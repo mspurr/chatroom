@@ -1,0 +1,3 @@
+= simple_form_for([@room, @room.broadcasts.build]) do |f|
+	= f.input :content, label: "Write a broadcast"
+	= f.button :submit, class: "button"

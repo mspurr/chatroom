@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150903082225) do
+ActiveRecord::Schema.define(version: 20150903121121) do
+
+  create_table "broadcasts", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "chatroom_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "broadcasts", ["chatroom_id"], name: "index_broadcasts_on_chatroom_id"
+  add_index "broadcasts", ["user_id"], name: "index_broadcasts_on_user_id"
 
   create_table "chatrooms", force: :cascade do |t|
     t.string   "title"
