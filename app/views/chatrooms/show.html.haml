@@ -1,0 +1,7 @@
+%h1= @room.title
+
+%p= @room.description
+
+= link_to "Home", root_path
+= link_to "Edit", edit_chatroom_path(@room)
+= link_to "Delete", chatroom_path(@room), method: :delete, data: { confirm: "Are you sure?" }
