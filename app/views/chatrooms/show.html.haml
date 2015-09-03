@@ -2,6 +2,8 @@
 
 %p= @room.description
 
+%p= @room.user.username.capitalize
+
 = link_to "Home", root_path
 = link_to "Edit", edit_chatroom_path(@room)
 = link_to "Delete", chatroom_path(@room), method: :delete, data: { confirm: "Are you sure?" }
