@@ -1,5 +1,6 @@
 class ChatroomsController < ApplicationController
 	before_action :find_room, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
 		@room = Chatroom.all.order('created_at DESC')
@@ -9,11 +10,11 @@ class ChatroomsController < ApplicationController
 	end
 
 	def new
-		@room = Chatroom.new
+		@room = current_user.chatrooms.build
 	end
 
 	def create
-		@room = Chatroom.new(room_params)
+		@room = current_user.chatrooms.build(room_params)
 
 		if @room.save
 			redirect_to @room
