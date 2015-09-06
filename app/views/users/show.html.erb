@@ -1,0 +1,496 @@
+<!-- PROFILE PAGE DESIGN -->
+<div class="container" id="container2">
+    <div class="body_fill_area">
+
+    <!-- Profile header design -->
+    	<div class="profile_page_header">
+    		<div class="p_header_bg">
+    			<img src="https://unsplash.it/1000/250/?random"/>
+    			<!-- <img src="./img/cover5.jpg"/> -->
+    		</div>
+    		<h2><%= @user.username.capitalize %></h2>
+    		<div class="p_picture">
+    			<!-- <img src="./img/pb.jpg"/> -->
+                <%= image_tag "pb.jpg" %>
+    			<!-- <img src="https://unsplash.it/120/120/?random"/> -->
+    		</div>
+    		<a href="#" class="default_btn_gray abs p_add_btn">
+    			<i class="ion-person-add"></i> Add Friend
+    		</a>
+    		<a href="#" class="default_btn_gray abs p_inv_btn">
+    			<i class="fa fa-paper-plane"></i> Invite
+    		</a>
+    		<a href="#" class="default_btn_gray abs p_more_btn">
+    			<span class="dots_btn">...</span>
+    		</a>
+    	</div>
+    <!-- End profile header -->
+
+    	<div class="p_default_window about_win">
+    		<!-- About list -->
+    		<h3 class="small_h3"><i class="fa fa-book"></i>About</h3>
+    		<div class="about_list">
+    			<ul>
+    				<li>
+    					<i class="ion-android-time p_mem_icon"></i> 
+    					Member since:
+    					<span class="p_about_list_input">
+    						24-02-2015
+    					</span>
+    				</li>
+    				<li>
+    					<i class="ion-ios-game-controller-b p_game_icon"></i> Games: 
+    					<a href="#">
+    						<span class="p_about_list_input">
+    							League Of Legends
+    						</span>
+    					</a>
+    					<span class="small_dot">·</span>
+    					<a href="#">
+    						<span class="p_about_list_input">
+    							Counter Strike: Source
+    						</span>
+    					</a>
+    					<span class="small_dot">·</span>
+    					<a href="#">
+    						<span class="p_about_list_input">
+    							World of Warcraft
+    						</span>
+    					</a>
+    				</li>
+    				<li>
+    					<i class="fa fa-users"></i> 
+    					Team: none
+    				</li>
+    				<li>
+    					<i class="fa fa-link p_mem_icon"></i> 
+    					Links:
+    					<a href="#">
+    						<span class="p_about_list_input">
+    							www.chatroom.guru
+    						</span>
+    					</a>
+    				</li>
+    				<li>
+    					<i class="ion-ios-location loc_icon"></i> 
+    					Location:
+    					<span class="p_about_list_input">
+    						Denmark
+    					</span>
+    				</li>
+    			</ul>
+    		</div>
+    		<!-- end about list -->
+
+    		<!-- profile description -->
+    		<div class="description_area">
+    			<span class="p_description_title">About me:</span>
+    			<p class="p_description">
+    			This is a random user profile description. Write anything about yourself. Let other people know who you are! </br>
+    			This is a random user profile description. Write anything about yourself. Let other people know who you are! 
+    			</p>
+    		</div>
+    		<!-- end profile description -->
+
+    		<!-- Friendlist -->
+    		<h3 class="small_h3"><i class="ion-ios-people"></i>Friendlist</h3>
+    		<span class="p_description_title">Friends</span>
+    		<span class="small_dot">·</span>
+    		<span class="p_description_title">Total: 102</span>
+    		<div class="friendlist_area">
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			<a href="#" class="p_user_friend">
+    				<img src="./img/pb.png"/>
+    			</a>
+    			
+    		</div>
+
+
+    		<!-- End Friendlist -->
+    	</div>
+
+    	
+
+    	<div class="p_default_window one_win">
+	    	<div class="p_online_icon">
+	    		<span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="int_on_icon">
+	                Online now
+	                <div class="arrow-down"></div>
+	            </span>
+	    	</div>
+	    	<h3 class="small_h3 inline"></i>Username</h3>
+	    	<div class="p_icon_1 rocket">
+	    		<i class="fa fa-rocket"></i>
+	    		<span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="p_user_icon">
+	                Member since launch!
+	                <div class="arrow-down"></div>
+	            </span>
+	    	</div>
+	    	<div class="p_icon_1 elite">
+	    		<i class="fa fa-star"></i>
+	    		<span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="p_user_icon">
+	                Elite Member
+	                <div class="arrow-down"></div>
+	            </span>
+	    	</div>
+	    	<div class="p_icon_1 prem">
+	    		<i class="fa fa-diamond"></i>
+	    		<span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="p_user_icon">
+	                Premium Member
+	                <div class="arrow-down"></div>
+	            </span>
+	    	</div>
+	    	<div class="p_icon_1 admin">
+	    		<i class="fa fa-gavel"></i>
+	    		<span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="p_user_icon">
+	                Site Admin
+	                <div class="arrow-down"></div>
+	            </span>
+	    	</div>
+	    	<div class="p_icon_1 note">
+	    		<i class="fa fa-pencil"></i>
+	    		<span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="p_user_icon">
+	                Write a note for this user
+	                <div class="arrow-down"></div>
+	            </span>
+	    	</div>
+
+
+    	</div>
+
+    	<div class="p_default_window one_win">
+    	<h3 class="small_h3"><i class="fa fa-tags"></i>Interests</h3>
+
+    	<div class="tabs" id="p_int_tabs">
+    			<ul class="nav nav-tabs tabs_d">
+  					<li role="presentation" class="active"><a class="alink" href="#tab4"><i class="fa fa-tags"></i>Tags of interest</a></li>
+  					<li role="presentation"><a class="alink" href="#tab5"><i class="ion-ios-game-controller-b"></i>Games of interest</a></li>
+				</ul>
+
+				<div class="tab_content">
+					<div id="tab4" class="tab_d active">
+            			<div class="used_tags_list p_int_list">
+    						<p class="p_description_title no_marg">Things of my interest:</p>
+                			<span>Gaming</span>
+                			<span>Computer</span>
+                			<span>Playstation 4</span>
+                			<span>Xbox one</span>
+                			<span>Multiplayer games</span>
+                			<span>Indie</span>
+                			<span>Multiplayer games</span>
+                			<span>Indie</span>
+            			</div>
+
+        			</div>
+
+        			<div id="tab5" class="tab_d">
+            			
+            			<span class="p_description_title">Games of my interest:</span>
+			            <p class="list_game_a">
+			           		<a href="#" class="alink">Browse all games</a><i class="fa fa-angle-right"></i>
+			           	</p>
+			            <div class="int_game_list">
+
+			           		<div class="int_game_div">
+			           			<a href="#">
+			           				<img src="./img/lolcover.jpg"/>
+			           				<span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="int_game_pos">
+			                    		League of Legends
+			                    		<div class="arrow-down"></div>
+			                		</span>
+			           			</a>
+			           		</div>
+
+			           		<div class="int_game_div">
+			           			<a href="#">
+			           				<img src="./img/wowcover.jpg"/>
+			           				<span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="int_game_pos">
+			                    		World of Warcraft
+			                    		<div class="arrow-down"></div>
+			                		</span>
+			           			</a>
+			           		</div>
+
+			           		<div class="int_game_div">
+			           			<a href="#">
+			           				<img src="./img/lolcover.jpg"/>
+			           				<span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="int_game_pos">
+			                    		League of Legends
+			                    		<div class="arrow-down"></div>
+			                		</span>
+			           			</a>
+			           		</div>
+
+			           		<div class="int_game_div">
+			           			<a href="#">
+			           				<img src="./img/wowcover.jpg"/>
+			           				<span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="int_game_pos">
+			                    		World of Warcraft
+			                    		<div class="arrow-down"></div>
+			                		</span>
+			           			</a>
+			           		</div>
+
+			           		<div class="int_game_div">
+			           			<a href="#">
+			           				<img src="./img/lolcover.jpg"/>
+			           				<span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="int_game_pos">
+			                    		League of Legends
+			                    		<div class="arrow-down"></div>
+			                		</span>
+			           			</a>
+			           		</div>
+
+			           		<div class="int_game_div">
+			           			<a href="#">
+			           				<img src="./img/wowcover.jpg"/>
+			           				<span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="int_game_pos">
+			                    		World of Warcraft
+			                    		<div class="arrow-down"></div>
+			                		</span>
+			           			</a>
+			           		</div>
+
+			           		<div class="int_game_div">
+			           			<a href="#">
+			           				<img src="./img/lolcover.jpg"/>
+			           				<span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="int_game_pos">
+			                    		League of Legends
+			                    		<div class="arrow-down"></div>
+			                		</span>
+			           			</a>
+			           		</div>
+
+        				</div>
+
+					</div>
+
+			</div>
+
+           	<h3 class="small_h3 clear"><i class="fa fa-comments-o"></i>Chatrooms</h3>
+
+    		<div class="tabs" id="p_chat_tabs">
+    			<ul class="nav nav-tabs tabs_d">
+  					<li role="presentation" class="active"><a class="alink" href="#tab1"><i class="fa fa-location-arrow"></i>Most visited</a></li>
+  					<li role="presentation"><a class="alink" href="#tab2"><i class="fa fa-child"></i>Own</a></li>
+  					<li role="presentation"><a class="alink" href="#tab3"><i class="fa fa-heart"></i>Favorite</a></li>
+				</ul>
+
+				<div class="tab_content">
+					<div id="tab1" class="tab_d active">
+            			<div class="chat_ad_div">
+                    		<h6>Chatroom Title</h6>
+                    		<div class="chat_ad_go">
+                        		<p>Go<i class="fa fa-angle-right"></i></p>
+                    		</div>
+                    		<div class="chat_ad_tag">
+                        		<i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+                    		</div>
+                    		<div class="chat_title_info small_title_info">
+                        		<p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
+                    			<p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
+                    		</div>
+                		</div>
+
+                		<div class="chat_ad_div">
+                    		<h6>Chatroom Title</h6>
+                    		<div class="chat_ad_go">
+                        		<p>Go<i class="fa fa-angle-right"></i></p>
+                    		</div>
+                    		<div class="chat_ad_tag">
+                        		<i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+                    		</div>
+                    		<div class="chat_title_info small_title_info">
+                        		<p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
+                    			<p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
+                    		</div>
+                		</div>
+
+                		<div class="chat_ad_div">
+                    		<h6>Chatroom Title</h6>
+                    		<div class="chat_ad_go">
+                        		<p>Go<i class="fa fa-angle-right"></i></p>
+                    		</div>
+                    		<div class="chat_ad_tag">
+                        		<i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+                    		</div>
+                    		<div class="chat_title_info small_title_info">
+                        		<p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
+                    			<p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
+                    		</div>
+                		</div>
+
+        			</div>
+
+        			<div id="tab2" class="tab_d">
+            			<div class="chat_ad_div">
+                    		<h6>My own chatroom</h6>
+                    		<div class="chat_ad_go">
+                        		<p>Go<i class="fa fa-angle-right"></i></p>
+                    		</div>
+                    		<div class="chat_ad_tag">
+                        		<i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+                    		</div>
+                    		<div class="chat_title_info small_title_info">
+                        		<p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
+                    			<p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
+                    		</div>
+                		</div>
+
+                		<div class="chat_ad_div">
+                    		<h6>My own chatroom</h6>
+                    		<div class="chat_ad_go">
+                        		<p>Go<i class="fa fa-angle-right"></i></p>
+                    		</div>
+                    		<div class="chat_ad_tag">
+                        		<i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+                    		</div>
+                    		<div class="chat_title_info small_title_info">
+                        		<p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
+                    			<p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
+                    		</div>
+                		</div>
+        			</div>
+        			<div id="tab3" class="tab_d">
+            			<div class="chat_ad_div">
+                    		<h6>Favorite room</h6>
+                    		<div class="chat_ad_go">
+                        		<p>Go<i class="fa fa-angle-right"></i></p>
+                    		</div>
+                    		<div class="chat_ad_tag">
+                        		<i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+                    		</div>
+                    		<div class="chat_title_info small_title_info">
+                        		<p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
+                    			<p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
+                    		</div>
+                		</div>
+
+                		<div class="chat_ad_div">
+                    		<h6>Favorite room</h6>
+                    		<div class="chat_ad_go">
+                        		<p>Go<i class="fa fa-angle-right"></i></p>
+                    		</div>
+                    		<div class="chat_ad_tag">
+                        		<i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+                    		</div>
+                    		<div class="chat_title_info small_title_info">
+                        		<p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
+                    			<p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
+                    		</div>
+                		</div>
+                		<div class="chat_ad_div">
+                    		<h6>Favorite room</h6>
+                    		<div class="chat_ad_go">
+                        		<p>Go<i class="fa fa-angle-right"></i></p>
+                    		</div>
+                    		<div class="chat_ad_tag">
+                        		<i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+                    		</div>
+                    		<div class="chat_title_info small_title_info">
+                        		<p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
+                    			<p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
+                    		</div>
+                		</div>
+                		<div class="chat_ad_div">
+                    		<h6>Favorite room</h6>
+                    		<div class="chat_ad_go">
+                        		<p>Go<i class="fa fa-angle-right"></i></p>
+                    		</div>
+                    		<div class="chat_ad_tag">
+                        		<i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+                    		</div>
+                    		<div class="chat_title_info small_title_info">
+                        		<p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
+                    			<p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
+                    		</div>
+                		</div>
+        			</div>
+
+				</div>
+
+			</div>
+
+    	</div>
+    	</div>
+    	
+
+    	<div class="p_default_window about_win" id="Explore_win">
+    		<div class="ex_people_area">
+    			<h3 class="small_h3"><i class="fa fa-users"></i>Explore people</h3>
+    			<!-- <a href="#" data-toggle="tooltip" data-original-title="Fucking awesome" data-placement="right">Tooltip</a> -->
+    		</div>
+    	</div>
+
+
+
+    </div>
+</div>

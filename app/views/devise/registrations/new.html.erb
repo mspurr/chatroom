@@ -1,18 +1,24 @@
-<h2>Sign up</h2>
+<div class="signup_bg">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+      <h3>Sign Up</h3>
+      <div class="main_login_box">
+        	<%= f.input :username, required: true, autofocus: true, label_html: { class: "main_login_h5" } %>
+          <div class="user_preview">chatroom.guru/user/</div>
+          <br>
+          <%= f.input :email, required: true, :placeholder => "Enter your email adress", label_html: { class: "main_login_h5" } %>
+          <br>
+          <%= f.input :password, required: true, :placeholder => "Choose your password", label_html: { class: "main_login_h5" } %>
+          <br>
+          <%= f.input :password_confirmation, required: true, :placeholder => "Re-type password", label_html: { class: "main_login_h5" } %>
+        
 
-  <div class="form-inputs">
-  	<%= f.input :username, required: true, autofocus: true %>
-    <%= f.input :email, required: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
-  </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Sign up", :id => "input_login_btn" %>
+          </div>
+      </div>
+      <p class="main_login_p"><i class="fa fa-sign-in"></i>Already have an account? <a href="<%= new_user_session_path %>"><b>click here</b></a> to login.</p>
+  <% end %>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

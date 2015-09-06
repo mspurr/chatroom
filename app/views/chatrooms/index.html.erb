@@ -1,0 +1,27 @@
+<% if user_signed_in? %>
+	<div class="container" id="container2">
+		<div class="body_fill_area">
+		<% @room.each do |room| %>
+			<div class="chatroom_ad">
+    			<%= image_tag "chatwowcover.png" %>
+    			<h3 class="a">World of Warcraft</h3>
+    			<div class="c_ad_d">
+    				<a href="<%= chatroom_path(room) %>">
+    				<h3 class="small_h3"></i><%= room.title %></h3>
+    				<div class="chat_ad_go">
+                        <p>Go<i class="fa fa-angle-right"></i></p>
+                    </div>
+                    <div class="chat_ad_tag">
+                        <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+                    </div>
+                    <p class="d">This is a random user profile description. Write anything about yourself. Let other people know who you are! If you would li ... </p>
+                    </a>
+    			</div>
+    		</div>
+	    <% end %>
+	    </div>
+	</div>
+
+<% else %>
+	<%= render 'chatrooms/welcome' %>
+<% end %>

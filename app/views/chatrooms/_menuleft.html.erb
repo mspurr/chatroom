@@ -1,0 +1,34 @@
+<!-- MENU LEFT -->
+<div class="menu_left_fixed" id="menu_big">
+	<span class="quick_menu_header"><i class="fa fa-list-alt"></i>Quick Menu</span>
+	<span class="menu_hide_btn"><i class="fa fa-minus"></i></span>
+	<div class="menu_left_btn_grid">
+		<ul>
+			<li><a href="<%= root_path %>"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="<%= user_path(current_user) %>"><i class="fa fa-male" id="quickmenu_profile_icon"></i>My Profile</a></li>
+		</ul>
+		<ul>
+			<li><a href="#"><i class="fa fa-comments-o"></i>Browse Chatrooms</a></li>
+			<li><a href="#"><i class="fa fa-gamepad"></i>Browse Games</a></li>
+			<li><a href="#"><i class="fa fa-heart"></i>Favorite Rooms</a></li>
+			<li><a href="<%= new_chatroom_path %>"><i class="fa fa-plus-circle"></i>Create Room</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="menu_left_fixed" id="menu_small">
+	<span class="menu_show_btn"><i class="fa fa-plus"></i></span>
+	<div class="menu_left_btn_grid">
+		<ul>
+			<li><a href="<%= root_path %>"><i class="fa fa-home"></i></a></li>
+			<li><a href="<%= user_path(current_user) %>"><i class="fa fa-male" id="quickmenu_profile_icon"></i></a></li>
+		</ul>
+		<ul>
+			<li><a href="#"><i class="fa fa-comments-o"></i></a></li>
+			<li><a href="#"><i class="fa fa-gamepad"></i></a></li>
+			<li><a href="#"><i class="fa fa-heart"></i></a></li>
+			<li><a href="<%= new_chatroom_path %>"><i class="fa fa-plus-circle"></i></a></li>
+		</ul>
+	</div>
+</div>
+<!-- END MENU LEFT -->

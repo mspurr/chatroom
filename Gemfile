@@ -13,6 +13,8 @@ gem 'haml', '~> 4.0.7'
 gem 'simple_form', '~> 3.1.1'
 gem 'devise', '~> 3.5.2'
 gem 'paperclip', '~> 4.3.0'
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'jquery-turbolinks', '~> 2.1.0'
 
 
 group :development, :test do
