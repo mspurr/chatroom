@@ -557,7 +557,7 @@
                 <div class="broad_title">
                     <p class="broadheader">Create a new broadcast</p>
                 </div>
-                <div class="user_post_area">
+                <div class="user_post_area broad_post">
                     <%= render 'broadcasts/form' %>
                 </div>
             </div>
@@ -596,7 +596,7 @@
             <div class="user_poster_info">
                 <%= image_tag "pb.jpg" %>
                 <div class="user_poster_info_text">
-                    <a href="<%= user_path(@room.user) %>"><span class="header_p_link"><%= @room.user.username.capitalize %></span></a>
+                    <a href="<%= user_path(@room.user.username) %>"><span class="header_p_link"><%= @room.user.username.capitalize %></span></a>
                     <div class="outer_icon">
                     <span class="veri_icon ion-ios-checkmark tool_icon">
                             <span class="upside_tooltip_box follow_tool no_wrap" id="user_header_tool_position">Chatroom Admininistator<div class="arrow-down"></div></span>
@@ -608,7 +608,8 @@
             </div>
             <div class="user_post_area">
                 <div class="user_post_area_inside">
-                    <p><%= broadcast.content %>
+                    <%= image_tag broadcast.image.url(:medium), :class => 'broad_img_show' if broadcast.image? %>
+                    <p><%= broadcast.content %></p>
                 </div>
             </div>
             <div class="post_functions_area">

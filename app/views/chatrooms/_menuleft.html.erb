@@ -5,7 +5,7 @@
 	<div class="menu_left_btn_grid">
 		<ul>
 			<li><a href="<%= root_path %>"><i class="fa fa-home"></i>Home</a></li>
-			<li><a href="<%= user_path(current_user) %>"><i class="fa fa-male" id="quickmenu_profile_icon"></i>My Profile</a></li>
+			<li><a href="<%= user_path(current_user.username) %>"><i class="fa fa-male" id="quickmenu_profile_icon"></i>My Profile</a></li>
 		</ul>
 		<ul>
 			<li><a href="#"><i class="fa fa-comments-o"></i>Browse Chatrooms</a></li>
@@ -21,7 +21,7 @@
 	<div class="menu_left_btn_grid">
 		<ul>
 			<li><a href="<%= root_path %>"><i class="fa fa-home"></i></a></li>
-			<li><a href="<%= user_path(current_user) %>"><i class="fa fa-male" id="quickmenu_profile_icon"></i></a></li>
+			<li><a href="<%= user_path(current_user.username) %>"><i class="fa fa-male" id="quickmenu_profile_icon"></i></a></li>
 		</ul>
 		<ul>
 			<li><a href="#"><i class="fa fa-comments-o"></i></a></li>

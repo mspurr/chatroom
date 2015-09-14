@@ -1,7 +1,7 @@
 class ChatroomsController < ApplicationController
 	before_action :find_room, only: [:show, :edit, :update, :destroy]
 	before_action :random_room, only: [:show, :index]
-	before_action :authenticate_user!, except: [:index, :show]
+	before_action :authenticate_user!, except: [:index]
 
 	def index
 		@room = Chatroom.all.order('created_at DESC')

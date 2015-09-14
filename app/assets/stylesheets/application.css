@@ -2844,3 +2844,40 @@ h3.a {
 .broad-setting p {
 	display: inline;
 }
+.broad_att_img {
+	margin-left: 2%;
+    margin-top: 5px;
+}
+.broadcast_image {
+    position: relative;
+    float: right;
+    width: 90px;
+    cursor: pointer;
+    background: url("small_img.png") no-repeat #F0F0F0;
+    background-size: 20px 20px;
+	background-position: 55px 5px;
+}
+.broadcast_image input.broad_att_img {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.broadcast_image label {
+	font-weight: normal;
+	font-size: 0.9em;
+	color: #a0a0a0;
+	display: inline;
+    position: absolute;
+    margin-top: 6px;
+    margin-left: -24px;
+}
+.broad_post {
+	min-height: 78px;
+}
+.broad_img_show {
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
