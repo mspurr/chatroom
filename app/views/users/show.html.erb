@@ -391,8 +391,11 @@
         			</div>
 
         			<div id="tab2" class="tab_d">
+                        <% @user.chatrooms.each do |room| %>
+
             			<div class="chat_ad_div">
-                    		<h6>My own chatroom</h6>
+                            <a href="<%= chatroom_path(room) %>">
+                    		<h6><%= room.title %></h6>
                     		<div class="chat_ad_go">
                         		<p>Go<i class="fa fa-angle-right"></i></p>
                     		</div>
@@ -403,21 +406,11 @@
                         		<p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
                     			<p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
                     		</div>
+                            </a>
                 		</div>
 
-                		<div class="chat_ad_div">
-                    		<h6>My own chatroom</h6>
-                    		<div class="chat_ad_go">
-                        		<p>Go<i class="fa fa-angle-right"></i></p>
-                    		</div>
-                    		<div class="chat_ad_tag">
-                        		<i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
-                    		</div>
-                    		<div class="chat_title_info small_title_info">
-                        		<p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
-                    			<p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
-                    		</div>
-                		</div>
+                        <% end %>
+                		
         			</div>
         			<div id="tab3" class="tab_d">
             			<div class="chat_ad_div">

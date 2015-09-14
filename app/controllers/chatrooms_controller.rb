@@ -1,5 +1,6 @@
 class ChatroomsController < ApplicationController
 	before_action :find_room, only: [:show, :edit, :update, :destroy]
+	before_action :random_room, only: [:show, :index]
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
@@ -7,6 +8,7 @@ class ChatroomsController < ApplicationController
 	end
 
 	def show
+		@broadcast = @room.broadcasts.all.order('created_at DESC')
 	end
 
 	def new
@@ -43,6 +45,10 @@ class ChatroomsController < ApplicationController
 
 	def find_room
 		@room = Chatroom.find(params[:id])
+	end
+
+	def random_room
+		@random = Chatroom.all.limit(5).shuffle
 	end
 
 	def room_params
