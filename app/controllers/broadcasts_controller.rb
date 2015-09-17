@@ -1,6 +1,7 @@
 class BroadcastsController < ApplicationController
 	before_action :authenticate_user!
 
+
 	def create
 		@room = Chatroom.find(params[:chatroom_id])
 		@broadcast = Broadcast.create(params[:broadcast].permit(:content, :image))

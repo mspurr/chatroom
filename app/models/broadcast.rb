@@ -1,6 +1,7 @@
 class Broadcast < ActiveRecord::Base
   belongs_to :chatroom
   belongs_to :user
+  has_many :comments
 
   validates :content, presence: true, length: { minimum: 1, maximum: 1000 }
   has_attached_file :image, styles: { medium: "525x525>" }
