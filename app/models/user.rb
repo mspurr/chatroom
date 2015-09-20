@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
 
 	has_many :chatrooms
 	has_many :broadcasts
-  has_many :comments
 
 
 	def self.find_for_database_authentication(warden_conditions)
