@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.1'
-gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -15,6 +14,7 @@ gem 'devise', '~> 3.5.2'
 gem 'paperclip', '~> 4.3.0'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'jquery-turbolinks', '~> 2.1.0'
+gem 'pg'
 
 
 group :development, :test do
