@@ -14,10 +14,10 @@
  *= require_self
  */
 
-@import url(https://fonts.googleapis.com/css?family=Mallanna);
-@import url(https://fonts.googleapis.com/css?family=NTR);
-@import url(https://fonts.googleapis.com/css?family=Viga);
-@import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700,300italic,400italic,500italic,700italic);
+@import url(//fonts.googleapis.com/css?family=Mallanna);
+@import url(//fonts.googleapis.com/css?family=NTR);
+@import url(//fonts.googleapis.com/css?family=Viga);
+@import url(//fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700,300italic,400italic,500italic,700italic);
 
 * {
 	margin: 0;
