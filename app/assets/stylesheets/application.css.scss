@@ -19,6 +19,9 @@
 @import url(//fonts.googleapis.com/css?family=Viga);
 @import url(//fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700,300italic,400italic,500italic,700italic);
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 * {
 	margin: 0;
 	padding: 0;
@@ -981,7 +984,7 @@ label {
 }
 .body_fill_area {
 	width: 100%;
-	margin-top: 80px;
+	margin-top: 70px;
 	min-height: 500px;
 }
 .chatwindow {
@@ -2879,4 +2882,7 @@ h3.a {
 	margin-top: 5px;
 	margin-bottom: 10px;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	max-width: 100%;
+    width: 100%;
+    display: block;
 }

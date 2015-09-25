@@ -1,16 +1,42 @@
 <% if user_signed_in? %>
+
 	<div class="container" id="container2">
 		<div class="body_fill_area">
+        <div class="wel_header">
+            <h3>Hey, <%= current_user.username.capitalize %>!</h3>
+        </div>
+        
+        
+
+        <div id="room_holder">
+        <div class="row">
 		<% @room.each do |room| %>
+
+        <div class="col-md-4 col-xs-6">
+            <div class="room_set">
+                <a href="<%= chatroom_path(room) %>">
+                    <%= image_tag "lolcover.png" %>
+                    <div class="r_wrap">
+                        <h3><%= room.title %></h3>
+                        <div class="splitter"></div>
+                        <p><%= room.description %></p>
+                    </div>
+                    <div class="go-sign">
+                        <p>Go<i class="fa fa-angle-right" id="spin"></i></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <!--
 			<div class="chatroom_ad">
     			<%= image_tag "chatwowcover.png" %>
     			<h3 class="a">World of Warcraft</h3>
     			<div class="c_ad_d">
     				<a href="<%= chatroom_path(room) %>">
     				<h3 class="small_h3"></i><%= room.title %></h3>
-    				<div class="chat_ad_go">
-                        <p>Go<i class="fa fa-angle-right"></i></p>
-                    </div>
+    				
                     <div class="chat_ad_tag">
                         <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
                     </div>
@@ -18,7 +44,12 @@
                     </a>
     			</div>
     		</div>
+        -->
+
+
 	    <% end %>
+        </div>
+        </div>
 	    </div>
 	</div>
 
