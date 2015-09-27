@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require 'masonry/transitions'
  *= require_self
  */
 
@@ -2886,3 +2887,4 @@ h3.a {
     width: 100%;
     display: block;
 }
+

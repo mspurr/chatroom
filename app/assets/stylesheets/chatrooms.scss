@@ -10,8 +10,8 @@
     border: 1px solid #D5D5D2;
     border-bottom: 2px solid #D5D5D2;
     box-shadow: 0px 0px 1px rgba(195, 195, 195, 0.72);
-    margin-bottom: 25px;
     transition: 0.2s;
+    margin-bottom: 20px;
     h3 {
     	color: #a0a0a0;
     	margin: 0;
@@ -26,6 +26,9 @@
     	img {
     		opacity: 1;
     	}
+    	.foot {
+    		background-color: #E9E7E2;
+    	}
 	}
 
     img {
@@ -34,6 +37,29 @@
     	opacity: 0.9;
     	transition: 0.2s;
     	border-bottom: 1px solid #D5D5D2;
+    }
+    p {
+    	font-size: 0.9em;
+    	margin: 0px;
+    }
+    h3 {
+    	font-family: 'Viga', 'Fira Sans', 'serif';
+    	font-weight: 400;
+    	font-size: 1.4em;
+    }
+    .foot {
+    	width: 100%;
+	    background-color: #E4E3DE;
+	    padding: 5px 10px;
+	    border-top: 1px solid #D5D5D2;
+	    transition: 0.2s;
+    	p {
+    		margin: 0px;
+    	}
+    	.small_dot {
+    		margin-left: 10px;
+    		margin-right: 10px;
+    	}
     }
 }
 
@@ -47,13 +73,17 @@
 	h3 {
 		color: #a0a0a0;
 	}
+	p {
+		color: #a0a0a0;
+		margin: 0px;
+	}
 }
 .go-sign {
 	display: inline;
     font-size: 1.2em;
     font-weight: bold;
     right: 8%;
-    bottom: 16px;
+    bottom: 20px;
     position: absolute;
     i {
     	margin-left: 5px;

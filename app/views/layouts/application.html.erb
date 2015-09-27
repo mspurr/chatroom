@@ -20,6 +20,8 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.min.js"></script>
+        <script src="//desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js"></script>
 
         <!-- Local Links -->
 
@@ -28,9 +30,15 @@
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
+        <script>
+        window.addEventListener("load", function(){
+            var load_screen = document.getElementById("load_screen");
+            document.body.removeChild(load_screen);
+        });
+        </script>
     </head>
     <body>
-
+    <div class="se-pre-con" id="load_screen"></div>
     <% if user_signed_in? %>
     	<%= render 'chatrooms/navbarin' %>
     	<%= render 'chatrooms/menuleft' %>
@@ -42,7 +50,7 @@
 
 
 	<%= render 'chatrooms/footer' %>
-	<!-- <div class="se-pre-con"></div> -->
+	
 	</body>
 </html>
 

@@ -4,30 +4,34 @@
 		<div class="body_fill_area">
         <div class="wel_header">
             <h3>Hey, <%= current_user.username.capitalize %>!</h3>
+            <p>We've collected the top chatrooms that you might like based on your interests. If you wan't </p>
         </div>
         
         
 
-        <div id="room_holder">
-        <div class="row">
-		<% @room.each do |room| %>
 
-        <div class="col-md-4 col-xs-6">
+        <div class="transitions-enabled row" id="rooms">
+		<% @room.each do |room| %>
+            <div class="col-md-4 col-xs-6 box">
             <div class="room_set">
                 <a href="<%= chatroom_path(room) %>">
                     <%= image_tag "lolcover.png" %>
                     <div class="r_wrap">
                         <h3><%= room.title %></h3>
                         <div class="splitter"></div>
+                        
+
                         <p><%= room.description %></p>
+                    </div>
+                    <div class="foot">
+                        <p><i class="fa fa-child"></i><%= room.user.username.capitalize %><span class="small_dot">·</span><i class="fa fa-users"></i>24</p>
                     </div>
                     <div class="go-sign">
                         <p>Go<i class="fa fa-angle-right" id="spin"></i></p>
                     </div>
                 </a>
             </div>
-        </div>
-
+            </div>
 
         <!--
 			<div class="chatroom_ad">
@@ -50,7 +54,6 @@
 	    <% end %>
         </div>
         </div>
-	    </div>
 	</div>
 
 <% else %>

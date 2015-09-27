@@ -16,31 +16,49 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-
 //Loading icon ALL pages
-$(window).load(function() {
-		$(".se-pre-con").fadeOut(400);
+
+
+$(window).load(function() {                             
+        $('#rooms').masonry({
+            itemSelector: '.box',
+            isAnimated: true,
+        });
+
+
 });
+
 
 $(document).ready(function() {
 
-	//Menu left minimize and extend
-	$('#menu_small').hide();
+    //Menu left minimize and extend
+    $('#menu_small').hide();
 
     $('.menu_hide_btn').click(function() {
-    	$('#menu_big').hide(300);
-    	$('#menu_small').show(300);
+        $('#menu_big').hide(300);
+        $('#menu_small').show(300);
         $('#container2').attr('id', 'container3');
         $('.p_user_friend').addClass('p_friend_height');
         $('.int_game_div').addClass('int_game_height');
+        $('#rooms').masonry({
+            itemSelector: '.box',
+            isAnimated: true,
+        });
     });
 
     $('.menu_show_btn').click(function() {
-    	$('#menu_big').show(300);
-    	$('#menu_small').hide(300);
+        $('#menu_big').show(300);
+        $('#menu_small').hide(300);
         $('#container3').attr('id', 'container2');
         $('.p_user_friend').removeClass('p_friend_height');
         $('.int_game_div').removeClass('int_game_height');
+
+        setTimeout(function() {
+        	$('#rooms').masonry({
+	            itemSelector: '.box',
+	            isAnimated: true,
+        	});
+       	}, 100);
     });
 
 
@@ -49,7 +67,7 @@ $(document).ready(function() {
     $('#small_login_drop').hide();
 
     $('#nav_login_btn').click(function() {
-    	$('#small_login_drop').toggle(50);
+        $('#small_login_drop').toggle(50);
     });
     $(document).mouseup(function (e){
 
@@ -69,7 +87,7 @@ $(document).ready(function() {
     $('#user_dropdown').hide();
 
     $('#toggleuser').click(function() {
-    	$('#user_dropdown').slideToggle(200);
+        $('#user_dropdown').slideToggle(200);
     });
 
     $(document).mouseup(function (e){
@@ -86,7 +104,7 @@ $(document).ready(function() {
     $('#notidropdown').hide();
 
     $('#nav_last_item').click(function() {
-    	$('#notidropdown').toggle(150);
+        $('#notidropdown').toggle(150);
     });
 
     $(document).mouseup(function (e){
@@ -102,7 +120,7 @@ $(document).ready(function() {
     $('#chatdropdown').hide();
 
     $('#togglechat').click(function() {
-    	$('#chatdropdown').toggle(150);
+        $('#chatdropdown').toggle(150);
     });
 
     $(document).mouseup(function (e){
@@ -118,7 +136,7 @@ $(document).ready(function() {
     $('#inbox_dropdown').hide();
 
     $('#toggleinbox').click(function() {
-    	$('#inbox_dropdown').toggle(150);
+        $('#inbox_dropdown').toggle(150);
     });
 
     $(document).mouseup(function (e){
@@ -326,7 +344,7 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
         msgbefore.toggle( "slide" );
     });
 
-
 });
+
 
 //= require turbolinks
