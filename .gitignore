@@ -9,9 +9,6 @@ vendor/bundle
 /tmp
 /spec/tmp
 
-# RVM
-.ruby-gemset
-
 # Lint files
 .eslintrc
 
