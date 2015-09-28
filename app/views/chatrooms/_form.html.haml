@@ -1,6 +1,7 @@
 = simple_form_for @room do |f|
 	= f.input :title
 	= f.input :description
+	= f.collection_select :game_id, Game.order(:name), :id, :name, { promt: "Select a Game" }, {class: "game-select"}
 
 	=f.button :submit
 

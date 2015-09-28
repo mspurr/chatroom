@@ -12,6 +12,8 @@
     box-shadow: 0px 0px 1px rgba(195, 195, 195, 0.72);
     transition: 0.2s;
     margin-bottom: 20px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
     h3 {
     	color: #a0a0a0;
     	margin: 0;
@@ -37,6 +39,8 @@
     	opacity: 0.9;
     	transition: 0.2s;
     	border-bottom: 1px solid #D5D5D2;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
     }
     p {
     	font-size: 0.9em;
@@ -46,6 +50,9 @@
     	font-family: 'Viga', 'Fira Sans', 'serif';
     	font-weight: 400;
     	font-size: 1.4em;
+    }
+    .game_tag_t {
+        font-size: 0.8em;
     }
     .foot {
     	width: 100%;
@@ -67,7 +74,7 @@
 .wel_header {
 	width: 100%;
 	border-bottom: 1px solid rgba(213, 213, 210, 0.4);
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 	padding-bottom: 10px;
 	text-align: center;
 	h3 {
@@ -83,7 +90,7 @@
     font-size: 1.2em;
     font-weight: bold;
     right: 8%;
-    bottom: 20px;
+    bottom: 24px;
     position: absolute;
     i {
     	margin-left: 5px;
@@ -98,6 +105,45 @@
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
+.splitter_light {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(213, 213, 210, 0.4);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 .r_wrap {
 	padding: 5px 10px;
+}
+.game_tag_link {
+    color: #A0A0A0;
+    text-decoration: none;
+    padding: 4px 12px 3px 12px;
+    border: 1px solid #d5d5d2;
+    border-bottom-color: #CACACA;
+    font-size: 0.85em;
+    border-radius: 3px;
+    background-color: #EFEFEF;
+    box-shadow: 0px 0px 2px rgba(161, 161, 161, 0.14);
+    transition: 0.3s;
+    display: inline;
+    margin-right: 5px;
+    line-height: 2.5;
+    white-space: nowrap;
+    transition: 0.1s;
+    &:hover {
+        color: #a0a0a0;
+        border: 1px solid #CAC9C6;
+        background-color: #EBEBEB;
+    }
+}
+#rooms {
+    margin-top: 20px;
+}
+.g_tag_header {
+    p {
+        text-align: center;
+        color: #a0a0a0;
+        margin: 0px;
+    }
 }

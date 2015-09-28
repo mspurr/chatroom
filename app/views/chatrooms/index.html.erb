@@ -7,16 +7,23 @@
             <p>We've collected the top chatrooms that you might like based on your interests. If you wan't </p>
         </div>
         
-        
+        <div class="g_tag_header">
+        <p>Most popular games</p>
+        <% Game.all.each do |game| %>
+            <%= link_to game.name, chatrooms_path(game: game.name), class: "game_tag_link" %>
+        <% end %>
+        </div>
 
+        <div class="splitter_light"></div>
 
         <div class="transitions-enabled row" id="rooms">
 		<% @room.each do |room| %>
             <div class="col-md-4 col-xs-6 box">
             <div class="room_set">
                 <a href="<%= chatroom_path(room) %>">
-                    <%= image_tag "lolcover.png" %>
+                    <%= image_tag room.game.thumb.url(:medium) %>
                     <div class="r_wrap">
+                        <p class="game_tag_t"><i class="fa fa-gamepad"></i><%= room.game.name %></p>
                         <h3><%= room.title %></h3>
                         <div class="splitter"></div>
                         

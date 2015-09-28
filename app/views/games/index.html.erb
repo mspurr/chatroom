@@ -1,0 +1,8 @@
+<div class="container" id="container2">
+	<div class="body_fill_area">
+		<% Game.all.each do |game| %>
+	        <%= link_to game.name, chatrooms_path(game: game.name), class: "game_tag_link" %>
+	        <%= button_to "delete", game, :method=>:delete, :class=>:destroy %>
+	    <% end %>
+	</div>
+</div>

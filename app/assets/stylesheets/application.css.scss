@@ -694,7 +694,7 @@ label {
 .user_dropdown {
 	position: absolute;
 	top: 58px;
-	margin-left: -27px;
+	right: 6.5%;
 	width: 200px;
 	background-color: #E7E7E6;
 	border: 1px solid #D5D5D2;
@@ -759,6 +759,7 @@ label {
 	height: 100%;
 	z-index: 9999;
 	background: url(loading.GIF) center no-repeat #ECECEC;
+	background-size: 40px 40px;
 }
 
 .nav_dropdown {

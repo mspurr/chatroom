@@ -4,7 +4,12 @@ class ChatroomsController < ApplicationController
 	before_action :authenticate_user!, except: [:index]
 
 	def index
-		@room = Chatroom.all.order('created_at DESC')
+		if params[:game].blank?
+			@room = Chatroom.all.order("created_at DESC")
+		else
+			@game_id = Game.find_by(name: params[:game]).id
+			@room = Chatroom.where(game_id: @game_id).order("created_at DESC")
+		end
 	end
 
 	def show
@@ -52,6 +57,6 @@ class ChatroomsController < ApplicationController
 	end
 
 	def room_params
-		params.require(:chatroom).permit(:title, :description)
+		params.require(:chatroom).permit(:title, :description, :game_id)
 	end
 end
