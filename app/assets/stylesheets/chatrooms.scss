@@ -72,17 +72,23 @@
 
 
 .wel_header {
-	width: 100%;
-	border-bottom: 1px solid rgba(213, 213, 210, 0.4);
-	margin-bottom: 5px;
-	padding-bottom: 10px;
-	text-align: center;
+    width: 120%;
+    margin-left: -10%;
+    border-bottom: 1px solid #D5D5D2;
+    margin-bottom: 5px;
+    margin-top: -20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    background-color: #E7E7E6;
 	h3 {
 		color: #a0a0a0;
+        padding-top: 10px;
 	}
 	p {
 		color: #a0a0a0;
 		margin: 0px;
+        font-size: 0.9em;
 	}
 }
 .go-sign {
@@ -141,9 +147,46 @@
     margin-top: 20px;
 }
 .g_tag_header {
+    margin-top: 10px;
+    padding-bottom: 5px;
     p {
         text-align: center;
         color: #a0a0a0;
         margin: 0px;
+    }
+    h3 {
+        font-family: 'Viga';
+        font-size: 1.2em;
+        text-align: center;
+        color: #a0a0a0;
+        margin: 0px;
+        margin-bottom: 5px;
+    }
+}
+.small_btn_y {
+    background: -webkit-linear-gradient(#FFC600, #F9C000);
+    background: -o-linear-gradient(#FFC600, #F9C000);
+    background: -moz-linear-gradient(#FFC600, #F9C000);
+    background: linear-gradient(#FFC600, #F9C000);
+    background-color: #FFC600;
+    border-radius: 2px;
+    border-top: 1px solid #F0BB00;
+    border-right: 1px solid #E3B002;
+    border-bottom: 1px solid #D7A700;
+    border-left: 1px solid #E3B002;
+    font-family: "Fira Sans", "Mallanna", "Serif";
+    font-weight: bold;
+    color: #FAFAFA;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 3px rgba(161, 161, 161, 0.18);
+    font-size: 0.85em;
+    padding: 1px 5px;
+    margin-left: 5px;
+    &:hover {
+        background: -webkit-linear-gradient(#FCC300, #EFB900);
+        background: -o-linear-gradient(#FCC300, #EFB900);
+        background: -moz-linear-gradient(#FCC300, #EFB900);
+        background: linear-gradient(#FCC300, #EFB900);
+        background-color: #FCC300;
     }
 }
