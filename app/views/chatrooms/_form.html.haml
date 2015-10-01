@@ -4,7 +4,7 @@
 	%p.ftitle Chatroom description
 	= f.input :description, label: false
 	%p.ftitle Select related game
-	= f.text_field :game_name
+	= f.text_field :game_name, data: { autocomplete_source: Game.order(:name).map(&:name) }
 
 	=f.button :submit
 

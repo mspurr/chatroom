@@ -263,3 +263,41 @@
     text-align: center;
     color: #a0a0a0;
 }
+ul.ui-autocomplete {
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #D5D5D2;
+    border-top: none;
+    cursor: pointer;
+    li {
+        background-color: rgb(241, 241, 241);
+        border-top: 1px solid #ddd;
+        margin: 0;
+        padding: 0 10px;
+        transition: 0.2s;
+        a {
+            color: #a0a0a0;
+            display: block;
+            padding: 3px;
+            font-size: 0.8em;
+        }
+        &:hover {
+            background-color: #F7F7F7;
+            border-left: 2px solid #FFC600;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
