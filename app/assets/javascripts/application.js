@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require masonry/jquery.masonry
 //= require bootstrap-sprockets
@@ -343,6 +344,8 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
         var msgbefore = $(this).closest('#inbox_dropdown').find('.dropdown_fill_area')
         msgbefore.toggle( "slide" );
     });
+
+    
 
 });
 
