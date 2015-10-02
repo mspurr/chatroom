@@ -34,6 +34,7 @@ end
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.4'
+  gem 'pry-remote'
   gem 'bullet'
 end
 
