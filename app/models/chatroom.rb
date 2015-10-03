@@ -2,7 +2,6 @@ class Chatroom < ActiveRecord::Base
   belongs_to :user
   belongs_to :game
   has_many :broadcasts
-
   validates :game, presence: true
 
   def game_name
