@@ -1,0 +1,80 @@
+
+
+		<div class="broadcastwindow">
+            <div class="highlighted_broadcast_icon">
+                <i class="ion-bookmark"></i>
+                <span class="ion-star"></span>
+                <span class="upside_tooltip_box follow_tool no_wrap noselect" id="pin_tool">
+                    Pinned broadcast
+                    <div class="arrow-down"></div>
+                </span>
+
+            </div>
+            <div class="broad-setting">
+                    <p>remove</p>
+                    <p>edit</p>
+            </div>
+            <div class="broadcastwindow_header">
+                <div class="recent_broadcast_icon">
+                    <i class="ion-radio-waves fa-spin"></i>
+                </div>
+                <div class="follow_broadcast_btn">
+                    <i class="fa fa-eye"></i>
+                    <div class="upside_tooltip_box follow_tool no_wrap" id="follow_tool_position">
+                        <span>Follow this broadcast</span>
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>  
+            </div>
+            <div class="user_poster_info">
+                <%= image_tag "pb.jpg" %>
+                <div class="user_poster_info_text">
+                    <a href="<%= user_path(@room.user.username) %>"><span class="header_p_link"><%= @room.user.username.capitalize %></span></a>
+                    <div class="outer_icon">
+                    <span class="veri_icon ion-ios-checkmark tool_icon">
+                            <span class="upside_tooltip_box follow_tool no_wrap" id="user_header_tool_position">Chatroom Admininistator<div class="arrow-down"></div></span>
+                    </span>
+                    </div>
+                    <p class="poster_info_p"><i class="fa fa-clock-o"></i>Posted <%= distance_of_time_in_words(Time.now, broadcast.created_at) %> ago.</p>
+                    <p class="poster_info_p"><i class="fa fa-tag"></i><span class="poster_tag_link">League of legends</span><span>·</span><span class="poster_tag_link">5v5</span><span>·</span><span class="poster_tag_link">Platinum</span></p>
+                </div>
+            </div>
+            <div class="user_post_area">
+                <div class="user_post_area_inside">
+                    <%= image_tag broadcast.image.url(:medium), :class => 'broad_img_show' if broadcast.image? %>
+                    <p><%= broadcast.content %></p>
+                </div>
+            </div>
+            <div class="post_functions_area">
+                <p>
+                    <% if current_user.liked? broadcast %>
+                        <i class="fa fa-thumbs-up thumb_icon big_icon"></i>
+                    <% else %>
+                        <i class="fa fa-thumbs-up thumb_icon"></i>
+                    <% end %>
+                        <%= broadcast.get_likes.size %> Thumbs up
+                    <span class="small_dot">·</span>
+                    <% if current_user.liked? broadcast %>
+                        <%= link_to "Remove thumbs up", unlike_chatroom_broadcast_path(@room, broadcast), class: 'small_functions_link thumbs_down', method: :put %>
+                    <% else %>
+                        <%= link_to "Thumbs up this broadcast", like_chatroom_broadcast_path(@room, broadcast), class: "small_functions_link thumbs_up", method: :put %>
+                    <% end %>
+                    
+
+                </p>
+                <p class="broadcast_float_right"><i class="fa fa-comments-o"></i><span class="small_functions_link comm_toggle noselect"> 0 comments</span></p>
+            </div>
+            <div class="user_comment_input">
+                <img src="./img/gaben.png" />
+                
+                <!-- 
+                <textarea placeholder="Write a comment ..." name="message" class="input_field_comment"></textarea>
+                <input type="submit" value="Post Comment" class="input_comment_btn"> -->
+            </div>
+
+            
+            <div class="post_comment_area"> 
+
+            </div>
+        </div>
+        <!-- END BROADCAST WINDOW -->

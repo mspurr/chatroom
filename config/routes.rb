@@ -4,7 +4,12 @@ Rails.application.routes.draw do
                                              edit: '/users/do/edit' }
 
   resources :chatrooms do
-    resources :broadcasts
+    resources :broadcasts do
+      member do
+        put "like" => "broadcasts#like"
+        put "unlike" => "broadcasts#unlike"
+      end
+    end
   end
 
   resources :users, only: [:show, :profile]

@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
 
+  acts_as_voter
+
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
          :trackable, :validatable
 
@@ -18,8 +20,7 @@ class User < ActiveRecord::Base
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login
 
-
-  #For views count
+  # For views count
   is_impressionable
 
   has_many :chatrooms
