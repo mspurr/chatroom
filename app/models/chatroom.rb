@@ -1,15 +1,15 @@
 class Chatroom < ActiveRecord::Base
-	belongs_to :user
-	has_many :broadcasts
-	belongs_to :game
+  belongs_to :user
+  belongs_to :game
+  has_many :broadcasts
 
-	def game_name
-		game.try(:name)
-	end
+  validates :game, presence: true
 
-	def game_name=(name)
-		self.game = Game.find_by_name(name) if name.present?
-		
-	end
-	
+  def game_name
+    game.try :name
+  end
+
+  def game_name=(name)
+    self.game = Game.find_by(name: name)
+  end
 end

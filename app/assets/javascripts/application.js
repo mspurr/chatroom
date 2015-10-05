@@ -19,7 +19,7 @@
 //Loading icon ALL pages
 
 
-$(window).load(function() {                             
+$(window).load(function() {
         $('#rooms').masonry({
             itemSelector: '.box',
             isAnimated: true,
@@ -79,7 +79,7 @@ $(document).ready(function() {
 
 
 
-    
+
 
     //User menu dropdown
     $('#user_dropdown').hide();
@@ -183,9 +183,9 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
             $(this).attr("id", "fav_room_btn_click")
             $(".tool_after_fav").show();
             $(".tool_before_fav").hide();
-            
+
         }
-        
+
     });
 
     $('.follow_room_btn').click(function() {
@@ -200,7 +200,7 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
             $(".tool_after_follow").show();
             $(".tool_before_follow").hide();
         }
-        
+
     });
 
 
@@ -210,10 +210,10 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
     $('.messagepop').hide()
     });
 
-    
+
     $('.invite_room_btn').on('click', function () {
         if($(this).hasClass("selected")) {
-            
+
         }
         else {
             $('.messagepop').show(150);
@@ -253,7 +253,7 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
     });
 
 
-    
+
     //THUMBS UP SCRIPT
     $('.thumbs_down').hide();
     $('.thumbs_up').on('click', function() {
@@ -290,7 +290,7 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
     });
 
 
-    //Comments view dropdown 
+    //Comments view dropdown
     $('.post_comment_area').hide();
     $('.user_comment_input').hide();
     $(".comm_toggle").on('click', function() {
@@ -323,11 +323,11 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
     //Profile page chatrooms tabs
     $('.tabs .tabs_d a').on('click', function(e)  {
         var currentAttrValue = $(this).attr('href');
- 
+
         $('.tabs ' + currentAttrValue).fadeIn(400).siblings().hide();
- 
+
         $(this).parent('li').addClass('active').siblings().removeClass('active');
- 
+
         e.preventDefault();
     });
 
@@ -335,7 +335,7 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
 
 
     //Chat message click and write function
-    //$('#inbox_dropdown').find('.dropdown_fill_area').hide(); 
+    //$('#inbox_dropdown').find('.dropdown_fill_area').hide();
 
     $('.inbox_message').on('click', function() {
         var msgbefore = $(this).closest('#inbox_dropdown').find('.dropdown_fill_area')
@@ -343,7 +343,7 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
     });
 
 
-    
+
 
 });
 

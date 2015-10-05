@@ -1,196 +1,196 @@
 <!-- NAVIGATION BAR -->
-	<div class="nav_login_false">
-		<div class="container">
-			<div class="nav_logoarea">
-				<a href="<%= root_path %>"><%= image_tag "mainlogosmall.png" %>CHATROOM</a>
+  <div class="nav_login_false">
+    <div class="container">
+      <div class="nav_logoarea">
+        <a href="<%= root_path %>"><%= image_tag "mainlogosmall.png" %>CHATROOM</a>
 
-			</div>
+      </div>
 
-			<div class="nav_search_bar">
-				<form action="/search" method="get">
-					<div class="inner_search">
-						<input type="text" name="q" class="input_search_bar" placeholder="Search chatrooms, users, games etc." autocomplete="off" tabindex="1" value="">
-						<button type="submit" class="search_bar_btn"></button>
-						</input>
-					</div>
-				</form>
-			</div>
+      <div class="nav_search_bar">
+        <form action="/search" method="get">
+          <div class="inner_search">
+            <input type="text" name="q" class="input_search_bar" placeholder="Search chatrooms, users, games etc." autocomplete="off" tabindex="1" value="">
+            <button type="submit" class="search_bar_btn"></button>
+            </input>
+          </div>
+        </form>
+      </div>
 
-			<div class="ul">
-				<div class="li">
-					<a href="#" id="toggleuser">
-						<%= image_tag "gaben.png", class: "nav_user_pic" %>
-						<span id="nav_username"><%= current_user.username.capitalize %></span>
-						<span class="ion-arrow-down-b" id="nav_user_dropdown_icon"></span>
-					</a>
-					<div class="user_dropdown" id="user_dropdown">
-						<div class="arrow_up" id="user_menu_arrow"></div>
-						<div class="user_menu_list">
-							<ul>
-								<li><a href="<%= user_path(current_user.username) %>"><i class="fa fa-male" id="quickmenu_profile_icon"></i>My Profile</a></li>
-								<li><a href="#"><i class="fa fa-inbox"></i>My Messages</a></li>
-							</ul>
-    						<ul>
-								<li><a href="<%= edit_user_registration_path %>"><i class="fa fa-cogs"></i>Settings</a></li>
-								<li><a href="#"><i class="fa fa-key"></i>Change Password</a></li>
-								<li><a href="#"><i class="fa fa-tags"></i>Change Interests</a></li>
-							</ul>
-							<ul>
-								<li><a href="<%= destroy_user_session_path %>" data-method="delete"><i class="fa fa-sign-out"></i>Sign Out</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="li"><a href="#" id="toggleinbox"><i class="fa fa-inbox"></i><div class="nav_notify_icon">2</div></a><div class="nav_dropdown" id="inbox_dropdown">
-						<div class="arrow_up" id="user_menu_arrow"></div>
-						<div class="nav_dropdown_header">
-							<h4>My Inbox</h4>
-						</div>
-						<div class="dropdown_fill_area before">
-							<div class="inbox_message" id="unread">
-								<div class="msg_from_pic">
-									<img src="./img/pb.png"/>
-								</div>
-								<div class="msg_info_from">
-									<h5>Username</h5>
-									<h6>12:49</h6>
-								</div>
-								<div class="inbox_msg_area">
-									<p>This is a custom message from me to you. Please answer.</p>
-								</div>
-							</div>
-							<div class="inbox_message" id="unread">
-								<div class="msg_from_pic">
-									<img src="./img/pb.png"></img>
-								</div>
-								<div class="msg_info_from">
-									<h5>Username</h5>
-									<h6>04-02-2015</h6>
-								</div>
-								<div class="inbox_msg_area">
-									<p>This is a custom message from me to you. Please answer.</p>
-								</div>
-							</div>
-							<div class="inbox_message" id="read">
-								<div class="msg_from_pic">
-									<img src="./img/pb.png"></img>
-								</div>
-								<div class="msg_info_from">
-									<h5>Username</h5>
-									<h6>01-02-2015</h6>
-								</div>
-								<div class="inbox_msg_area">
-									<p>This is a custom message from me to you. Please answer.</p>
-								</div>
-							</div>
-							<div class="inbox_message" id="read">
-								<div class="msg_from_pic">
-									<img src="./img/pb.png"></img>
-								</div>
-								<div class="msg_info_from">
-									<h5>Username</h5>
-									<h6>01-02-2015</h6>
-								</div>
-								<div class="inbox_msg_area">
-									<p>This is a custom message from me to you. Please answer.</p>
-								</div>
-							</div>
-							<div class="inbox_message" id="read">
-								<div class="msg_from_pic">
-									<img src="./img/pb.png"></img>
-								</div>
-								<div class="msg_info_from">
-									<h5>Username</h5>
-									<h6>01-02-2015</h6>
-								</div>
-								<div class="inbox_msg_area">
-									<p>This is a custom message from me to you. Please answer.</p>
-								</div>
-							</div>
-							<div class="inbox_message" id="read">
-								<div class="msg_from_pic">
-									<img src="./img/pb.png"></img>
-								</div>
-								<div class="msg_info_from">
-									<h5>Username</h5>
-									<h6>01-02-2015</h6>
-								</div>
-								<div class="inbox_msg_area">
-									<p>This is a custom message from me to you. Please answer.</p>
-								</div>
-							</div>
+      <div class="ul">
+        <div class="li">
+          <a href="#" id="toggleuser">
+            <%= image_tag "gaben.png", class: "nav_user_pic" %>
+            <span id="nav_username"><%= current_user.username.capitalize %></span>
+            <span class="ion-arrow-down-b" id="nav_user_dropdown_icon"></span>
+          </a>
+          <div class="user_dropdown" id="user_dropdown">
+            <div class="arrow_up" id="user_menu_arrow"></div>
+            <div class="user_menu_list">
+              <ul>
+                <li><a href="<%= user_path(current_user.username) %>"><i class="fa fa-male" id="quickmenu_profile_icon"></i>My Profile</a></li>
+                <li><a href="#"><i class="fa fa-inbox"></i>My Messages</a></li>
+              </ul>
+                <ul>
+                <li><a href="<%= edit_user_registration_path %>"><i class="fa fa-cogs"></i>Settings</a></li>
+                <li><a href="#"><i class="fa fa-key"></i>Change Password</a></li>
+                <li><a href="#"><i class="fa fa-tags"></i>Change Interests</a></li>
+              </ul>
+              <ul>
+                <li><a href="<%= destroy_user_session_path %>" data-method="delete"><i class="fa fa-sign-out"></i>Sign Out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="li"><a href="#" id="toggleinbox"><i class="fa fa-inbox"></i><div class="nav_notify_icon">2</div></a><div class="nav_dropdown" id="inbox_dropdown">
+            <div class="arrow_up" id="user_menu_arrow"></div>
+            <div class="nav_dropdown_header">
+              <h4>My Inbox</h4>
+            </div>
+            <div class="dropdown_fill_area before">
+              <div class="inbox_message" id="unread">
+                <div class="msg_from_pic">
+                  <%= image_tag 'pb.png' %>
+                </div>
+                <div class="msg_info_from">
+                  <h5>Username</h5>
+                  <h6>12:49</h6>
+                </div>
+                <div class="inbox_msg_area">
+                  <p>This is a custom message from me to you. Please answer.</p>
+                </div>
+              </div>
+              <div class="inbox_message" id="unread">
+                <div class="msg_from_pic">
+                  <%= image_tag 'pb.png' %>
+                </div>
+                <div class="msg_info_from">
+                  <h5>Username</h5>
+                  <h6>04-02-2015</h6>
+                </div>
+                <div class="inbox_msg_area">
+                  <p>This is a custom message from me to you. Please answer.</p>
+                </div>
+              </div>
+              <div class="inbox_message" id="read">
+                <div class="msg_from_pic">
+                  <%= image_tag 'pb.png' %>
+                </div>
+                <div class="msg_info_from">
+                  <h5>Username</h5>
+                  <h6>01-02-2015</h6>
+                </div>
+                <div class="inbox_msg_area">
+                  <p>This is a custom message from me to you. Please answer.</p>
+                </div>
+              </div>
+              <div class="inbox_message" id="read">
+                <div class="msg_from_pic">
+                  <%= image_tag 'pb.png' %>
+                </div>
+                <div class="msg_info_from">
+                  <h5>Username</h5>
+                  <h6>01-02-2015</h6>
+                </div>
+                <div class="inbox_msg_area">
+                  <p>This is a custom message from me to you. Please answer.</p>
+                </div>
+              </div>
+              <div class="inbox_message" id="read">
+                <div class="msg_from_pic">
+                  <%= image_tag 'pb.png' %>
+                </div>
+                <div class="msg_info_from">
+                  <h5>Username</h5>
+                  <h6>01-02-2015</h6>
+                </div>
+                <div class="inbox_msg_area">
+                  <p>This is a custom message from me to you. Please answer.</p>
+                </div>
+              </div>
+              <div class="inbox_message" id="read">
+                <div class="msg_from_pic">
+                  <%= image_tag 'pb.png' %>
+                </div>
+                <div class="msg_info_from">
+                  <h5>Username</h5>
+                  <h6>01-02-2015</h6>
+                </div>
+                <div class="inbox_msg_area">
+                  <p>This is a custom message from me to you. Please answer.</p>
+                </div>
+              </div>
 
-								<p id="msg_end_p">No more messages</p>
-						</div>
-						<div class="dropdown_footer">
-							<a href="#" id="dropdown_a">View all messages</a>
-						</div>
-				</div></div>
-				<div class="li"><a href="#" id="togglechat"><i class="fa fa-comments"></i></a><div class="nav_dropdown" id="chatdropdown">
-						<div class="arrow_up" id="user_menu_arrow"></div>
-						<div class="nav_dropdown_header">
-							<h4>Chat Activity</h4>
-						</div>
-						<div class="dropdown_fill_area">
-							<div class="inbox_message" id="invitation">
-								<div class="msg_from_pic">
-									<img src="./img/pb.png"></img>
-								</div>
-								<div class="msg_info_from">
-									<h5>Chatroom Invitation!</h5>
-									<h6>01-02-2015</h6>
-								</div>
-								<div class="inbox_msg_area">
-									<p><b>Username</b> has invited you to join the chatroom: League of Legends</p>
-								</div>
-								<div class="dropdown_btn_area">
-									<div class="inviteicon">
-										<i class="fa fa-comments"></i>
-									</div>
-									<a href="#" id="dropdown_btn1">Accept</a>
-									<a href="#" id="dropdown_btn2">Ignore</a>
-								</div>
-							</div>
-							<div class="inbox_message" id="invitation">
-								<div class="msg_from_pic">
-									<img src="./img/pb.png"></img>
-								</div>
-								<div class="msg_info_from">
-									<h5>Chatroom Invitation!</h5>
-									<h6>01-02-2015</h6>
-								</div>
-								<div class="inbox_msg_area">
-									<p><b>Username</b> has invited you to join the chatroom: League of Legends</p>
-								</div>
-								<div class="dropdown_btn_area">
-									<div class="inviteicon">
-										<i class="fa fa-comments"></i>
-									</div>
-									<a href="#" id="dropdown_btn1">Accept</a>
-									<a href="#" id="dropdown_btn2">Ignore</a>
-								</div>
-							</div>
-							<p id="msg_end_p">No more chat activity.</p>
-						</div>
-						<div class="dropdown_footer">
-							<a href="#" id="dropdown_a">View all chat activity</a>
-						</div>
-				</div></div>
-				<div class="li"><a href="#" id="nav_last_item"><i class="fa fa-flag"></i></a><div class="nav_dropdown" id="notidropdown">
-						<div class="arrow_up" id="user_menu_arrow"></div>
-						<div class="nav_dropdown_header">
-							<h4>Notifications</h4>
-						</div>
-						<div class="dropdown_fill_area">
-							<div class="dropdown_nodata">
-								<p><i class="fa fa-folder-open-o"></i>Nothing new!</p>
-							</div>
-						</div>
-						<div class="dropdown_footer">
-							<a href="#" id="dropdown_a">View all notifications</a>
-						</div>
-				</div></div>
-			</div>
-		</div>
-	</div>
+                <p id="msg_end_p">No more messages</p>
+            </div>
+            <div class="dropdown_footer">
+              <a href="#" id="dropdown_a">View all messages</a>
+            </div>
+        </div></div>
+        <div class="li"><a href="#" id="togglechat"><i class="fa fa-comments"></i></a><div class="nav_dropdown" id="chatdropdown">
+            <div class="arrow_up" id="user_menu_arrow"></div>
+            <div class="nav_dropdown_header">
+              <h4>Chat Activity</h4>
+            </div>
+            <div class="dropdown_fill_area">
+              <div class="inbox_message" id="invitation">
+                <div class="msg_from_pic">
+                  <%= image_tag 'pb.png' %>
+                </div>
+                <div class="msg_info_from">
+                  <h5>Chatroom Invitation!</h5>
+                  <h6>01-02-2015</h6>
+                </div>
+                <div class="inbox_msg_area">
+                  <p><b>Username</b> has invited you to join the chatroom: League of Legends</p>
+                </div>
+                <div class="dropdown_btn_area">
+                  <div class="inviteicon">
+                    <i class="fa fa-comments"></i>
+                  </div>
+                  <a href="#" id="dropdown_btn1">Accept</a>
+                  <a href="#" id="dropdown_btn2">Ignore</a>
+                </div>
+              </div>
+              <div class="inbox_message" id="invitation">
+                <div class="msg_from_pic">
+                  <%= image_tag 'pb.png' %>
+                </div>
+                <div class="msg_info_from">
+                  <h5>Chatroom Invitation!</h5>
+                  <h6>01-02-2015</h6>
+                </div>
+                <div class="inbox_msg_area">
+                  <p><b>Username</b> has invited you to join the chatroom: League of Legends</p>
+                </div>
+                <div class="dropdown_btn_area">
+                  <div class="inviteicon">
+                    <i class="fa fa-comments"></i>
+                  </div>
+                  <a href="#" id="dropdown_btn1">Accept</a>
+                  <a href="#" id="dropdown_btn2">Ignore</a>
+                </div>
+              </div>
+              <p id="msg_end_p">No more chat activity.</p>
+            </div>
+            <div class="dropdown_footer">
+              <a href="#" id="dropdown_a">View all chat activity</a>
+            </div>
+        </div></div>
+        <div class="li"><a href="#" id="nav_last_item"><i class="fa fa-flag"></i></a><div class="nav_dropdown" id="notidropdown">
+            <div class="arrow_up" id="user_menu_arrow"></div>
+            <div class="nav_dropdown_header">
+              <h4>Notifications</h4>
+            </div>
+            <div class="dropdown_fill_area">
+              <div class="dropdown_nodata">
+                <p><i class="fa fa-folder-open-o"></i>Nothing new!</p>
+              </div>
+            </div>
+            <div class="dropdown_footer">
+              <a href="#" id="dropdown_a">View all notifications</a>
+            </div>
+        </div></div>
+      </div>
+    </div>
+  </div>
 <!-- END NAVIGATION BAR -->
