@@ -25,7 +25,7 @@ class ChatroomsController < ApplicationController
     if @room.save
       redirect_to @room
     else
-      flash.now[:alert] = 'Game not found. Please choose a game from the list.'
+      flash[:alert] = 'Game not found. Please choose a game from the list.'
       render :new
     end
   end
