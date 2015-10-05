@@ -1,8 +1,26 @@
 <div class="container" id="container2">
 	<div class="body_fill_area">
+		
+		<div class="g_tag_header">
+        <h3>All Games</h3>
+        </div>
+
+        <div class="splitter_light"></div>
+        
+		<div class="row games_list">
+
 		<% Game.all.each do |game| %>
-	        <%= link_to game.name, chatrooms_path(game: game.name), class: "game_tag_link" %>
-	        <%= button_to "delete", game, :method=>:delete, :class=>:destroy %>
+			<div class="col-md-2 game_cover">
+	        	<a href="<%= chatrooms_path(game: game.name) %>">
+	        		<%= image_tag game.cover.url(:medium) %>
+	        		<p>
+	        		<%= truncate game.name, length: 35 %>
+	        		<i class="fa fa-angle-right"></i>
+	        		</p>
+	        	</a>
+	        </div>
 	    <% end %>
+	    </div>
+
 	</div>
 </div>

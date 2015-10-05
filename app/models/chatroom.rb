@@ -3,6 +3,8 @@ class Chatroom < ActiveRecord::Base
   belongs_to :game
   has_many :broadcasts
   validates :game, presence: true
+  validates :title, presence: true
+  validates :description, presence: true
 
   def game_name
     game.try :name
