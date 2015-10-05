@@ -11,7 +11,7 @@ class GamesController < ApplicationController
 	end
 
 	def create
-		@game = Game.create(params[:game].permit(:name, :thumb))
+		@game = Game.create(params[:game].permit(:name, :thumb, :cover))
 
 		if @game.save
 			redirect_to chatrooms_path
