@@ -7,5 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 if Rails.env.development?
-  User.create! email: 'admin@test.com', password: 'password', password_confirmation: 'password', username: 'admin'
+  user = User.create! email: 'admin@test.com', password: 'password', password_confirmation: 'password', username: 'admin'
+  game = Game.create! name: 'Test game', thumb_file_name: 'h1z1.png', thumb_content_type: 'image/png', thumb_file_size: 171757
+  Chatroom.create! title: 'test room title', description: 'test room desc', user: user, game: game
 end

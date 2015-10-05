@@ -1,11 +1,11 @@
 <% if user_signed_in? %>
 
-	<div class="container" id="container2">
-		<div class="body_fill_area">
+    <div class="container" id="container2">
+        <div class="body_fill_area">
         <div class="wel_header">
             <p>We've collected the top chatrooms based on your interests. If you can't find what you are looking for create your own room: <%= link_to 'Create Room', new_chatroom_path, class: "small_btn_y" %></p>
         </div>
-        
+
         <div class="g_tag_header">
         <h3>Top Games</h3>
         <% Game.all.each do |game| %>
@@ -16,7 +16,7 @@
         <div class="splitter_light"></div>
 
         <div class="transitions-enabled row" id="rooms">
-		<% @room.each do |room| %>
+        <% @room.each do |room| %>
             <div class="col-md-4 col-xs-6 box">
             <div class="room_set">
                 <a href="<%= chatroom_path(room) %>">
@@ -25,7 +25,7 @@
                         <p class="game_tag_t"><i class="fa fa-gamepad"></i><%= room.game.name %></p>
                         <h3><%= room.title %></h3>
                         <div class="splitter"></div>
-                        
+
 
                         <p><%= truncate room.description, length: 200 %></p>
                     </div>
@@ -40,28 +40,28 @@
             </div>
 
         <!--
-			<div class="chatroom_ad">
-    			<%= image_tag "chatwowcover.png" %>
-    			<h3 class="a">World of Warcraft</h3>
-    			<div class="c_ad_d">
-    				<a href="<%= chatroom_path(room) %>">
-    				<h3 class="small_h3"></i><%= room.title %></h3>
-    				
+            <div class="chatroom_ad">
+                <%= image_tag "chatwowcover.png" %>
+                <h3 class="a">World of Warcraft</h3>
+                <div class="c_ad_d">
+                    <a href="<%= chatroom_path(room) %>">
+                    <h3 class="small_h3"></i><%= room.title %></h3>
+
                     <div class="chat_ad_tag">
                         <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
                     </div>
                     <p class="d">This is a random user profile description. Write anything about yourself. Let other people know who you are! If you would li ... </p>
                     </a>
-    			</div>
-    		</div>
+                </div>
+            </div>
         -->
 
 
-	    <% end %>
+        <% end %>
         </div>
         </div>
-	</div>
+    </div>
 
 <% else %>
-	<%= render 'chatrooms/welcome' %>
+    <%= render 'chatrooms/welcome' %>
 <% end %>

@@ -1,40 +1,80 @@
     <!-- CHATROOM SITE DESIGN -->
-    
-<div class="container" id="container2">
-    <div class="body_fill_area">
 
-        <div class="room_title_area">
-            <h2><%= @room.title %></h2>
-            <div class="chat_title_info">
-                <p><i class="fa fa-gamepad"></i>Game: <%= @room.game.name %></p>
-                <p> |</p>
-                <p><i class="fa fa-keyboard-o"></i>Platform: Computer</p>
-                <p> |</p>
-                <p><i class="fa fa-users"></i>Current users: 105</p>
+    <div class="container" id="container2">
+        <div class="body_fill_area">
+
+            <div class="room_title_area">
+                <h2><%= @room.title %></h2>
+                <div class="chat_title_info">
+                    <p><i class="fa fa-gamepad"></i>Game: <%= @room.game.name %></p>
+                    <p> |</p>
+                    <p><i class="fa fa-keyboard-o"></i>Platform: Computer</p>
+                    <p> |</p>
+                    <p><i class="fa fa-users"></i>Current users: 105</p>
+                </div>
             </div>
-        </div>
-        <div class="user_window_title">
-            <h2>Userlist</h2>
-        </div>
-        <div class="chatwindow">
-            <div class="chat_inside">
-                <div class="chat_message_area">
-                    <div class="user_chat_message">
-                        <div class="chat_msg_sender">
-                            <img src="./img/pb.png" class="chat_user_img"/>
-                            <a href="#"><span class="comment_header chat_msg_username">Username</span></a><span>:</span>
+            <div class="user_window_title">
+                <h2>Userlist</h2>
+            </div>
+            <div class="chatwindow">
+                <div class="chat_inside">
+                    <div class="chat_message_area">
+                        <div class="user_chat_message">
+                            <div class="chat_msg_sender">
+                                <%= image_tag 'pb.png', class: 'chat_user_img' %>
+                                <a href="#"><span class="comment_header chat_msg_username">Username</span></a><span>:</span>
+                            </div>
+                            <div class="user_msg_info">
+                                <p>15:17</p>
+                            </div>
+                            <div class="user_chat_msg_div">
+                                <p class="user_chat_msg_p">This is a random chat message. What is up?? <span class="p_hashtag">#Randomhashtag</span> This is a random chat message. What is up?? #Randomhashtag This is a random chat message. What is up?? #Randomhashtag</p>
+                            </div>
                         </div>
-                        <div class="user_msg_info">
-                            <p>15:17</p>
+                        <div class="user_chat_message">
+                            <div class="chat_msg_sender">
+                                <%= image_tag 'pb2.gif', class: 'chat_user_img' %>
+                                <a href="#"><span class="comment_header chat_msg_username">Usern</span></a><span>:</span>
+                            </div>
+                            <div class="user_msg_info">
+                                <p>15:17</p>
+                            </div>
+                            <div class="user_chat_msg_div">
+                                <p class="user_chat_msg_p">This is a random chat message. What is up?? #Randomhashtag This is a random chat message. What is up?? #Randomhashtag This is a random chat message. What is up?? #Randomhashtag</p>
+                            </div>
                         </div>
-                        <div class="user_chat_msg_div">
-                            <p class="user_chat_msg_p">This is a random chat message. What is up?? <span class="p_hashtag">#Randomhashtag</span> This is a random chat message. What is up?? #Randomhashtag This is a random chat message. What is up?? #Randomhashtag</p>
+                        <div class="user_chat_message">
+                            <div class="chat_msg_sender">
+                                <%= image_tag 'gaben.png', class: 'chat_user_img' %>
+                                <a href="#"><span class="comment_header chat_msg_username">Usernameislong</span></a><span>:</span>
+                            </div>
+                            <div class="user_msg_info">
+                                <p>15:17</p>
+                            </div>
+                            <div class="user_chat_msg_div">
+                                <p class="user_chat_msg_p">This is a random chat message. What is up?? #Randomhashtag This is a random chat message. What is up?? #Randomhashtag This is a random chat message. What is up?? #Randomhashtag</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="user_chat_message">
-                        <div class="chat_msg_sender">
-                            <img src="./img/pb2.gif" class="chat_user_img"/>
-                            <a href="#"><span class="comment_header chat_msg_username">Usern</span></a><span>:</span>
+                        <div class="user_chat_message">
+                            <div class="chat_msg_sender">
+                                <%= image_tag 'pb.png', class: 'chat_user_img' %>
+                                <a href="#"><span class="comment_header chat_msg_username">Usernameislonjgsg</span></a><span>:</span>
+                            </div>
+                            <div class="user_msg_info">
+                                <p>15:17</p>
+                            </div>
+                            <div class="user_chat_msg_div">
+                                <p class="user_chat_msg_p">This is a random chat message. What is up?? #Randomhashtag This is a random chat message. What is up?? #Randomhashtag This is a random chat message. What is up?? #Randomhashtag</p>
+                            </div>
+                        </div>
+                        <div class="user_chat_message">
+                            <div class="chat_msg_sender">
+                                <%= image_tag 'pb2.png', class: 'chat_user_img' %>
+                                <a href="#"><span class="comment_header chat_msg_username">Usern</span></a><div class="outer_icon">
+                                <span class="ion-ios-checkmark tool_icon">
+                                    <span class="upside_tooltip_box follow_tool no_wrap">Chatroom Admininistator<div class="arrow-down"></div></span>
+                                </span>
+                            </div><span>:</span>
                         </div>
                         <div class="user_msg_info">
                             <p>15:17</p>
@@ -45,47 +85,7 @@
                     </div>
                     <div class="user_chat_message">
                         <div class="chat_msg_sender">
-                            <img src="./img/gaben.png" class="chat_user_img"/>
-                            <a href="#"><span class="comment_header chat_msg_username">Usernameislong</span></a><span>:</span>
-                        </div>
-                        <div class="user_msg_info">
-                            <p>15:17</p>
-                        </div>
-                        <div class="user_chat_msg_div">
-                            <p class="user_chat_msg_p">This is a random chat message. What is up?? #Randomhashtag This is a random chat message. What is up?? #Randomhashtag This is a random chat message. What is up?? #Randomhashtag</p>
-                        </div>
-                    </div>
-                    <div class="user_chat_message">
-                        <div class="chat_msg_sender">
-                            <img src="./img/pb.png" class="chat_user_img"/>
-                            <a href="#"><span class="comment_header chat_msg_username">Usernameislonjgsg</span></a><span>:</span>
-                        </div>
-                        <div class="user_msg_info">
-                            <p>15:17</p>
-                        </div>
-                        <div class="user_chat_msg_div">
-                            <p class="user_chat_msg_p">This is a random chat message. What is up?? #Randomhashtag This is a random chat message. What is up?? #Randomhashtag This is a random chat message. What is up?? #Randomhashtag</p>
-                        </div>
-                    </div>
-                    <div class="user_chat_message">
-                        <div class="chat_msg_sender">
-                            <img src="./img/pb2.png" class="chat_user_img"/>
-                            <a href="#"><span class="comment_header chat_msg_username">Usern</span></a><div class="outer_icon">
-                        <span class="ion-ios-checkmark tool_icon">
-                            <span class="upside_tooltip_box follow_tool no_wrap">Chatroom Admininistator<div class="arrow-down"></div></span>
-                        </span>
-                    </div><span>:</span>
-                        </div>
-                        <div class="user_msg_info">
-                            <p>15:17</p>
-                        </div>
-                        <div class="user_chat_msg_div">
-                            <p class="user_chat_msg_p">This is a random chat message. What is up?? #Randomhashtag This is a random chat message. What is up?? #Randomhashtag This is a random chat message. What is up?? #Randomhashtag</p>
-                        </div>
-                    </div>
-                    <div class="user_chat_message">
-                        <div class="chat_msg_sender">
-                            <img src="./img/gaben.png" class="chat_user_img"/>
+                            <%= image_tag 'gaben.png', class: 'chat_user_img' %>
                             <a href="#"><span class="comment_header chat_msg_username">Username</span></a><span>:</span>
                         </div>
                         <div class="user_msg_info">
@@ -103,7 +103,7 @@
                 <div class="chat_input_area">
                     <div class="chat_input_div">
                         <div class="user_chat_pb">
-                            <img src="./img/gaben.png" />
+                            <%= image_tag 'gaben.png' %>
                         </div>
                         <textarea name="message" placeholder="Write your message here..." ></textarea>
                         <button>Send</button>
@@ -114,11 +114,11 @@
         <div class="userwindow">
             <div class="chat_inside">
                 <div class="users_pop_area">
-            
+
                     <!-- USER LIST USER POP -->
                     <div class="inbox_message user_list_col">
                         <div class="msg_from_pic">
-                            <img src="./img/pb.jpg">
+                            <%= image_tag 'pb.png' %>
                         </div>
                         <div class="msg_info_from user_list_pos">
                             <h5>Username</h5>
@@ -135,10 +135,10 @@
                             <span class="view_msg_user view_tog" id="view_msg_user">View message<i class="fa fa-angle-right"></i></span>
                             <span class="view_msg_user hide_msg_user" id="hide_msg_user">Hide message<i class="fa fa-angle-up"></i></span>
                             <i class="fa fa-user-plus add_friend_user_list"><span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="small_btns_pos">
-                            Add friend<div class="arrow-left"></div>
+                                Add friend<div class="arrow-left"></div>
                             </span></i>
                             <i class="fa fa-paper-plane add_friend_user_list inv_friend_user_list"><span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="small_btns_pos">
-                            Invite<div class="arrow-left"></div>
+                                Invite<div class="arrow-left"></div>
                             </span></i>
                         </div>
                         <div class="user_list_msg_area">
@@ -146,10 +146,10 @@
                         </div>
                     </div>
                     <!-- END -->
-                     <!-- USER LIST USER POP -->
+                    <!-- USER LIST USER POP -->
                     <div class="inbox_message user_list_col">
                         <div class="msg_from_pic">
-                            <img src="./img/gaben.png">
+                            <%= image_tag 'gaben.png' %>
                         </div>
                         <div class="msg_info_from user_list_pos">
                             <h5>Username</h5>
@@ -164,10 +164,10 @@
                             <span class="view_msg_user view_tog" id="view_msg_user">View message<i class="fa fa-angle-right"></i></span>
                             <span class="view_msg_user hide_msg_user" id="hide_msg_user">Hide message<i class="fa fa-angle-up"></i></span>
                             <i class="fa fa-user-plus add_friend_user_list"><span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="small_btns_pos">
-                            Add friend<div class="arrow-left"></div>
+                                Add friend<div class="arrow-left"></div>
                             </span></i>
                             <i class="fa fa-paper-plane add_friend_user_list inv_friend_user_list"><span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="small_btns_pos">
-                            Invite<div class="arrow-left"></div>
+                                Invite<div class="arrow-left"></div>
                             </span></i>
                         </div>
                         <div class="user_list_msg_area">
@@ -178,7 +178,7 @@
                     <!-- USER LIST USER POP -->
                     <div class="inbox_message user_list_col">
                         <div class="msg_from_pic">
-                            <img src="./img/pb2.png">
+                            <%= image_tag 'pb2.png' %>
                         </div>
                         <div class="msg_info_from user_list_pos">
                             <h5>Usernameistoolong</h5>
@@ -196,10 +196,10 @@
                             <span class="view_msg_user view_tog" id="view_msg_user">View message<i class="fa fa-angle-right"></i></span>
                             <span class="view_msg_user hide_msg_user" id="hide_msg_user">Hide message<i class="fa fa-angle-up"></i></span>
                             <i class="fa fa-user-plus add_friend_user_list"><span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="small_btns_pos">
-                            Add friend<div class="arrow-left"></div>
+                                Add friend<div class="arrow-left"></div>
                             </span></i>
                             <i class="fa fa-paper-plane add_friend_user_list inv_friend_user_list"><span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="small_btns_pos">
-                            Invite<div class="arrow-left"></div>
+                                Invite<div class="arrow-left"></div>
                             </span></i>
                         </div>
                         <div class="user_list_msg_area">
@@ -210,7 +210,7 @@
                     <!-- USER LIST USER POP -->
                     <div class="inbox_message user_list_col">
                         <div class="msg_from_pic">
-                            <img src="./img/pb.jpg">
+                            <%= image_tag 'pb.jpg' %>
                         </div>
                         <div class="msg_info_from user_list_pos">
                             <h5>Username</h5>
@@ -227,10 +227,10 @@
                             <span class="view_msg_user view_tog" id="view_msg_user">View message<i class="fa fa-angle-right"></i></span>
                             <span class="view_msg_user hide_msg_user" id="hide_msg_user">Hide message<i class="fa fa-angle-up"></i></span>
                             <i class="fa fa-user-plus add_friend_user_list"><span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="small_btns_pos">
-                            Add friend<div class="arrow-left"></div>
+                                Add friend<div class="arrow-left"></div>
                             </span></i>
                             <i class="fa fa-paper-plane add_friend_user_list inv_friend_user_list"><span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="small_btns_pos">
-                            Invite<div class="arrow-left"></div>
+                                Invite<div class="arrow-left"></div>
                             </span></i>
                         </div>
                         <div class="user_list_msg_area">
@@ -238,10 +238,10 @@
                         </div>
                     </div>
                     <!-- END -->
-                     <!-- USER LIST USER POP -->
+                    <!-- USER LIST USER POP -->
                     <div class="inbox_message user_list_col">
                         <div class="msg_from_pic">
-                            <img src="./img/gaben.png">
+                            <%= image_tag 'gaben.png' %>
                         </div>
                         <div class="msg_info_from user_list_pos">
                             <h5>Username</h5>
@@ -256,10 +256,10 @@
                             <span class="view_msg_user view_tog" id="view_msg_user">View message<i class="fa fa-angle-right"></i></span>
                             <span class="view_msg_user hide_msg_user" id="hide_msg_user">Hide message<i class="fa fa-angle-up"></i></span>
                             <i class="fa fa-user-plus add_friend_user_list"><span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="small_btns_pos">
-                            Add friend<div class="arrow-left"></div>
+                                Add friend<div class="arrow-left"></div>
                             </span></i>
                             <i class="fa fa-paper-plane add_friend_user_list inv_friend_user_list"><span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="small_btns_pos">
-                            Invite<div class="arrow-left"></div>
+                                Invite<div class="arrow-left"></div>
                             </span></i>
                         </div>
                         <div class="user_list_msg_area">
@@ -270,7 +270,7 @@
                     <!-- USER LIST USER POP -->
                     <div class="inbox_message user_list_col">
                         <div class="msg_from_pic">
-                            <img src="./img/pb2.png">
+                            <%= image_tag 'pb2.png' %>
                         </div>
                         <div class="msg_info_from user_list_pos">
                             <h5>Usernameistoolong</h5>
@@ -288,10 +288,10 @@
                             <span class="view_msg_user view_tog" id="view_msg_user">View message<i class="fa fa-angle-right"></i></span>
                             <span class="view_msg_user hide_msg_user" id="hide_msg_user">Hide message<i class="fa fa-angle-up"></i></span>
                             <i class="fa fa-user-plus add_friend_user_list"><span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="small_btns_pos">
-                            Add friend<div class="arrow-left"></div>
+                                Add friend<div class="arrow-left"></div>
                             </span></i>
                             <i class="fa fa-paper-plane add_friend_user_list inv_friend_user_list"><span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="small_btns_pos">
-                            Invite<div class="arrow-left"></div>
+                                Invite<div class="arrow-left"></div>
                             </span></i>
                         </div>
                         <div class="user_list_msg_area">
@@ -304,7 +304,7 @@
                 <span class="clear_list_btn">
                     <i class="fa fa-times-circle"></i>Clear list
                 </span>
-                 <span class="invite_all_btn">
+                <span class="invite_all_btn">
                     <i class="fa fa-paper-plane"></i>Invite All
                 </span>
                 <p class="window_tip">Use #hashtags in the chatwindow to match with other users. Users matching your hashtags will appear above.</p>
@@ -324,7 +324,7 @@
                     <div class="arrow-down"></div>
                 </span>
             </span>
-            
+
             <span class="fav_room_btn">
                 <i class="fa fa-heart noselect"></i>
                 <span class="upside_tooltip_box follow_tool no_wrap tool_after_fav noselect" id="square_btn_position">
@@ -369,7 +369,8 @@
                         <!-- FRIEND DIV -->
                         <div class="inbox_message inv_friend_div">
                             <div class="msg_from_pic">
-                                <img src="./img/pb.png">
+                                <%= image_tag 'pb.png' %>
+                                <%= image_tag 'pb.png' %>
                             </div>
                             <div class="msg_info_from">
                                 <h5>Username</h5>
@@ -378,7 +379,7 @@
                         <!-- END FRIEND DIV -->
                         <div class="inbox_message inv_friend_div">
                             <div class="msg_from_pic">
-                                <img src="./img/pb.png">
+                                <%= image_tag 'pb.png' %>
                             </div>
                             <div class="msg_info_from">
                                 <h5>Username</h5>
@@ -386,7 +387,7 @@
                         </div>
                         <div class="inbox_message inv_friend_div">
                             <div class="msg_from_pic">
-                                <img src="./img/pb.png">
+                                <%= image_tag 'pb.png' %>
                             </div>
                             <div class="msg_info_from">
                                 <h5>Username</h5>
@@ -394,7 +395,7 @@
                         </div>
                         <div class="inbox_message inv_friend_div">
                             <div class="msg_from_pic">
-                                <img src="./img/pb.png">
+                                <%= image_tag 'pb.png' %>
                             </div>
                             <div class="msg_info_from">
                                 <h5>Username</h5>
@@ -402,7 +403,7 @@
                         </div>
                         <div class="inbox_message inv_friend_div">
                             <div class="msg_from_pic">
-                                <img src="./img/pb.png">
+                                <%= image_tag 'pb.png' %>
                             </div>
                             <div class="msg_info_from">
                                 <h5>Username</h5>
@@ -410,7 +411,7 @@
                         </div>
                         <div class="inbox_message inv_friend_div">
                             <div class="msg_from_pic">
-                                <img src="./img/pb.png">
+                                <%= image_tag 'pb.png' %>
                             </div>
                             <div class="msg_info_from">
                                 <h5>Username</h5>
@@ -418,7 +419,7 @@
                         </div>
                         <div class="inbox_message inv_friend_div">
                             <div class="msg_from_pic">
-                                <img src="./img/pb.png">
+                                <%= image_tag 'pb.png' %>
                             </div>
                             <div class="msg_info_from">
                                 <h5>Username</h5>
@@ -426,7 +427,7 @@
                         </div>
                         <div class="inbox_message inv_friend_div">
                             <div class="msg_from_pic">
-                                <img src="./img/pb.png">
+                                <%= image_tag 'pb.png' %>
                             </div>
                             <div class="msg_info_from">
                                 <h5>Username</h5>
@@ -434,7 +435,7 @@
                         </div>
                         <div class="inbox_message inv_friend_div">
                             <div class="msg_from_pic">
-                                <img src="./img/pb.png">
+                                <%= image_tag 'pb.png' %>
                             </div>
                             <div class="msg_info_from">
                                 <h5>Username</h5>
@@ -461,98 +462,98 @@
         <!-- END -->
 
         <div class="wrap_divs">
-        <!-- CHATROOM TAGS INFO -->
-        <div class="chatroom_info_window">
-            <h4>Tags</h4>
-            <h5>Most used tags in this chatroom</h5>
-            <div class="used_tags_list">
-                <a href="#">#5v5</a>
-                <a href="#">#Teammacth</a>
-                <a href="#">#Rank</a>
-                <a href="#">#Diamond</a>
-                <a href="#">#Custom</a>
-                <a href="#">#LeagueofLegends</a>
-                <a href="#">#LFTeam</a>
-                <a href="#">#RankedGame</a>
-                <a href="#">#Custom</a>
-            </div>
-            <h5>Use following commands to get in touch with admins</h5>
-            <div class="admins_at_list">
-                <a href="#">@Adminname</a>
-                <a href="#">@username</a>
-                <a href="#">@user</a>
-                <a href="#">@usernametwo</a>
-            </div>
-        </div>
-        <!--  -->
-        <!-- CHATOOM INFORMATION WINDOW -->
-        <div class="chatroom_info_window">
-            <h4>About</h4>
-            <p><%= @room.description %></p>
-            <div class="chatroom_info_icons">
-                <i class="fa fa-tags"></i>
-                <span class="poster_tag_link">League of legends</span><span class="small_dot">·</span><span class="poster_tag_link">5v5</span><span class="small_dot">·</span><span class="poster_tag_link">Platinum</span>
-            </div>
-            <div class="chatroom_info_icons border_bottom">
-                <i class="fa fa-globe"></i>
-                <span class="small_dot">·</span>
-                <i class="fa fa-calendar-o"></i><span class="small_size">Chatroom created <%= distance_of_time_in_words(Time.now, @room.created_at) %> ago.</span>
-            </div>
-            <h5>Chatroom administators</h5>
-            <div class="admin_list">
-                <div class="admin_img_status">
-                    <img src="./img/pb.jpg">
-                    <div class="admin_status_icon">
-                    </div>
+            <!-- CHATROOM TAGS INFO -->
+            <div class="chatroom_info_window">
+                <h4>Tags</h4>
+                <h5>Most used tags in this chatroom</h5>
+                <div class="used_tags_list">
+                    <a href="#">#5v5</a>
+                    <a href="#">#Teammacth</a>
+                    <a href="#">#Rank</a>
+                    <a href="#">#Diamond</a>
+                    <a href="#">#Custom</a>
+                    <a href="#">#LeagueofLegends</a>
+                    <a href="#">#LFTeam</a>
+                    <a href="#">#RankedGame</a>
+                    <a href="#">#Custom</a>
                 </div>
-                <div class="admin_img_status">
-                    <img src="./img/pb2.png">
-                    <div class="admin_status_icon" id="offline_icon">
-                    </div>
-                </div>
-                <div class="admin_img_status">
-                    <img src="./img/gaben.png">
-                    <div class="admin_status_icon" id="offline_icon">
-                    </div>
-                </div>
-                <div class="admin_img_status">
-                    <img src="./img/pb2.gif">
-                    <div class="admin_status_icon">
-                    </div>
+                <h5>Use following commands to get in touch with admins</h5>
+                <div class="admins_at_list">
+                    <a href="#">@Adminname</a>
+                    <a href="#">@username</a>
+                    <a href="#">@user</a>
+                    <a href="#">@usernametwo</a>
                 </div>
             </div>
-        </div>
-        <!-- END CHATROOM INFO WINDOW -->
-        <div class="chatroom_info_window">
-            <h4>Explore</h4>
-            <h5>Related chatrooms</h5>
-            <div class="explore_list">
-                <% @random.each do |room| %>
-                <div class="chat_ad_div">
-                    <h6><%= room.title %></h6>
-                    <div class="chat_ad_go">
-                        <p>Go<i class="fa fa-angle-right"></i></p>
+            <!--  -->
+            <!-- CHATOOM INFORMATION WINDOW -->
+            <div class="chatroom_info_window">
+                <h4>About</h4>
+                <p><%= @room.description %></p>
+                <div class="chatroom_info_icons">
+                    <i class="fa fa-tags"></i>
+                    <span class="poster_tag_link">League of legends</span><span class="small_dot">·</span><span class="poster_tag_link">5v5</span><span class="small_dot">·</span><span class="poster_tag_link">Platinum</span>
+                </div>
+                <div class="chatroom_info_icons border_bottom">
+                    <i class="fa fa-globe"></i>
+                    <span class="small_dot">·</span>
+                    <i class="fa fa-calendar-o"></i><span class="small_size">Chatroom created <%= distance_of_time_in_words(Time.now, @room.created_at) %> ago.</span>
+                </div>
+                <h5>Chatroom administators</h5>
+                <div class="admin_list">
+                    <div class="admin_img_status">
+                        <%= image_tag 'pb.jpg' %>
+                        <div class="admin_status_icon">
+                        </div>
                     </div>
-                    <div class="chat_ad_tag">
-                        <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+                    <div class="admin_img_status">
+                        <%= image_tag 'pb2.png' %>
+                        <div class="admin_status_icon" id="offline_icon">
+                        </div>
                     </div>
-                    <div class="chat_title_info small_title_info">
-                        <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
-                    <p><i class="fa fa-users"></i>80</p>
+                    <div class="admin_img_status">
+                        <%= image_tag 'gaben.png' %>
+                        <div class="admin_status_icon" id="offline_icon">
+                        </div>
+                    </div>
+                    <div class="admin_img_status">
+                        <%= image_tag 'pb2.gif' %>
+                        <div class="admin_status_icon">
+                        </div>
                     </div>
                 </div>
-                <% end %>
-                
             </div>
-            <span class="small_text_chat_ad">Can't find what you are looking for?</br>Click below to create your own chatroom.</span></br></br>
-            <a href="<%= new_chatroom_path %>" class="default_div_btn"><i class="fa fa-plus"></i>Create Room</a>
-        </div>
+            <!-- END CHATROOM INFO WINDOW -->
+            <div class="chatroom_info_window">
+                <h4>Explore</h4>
+                <h5>Related chatrooms</h5>
+                <div class="explore_list">
+                    <% @random.each do |room| %>
+                    <div class="chat_ad_div">
+                        <h6><%= room.title %></h6>
+                        <div class="chat_ad_go">
+                            <p>Go<i class="fa fa-angle-right"></i></p>
+                        </div>
+                        <div class="chat_ad_tag">
+                            <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+                        </div>
+                        <div class="chat_title_info small_title_info">
+                            <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
+                            <p><i class="fa fa-users"></i>80</p>
+                        </div>
+                    </div>
+                    <% end %>
+
+                </div>
+                <span class="small_text_chat_ad">Can't find what you are looking for?</br>Click below to create your own chatroom.</span></br></br>
+                <a href="<%= new_chatroom_path %>" class="default_div_btn"><i class="fa fa-plus"></i>Create Room</a>
+            </div>
         </div>
 
 
 
         <div class="wrap_broadcasts">
-        <% if @room.user == current_user %>
+            <% if @room.user == current_user %>
             <div class="broadcastwindow">
                 <div class="broad_title">
                     <p class="broadheader">Create a new broadcast</p>
@@ -561,77 +562,77 @@
                     <%= render 'broadcasts/form' %>
                 </div>
             </div>
-        <% else %>
-            
-        <% end %>
+            <% else %>
 
-        <% @broadcast.each do |broadcast| %>
-        <!-- BROADCAST WINDOW -->
-        <div class="broadcastwindow">
-            <div class="highlighted_broadcast_icon">
-                <i class="ion-bookmark"></i>
-                <span class="ion-star"></span>
-                <span class="upside_tooltip_box follow_tool no_wrap noselect" id="pin_tool">
-                    Pinned broadcast
-                    <div class="arrow-down"></div>
-                </span>
+            <% end %>
 
-            </div>
-            <div class="broad-setting">
+            <% @broadcast.each do |broadcast| %>
+            <!-- BROADCAST WINDOW -->
+            <div class="broadcastwindow">
+                <div class="highlighted_broadcast_icon">
+                    <i class="ion-bookmark"></i>
+                    <span class="ion-star"></span>
+                    <span class="upside_tooltip_box follow_tool no_wrap noselect" id="pin_tool">
+                        Pinned broadcast
+                        <div class="arrow-down"></div>
+                    </span>
+
+                </div>
+                <div class="broad-setting">
                     <p>remove</p>
                     <p>edit</p>
-            </div>
-            <div class="broadcastwindow_header">
-                <div class="recent_broadcast_icon">
-                    <i class="ion-radio-waves fa-spin"></i>
                 </div>
-                <div class="follow_broadcast_btn">
-                    <i class="fa fa-eye"></i>
-                    <div class="upside_tooltip_box follow_tool no_wrap" id="follow_tool_position">
-                        <span>Follow this broadcast</span>
-                        <div class="arrow-down"></div>
+                <div class="broadcastwindow_header">
+                    <div class="recent_broadcast_icon">
+                        <i class="ion-radio-waves fa-spin"></i>
                     </div>
-                </div>  
-            </div>
-            <div class="user_poster_info">
-                <%= image_tag "pb.jpg" %>
-                <div class="user_poster_info_text">
-                    <a href="<%= user_path(@room.user.username) %>"><span class="header_p_link"><%= @room.user.username.capitalize %></span></a>
-                    <div class="outer_icon">
-                    <span class="veri_icon ion-ios-checkmark tool_icon">
-                            <span class="upside_tooltip_box follow_tool no_wrap" id="user_header_tool_position">Chatroom Admininistator<div class="arrow-down"></div></span>
-                    </span>
+                    <div class="follow_broadcast_btn">
+                        <i class="fa fa-eye"></i>
+                        <div class="upside_tooltip_box follow_tool no_wrap" id="follow_tool_position">
+                            <span>Follow this broadcast</span>
+                            <div class="arrow-down"></div>
+                        </div>
                     </div>
-                    <p class="poster_info_p"><i class="fa fa-clock-o"></i>Posted <%= distance_of_time_in_words(Time.now, broadcast.created_at) %> ago.</p>
-                    <p class="poster_info_p"><i class="fa fa-tag"></i><span class="poster_tag_link">League of legends</span><span>·</span><span class="poster_tag_link">5v5</span><span>·</span><span class="poster_tag_link">Platinum</span></p>
                 </div>
-            </div>
-            <div class="user_post_area">
-                <div class="user_post_area_inside">
-                    <%= image_tag broadcast.image.url(:medium), :class => 'broad_img_show' if broadcast.image? %>
-                    <p><%= broadcast.content %></p>
+                <div class="user_poster_info">
+                    <%= image_tag "pb.jpg" %>
+                    <div class="user_poster_info_text">
+                        <a href="<%= user_path(@room.user.username) %>"><span class="header_p_link"><%= @room.user.username.capitalize %></span></a>
+                        <div class="outer_icon">
+                            <span class="veri_icon ion-ios-checkmark tool_icon">
+                                <span class="upside_tooltip_box follow_tool no_wrap" id="user_header_tool_position">Chatroom Admininistator<div class="arrow-down"></div></span>
+                            </span>
+                        </div>
+                        <p class="poster_info_p"><i class="fa fa-clock-o"></i>Posted <%= distance_of_time_in_words(Time.now, broadcast.created_at) %> ago.</p>
+                        <p class="poster_info_p"><i class="fa fa-tag"></i><span class="poster_tag_link">League of legends</span><span>·</span><span class="poster_tag_link">5v5</span><span>·</span><span class="poster_tag_link">Platinum</span></p>
+                    </div>
                 </div>
-            </div>
-            <div class="post_functions_area">
-                <p>
-                    <i class="fa fa-thumbs-up thumb_icon"></i>
+                <div class="user_post_area">
+                    <div class="user_post_area_inside">
+                        <%= image_tag broadcast.image.url(:medium), :class => 'broad_img_show' if broadcast.image? %>
+                        <p><%= broadcast.content %></p>
+                    </div>
+                </div>
+                <div class="post_functions_area">
+                    <p>
+                        <i class="fa fa-thumbs-up thumb_icon"></i>
                         98 Thumbs up
-                    <span class="small_dot">·</span>
-                    <span class="small_functions_link thumbs_up">Thumbs up this broadcast</span>
-                    <span class="small_functions_link thumbs_down">Remove thumbs up</span>
-                </p>
-                <p class="broadcast_float_right"><i class="fa fa-comments-o"></i><span class="small_functions_link comm_toggle noselect"> 0 comments</span></p>
-            </div>
-            <div class="user_comment_input">
-                <img src="./img/gaben.png" />
-                
-                <!-- 
+                        <span class="small_dot">·</span>
+                        <span class="small_functions_link thumbs_up">Thumbs up this broadcast</span>
+                        <span class="small_functions_link thumbs_down">Remove thumbs up</span>
+                    </p>
+                    <p class="broadcast_float_right"><i class="fa fa-comments-o"></i><span class="small_functions_link comm_toggle noselect"> 0 comments</span></p>
+                </div>
+                <div class="user_comment_input">
+                    <%= image_tag 'gaben.png' %>
+
+                <!--
                 <textarea placeholder="Write a comment ..." name="message" class="input_field_comment"></textarea>
                 <input type="submit" value="Post Comment" class="input_comment_btn"> -->
             </div>
 
-            
-            <div class="post_comment_area"> 
+
+            <div class="post_comment_area">
 
             </div>
         </div>
@@ -651,16 +652,16 @@
                         <span>Follow this broadcast</span>
                         <div class="arrow-down"></div>
                     </div>
-                </div>  
+                </div>
             </div>
             <div class="user_poster_info">
-                <img src="./img/pb2.png" />
+                <%= image_tag 'pb2.png' %>
                 <div class="user_poster_info_text">
                     <a href="#"><span class="header_p_link">Username</span></a>
                     <div class="outer_icon">
-                    <span class="veri_icon ion-ios-checkmark tool_icon">
+                        <span class="veri_icon ion-ios-checkmark tool_icon">
                             <span class="upside_tooltip_box follow_tool no_wrap" id="user_header_tool_position">Chatroom Admininistator<div class="arrow-down"></div></span>
-                    </span>
+                        </span>
                     </div>
                     <p class="poster_info_p"><i class="fa fa-clock-o"></i>Posted 5 minutes ago</p>
                     <p class="poster_info_p"><i class="fa fa-tag"></i><span class="poster_tag_link">League of legends</span><span>·</span><span class="poster_tag_link">5v5</span><span>·</span><span class="poster_tag_link">Platinum</span></p>
@@ -675,7 +676,7 @@
             <div class="post_functions_area">
                 <p>
                     <i class="fa fa-thumbs-up thumb_icon"></i>
-                        98 Thumbs up
+                    98 Thumbs up
                     <span class="small_dot">·</span>
                     <span class="small_functions_link thumbs_up">Thumbs up this broadcast</span>
                     <span class="small_functions_link thumbs_down">Remove thumbs up</span>
@@ -683,95 +684,91 @@
                 <p class="broadcast_float_right"><i class="fa fa-comments-o"></i><span class="small_functions_link comm_toggle noselect">9 Comments</span></p>
             </div>
             <div class="user_comment_input">
-                <img src="./img/gaben.png" />
+                <%= image_tag 'gaben.png' %>
                 <textarea placeholder="Write a comment ..." name="message" class="input_field_comment"></textarea>
                 <input type="submit" value="Post Comment" class="input_comment_btn">
             </div>
 
-            
-            <div class="post_comment_area"> 
 
-            <!-- USER COMMENT -->
-            <div class="comm_with_reply">
-                <div class="user_comment">
-                    <img src="./img/pb2.png" />
-                    <a href="#"><span class="comment_header">Usernamislongwtfe</span></a>
-                    <div class="outer_icon">
-                        <span class="veri_icon ion-ios-checkmark tool_icon">
-                            <span class="upside_tooltip_box follow_tool no_wrap">Chatroom Admininistator<div class="arrow-down"></div></span>
-                        </span>
-                    </div>
-                    <p class="comment_header_p"><span class="small_dot">·</span>10 minutes ago.</p><br/>
-                    <p class="user_comment_text">This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!<p class="comment_functions_p">
-                    <i class="fa fa-thumbs-up thumb_icon"></i>98 Thumbs up<span class="small_dot">·</span><span class="small_functions_link thumbs_up">Thumbs up this comment</span><span class="small_functions_link thumbs_down">Remove thumbs up</span></p>
-                    <p class="broadcast_float_right comment_functions_p"><i class="fa fa-comments-o"></i>2 Comments<span class="small_dot">·</span><span class="small_functions_link reply_btn noselect">Reply</span></p></p>
-                </div>
-            <!-- END -->
-            <!-- REPLY COMMENT INPUT SECTION -->
-                <div class="reply_comm_section">
-                    <div class="user_comment_input" id="comm_reply_input">
-                        <img src="./img/gaben.png" />
-                        <textarea placeholder="Write a comment ..." name="message" class="input_field_comment"></textarea>
-                        <input type="submit" value="Post Comment" class="input_comment_btn">
-                    </div>
-                </div>
-            <!-- END COMMENT INPUT -->
-            </div>
-
-                <!-- USER COMMENT REPLY -->
-                <div class="user_comment user_comment_reply">
-                    <img src="./img/pb2.png" />
-                    <a href="#"><span class="comment_header">Usernamislongwtfe</span></a>
-                    <div class="outer_icon">
-                        <span class="veri_icon ion-ios-checkmark tool_icon">
-                            <span class="upside_tooltip_box follow_tool no_wrap">Chatroom Admininistator<div class="arrow-down"></div></span>
-                        </span>
-                    </div>
-                    <p class="comment_header_p"><span class="small_dot">·</span>10 minutes ago.</p><br/>
-                    <p class="user_comment_text">This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!<p class="comment_functions_p"><i class="fa fa-thumbs-up thumb_icon"></i>98 Thumbs up<span class="small_dot">·</span><span class="small_functions_link thumbs_up">Thumbs up this comment</span><span class="small_functions_link thumbs_down">Remove thumbs up</span></p>
-                </div>
-                <!-- END -->
-
-
-                <div class="user_comment user_comment_reply">
-                    <img src="./img/pb2.gif" />
-                    <a href="#"><span class="comment_header">Username</span></a>
-                    <p class="comment_header_p"><span class="small_dot">·</span>10 minutes ago.</p><br/>
-                    <p class="user_comment_text">This is a random comment. <i class="fa fa-smile-o"></i><p class="comment_functions_p"><i class="fa fa-thumbs-up thumb_icon"></i>98 Thumbs up<span class="small_dot">·</span><span class="small_functions_link thumbs_up">Thumbs up this comment</span><span class="small_functions_link thumbs_down">Remove thumbs up</span></p>
-                </div>
+            <div class="post_comment_area">
 
                 <!-- USER COMMENT -->
-            <div class="comm_with_reply">
-                <div class="user_comment">
-                    <img src="./img/pb2.png" />
-                    <a href="#"><span class="comment_header">Usernamislongwtfe</span></a>
-                    <div class="outer_icon">
-                        <span class="veri_icon ion-ios-checkmark tool_icon">
-                            <span class="upside_tooltip_box follow_tool no_wrap">Chatroom Admininistator<div class="arrow-down"></div></span>
-                        </span>
+                <div class="comm_with_reply">
+                    <div class="user_comment">
+                        <%= image_tag 'pb2.png' %>
+                        <a href="#"><span class="comment_header">Usernamislongwtfe</span></a>
+                        <div class="outer_icon">
+                            <span class="veri_icon ion-ios-checkmark tool_icon">
+                                <span class="upside_tooltip_box follow_tool no_wrap">Chatroom Admininistator<div class="arrow-down"></div></span>
+                            </span>
+                        </div>
+                        <p class="comment_header_p"><span class="small_dot">·</span>10 minutes ago.</p><br/>
+                        <p class="user_comment_text">This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!<p class="comment_functions_p">
+                            <i class="fa fa-thumbs-up thumb_icon"></i>98 Thumbs up<span class="small_dot">·</span><span class="small_functions_link thumbs_up">Thumbs up this comment</span><span class="small_functions_link thumbs_down">Remove thumbs up</span></p>
+                            <p class="broadcast_float_right comment_functions_p"><i class="fa fa-comments-o"></i>2 Comments<span class="small_dot">·</span><span class="small_functions_link reply_btn noselect">Reply</span></p></p>
+                        </div>
+                        <!-- END -->
+                        <!-- REPLY COMMENT INPUT SECTION -->
+                        <div class="reply_comm_section">
+                            <div class="user_comment_input" id="comm_reply_input">
+                                <%= image_tag 'gaben.png' %>
+                                <textarea placeholder="Write a comment ..." name="message" class="input_field_comment"></textarea>
+                                <input type="submit" value="Post Comment" class="input_comment_btn">
+                            </div>
+                        </div>
+                        <!-- END COMMENT INPUT -->
                     </div>
-                    <p class="comment_header_p"><span class="small_dot">·</span>10 minutes ago.</p><br/>
-                    <p class="user_comment_text">This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!<p class="comment_functions_p">
-                    <i class="fa fa-thumbs-up thumb_icon"></i>98 Thumbs up<span class="small_dot">·</span><span class="small_functions_link thumbs_up">Thumbs up this comment</span><span class="small_functions_link thumbs_down">Remove thumbs up</span></p>
-                    <p class="broadcast_float_right comment_functions_p"><i class="fa fa-comments-o"></i>2 Comments<span class="small_dot">·</span><span class="small_functions_link reply_btn noselect">Reply</span></p></p>
-                </div>
-            <!-- END -->
-            <!-- REPLY COMMENT INPUT SECTION -->
-                <div class="reply_comm_section">
-                    <div class="user_comment_input" id="comm_reply_input">
-                        <img src="./img/gaben.png" />
-                        <textarea placeholder="Write a comment ..." name="message" class="input_field_comment"></textarea>
-                        <input type="submit" value="Post Comment" class="input_comment_btn">
+
+                    <!-- USER COMMENT REPLY -->
+                    <div class="user_comment user_comment_reply">
+                        <%= image_tag 'pb2.png' %>
+                        <a href="#"><span class="comment_header">Usernamislongwtfe</span></a>
+                        <div class="outer_icon">
+                            <span class="veri_icon ion-ios-checkmark tool_icon">
+                                <span class="upside_tooltip_box follow_tool no_wrap">Chatroom Admininistator<div class="arrow-down"></div></span>
+                            </span>
+                        </div>
+                        <p class="comment_header_p"><span class="small_dot">·</span>10 minutes ago.</p><br/>
+                        <p class="user_comment_text">This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!<p class="comment_functions_p"><i class="fa fa-thumbs-up thumb_icon"></i>98 Thumbs up<span class="small_dot">·</span><span class="small_functions_link thumbs_up">Thumbs up this comment</span><span class="small_functions_link thumbs_down">Remove thumbs up</span></p>
+                    </div>
+                    <!-- END -->
+
+
+                    <div class="user_comment user_comment_reply">
+                        <%= image_tag 'pb2.gif' %>
+                        <a href="#"><span class="comment_header">Username</span></a>
+                        <p class="comment_header_p"><span class="small_dot">·</span>10 minutes ago.</p><br/>
+                        <p class="user_comment_text">This is a random comment. <i class="fa fa-smile-o"></i><p class="comment_functions_p"><i class="fa fa-thumbs-up thumb_icon"></i>98 Thumbs up<span class="small_dot">·</span><span class="small_functions_link thumbs_up">Thumbs up this comment</span><span class="small_functions_link thumbs_down">Remove thumbs up</span></p>
+                    </div>
+
+                    <!-- USER COMMENT -->
+                    <div class="comm_with_reply">
+                        <div class="user_comment">
+                            <%= image_tag 'pb2.png' %>
+                            <a href="#"><span class="comment_header">Usernamislongwtfe</span></a>
+                            <div class="outer_icon">
+                                <span class="veri_icon ion-ios-checkmark tool_icon">
+                                    <span class="upside_tooltip_box follow_tool no_wrap">Chatroom Admininistator<div class="arrow-down"></div></span>
+                                </span>
+                            </div>
+                            <p class="comment_header_p"><span class="small_dot">·</span>10 minutes ago.</p><br/>
+                            <p class="user_comment_text">This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!<p class="comment_functions_p">
+                                <i class="fa fa-thumbs-up thumb_icon"></i>98 Thumbs up<span class="small_dot">·</span><span class="small_functions_link thumbs_up">Thumbs up this comment</span><span class="small_functions_link thumbs_down">Remove thumbs up</span></p>
+                                <p class="broadcast_float_right comment_functions_p"><i class="fa fa-comments-o"></i>2 Comments<span class="small_dot">·</span><span class="small_functions_link reply_btn noselect">Reply</span></p></p>
+                            </div>
+                            <!-- END -->
+                            <!-- REPLY COMMENT INPUT SECTION -->
+                            <div class="reply_comm_section">
+                                <div class="user_comment_input" id="comm_reply_input">
+                                    <%= image_tag 'gaben.png' %>
+                                    <textarea placeholder="Write a comment ..." name="message" class="input_field_comment"></textarea>
+                                    <input type="submit" value="Post Comment" class="input_comment_btn">
+                                </div>
+                            </div>
+                            <!-- END COMMENT INPUT -->
+                        </div>
                     </div>
                 </div>
-            <!-- END COMMENT INPUT -->
-            </div>
-
             </div>
         </div>
-
-        
-
-        </div>
-        </div>
-    </div> 
+    </div>
