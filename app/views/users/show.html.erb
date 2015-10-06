@@ -5,13 +5,13 @@
     <!-- Profile header design -->
     	<div class="profile_page_header">
     		<div class="p_header_bg">
-    			<img src="https://unsplash.it/1000/250/?random"/>
+    			<%= image_tag @user.cover.url(:medium) %>
     			<!-- <img src="./img/cover5.jpg"/> -->
     		</div>
     		<h2><%= @user.username.capitalize %></h2>
     		<div class="p_picture">
     			<!-- <img src="./img/pb.jpg"/> -->
-                <%= image_tag "pb.jpg" %>
+                <%= image_tag @user.avatar.url(:medium) %>
     			<!-- <img src="https://unsplash.it/120/120/?random"/> -->
     		</div>
     		<a href="#" class="default_btn_gray abs p_add_btn">

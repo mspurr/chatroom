@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
-	before_action :find_user, only: [:show]
+	before_action :find_user, only: [:show, :profile]
 	before_action :authenticate_user!
 
 	def show
+	end
+
+	def profile
 	end
 
 	private

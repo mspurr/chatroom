@@ -1,0 +1,32 @@
+<div class="container" id="container2">
+    <div class="body_fill_area">
+    	<div class="create_wrap">
+			<h3><i class="fa fa-pencil-square-o"></i>Edit Profile</h3>
+			<div class="row edit_acc_wrap">
+			<%= simple_form_for("user", :url => "/", html: { method: :put }) do |f| %>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="p_picture_text">
+						<h4 class="edit_title">Profile Picture</h4>
+					</div>
+					<div class="p_picture">
+		                <%= image_tag current_user.avatar.url(:medium) %>
+		    		</div>
+		    		<%= f.file_field :avatar %>
+		    	</div>
+		    	<div class="col-md-7">
+		    		<h4 class="edit_title">Header Picture</h4>
+		    		<div class="profile_page_header">
+				    	<div class="p_header_bg">
+			    			<%= image_tag current_user.cover.url(:medium) %>
+		    			</div>
+		    		</div>
+		    		<%= f.file_field :cover %>
+				</div>
+
+				<%= f.input :current_password, required: true %>
+				<%= f.button :submit, "Save Changes" %>
+				<% end %>
+			</div>
+		</div>
+    </div>
+</div>

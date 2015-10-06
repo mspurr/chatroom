@@ -7,8 +7,10 @@ Rails.application.routes.draw do
     resources :broadcasts
   end
 
-  resources :users, only: [:show]
+  resources :users, only: [:show, :profile]
   resources :games
+
+  get '/users/do/profile', to: 'users#profile', as: 'profile'
 
   root 'chatrooms#index'
 end
