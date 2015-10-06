@@ -18,7 +18,6 @@
 
 //Loading icon ALL pages
 
-
 $(window).load(function() {
         $('#rooms').masonry({
             itemSelector: '.box',
