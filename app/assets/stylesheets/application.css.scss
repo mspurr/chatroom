@@ -57,17 +57,23 @@ a:focus {
 .main_header_bg {
 	min-width: 100%;
 	height: auto;
-	background: url("mainheaderbg.png") center center/cover no-repeat fixed #FFFFFF;
+	background: url("mainheaderbg2.png") center center/cover no-repeat fixed #FFFFFF;
 }
 
 .center_h1 {
 	text-align: center;
-	font-size: 4.0em;
+    font-size: 4.0em;
+    color: #FDD364;
+    font-family: "Viga";
+    text-shadow: 0px 2px 0px #E2B641;
 }
 
 .center_h4 {
 	text-align: center;
 	font-size: 1.7em;
+	font-family: "Viga";
+	color: #EFEFEF;
+	text-shadow: 0px 2px 0px rgba(171, 165, 165, 0.75);
 }
 
 .main_inside_header {
