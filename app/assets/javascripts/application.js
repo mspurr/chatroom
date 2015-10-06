@@ -343,6 +343,8 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
     });
 
 
+    // Alert message fade out
+    setTimeout("$('.alert' ).fadeOut(3000)", 5000);
 
 
 });
