@@ -3023,3 +3023,26 @@ h3.a {
 .p_picture_text {
 	width: 150px;
 }
+.user_fields {
+	margin-top: 15px;
+	p {
+	    font-size: 1em;
+	    font-family: 'Fira Sans';
+	    font-weight: bold;
+	    margin: 0px;
+	    margin-bottom: 5px;
+	    color: #a0a0a0;
+	}
+	#user_about {
+		height: 115px;
+	}
+	i {
+		position: absolute;
+		margin-left: -22px;
+		margin-top: 10px;
+		color: #a0a0a0;
+	}
+}
+.bottom_div {
+	margin-top: 20px;
+}
