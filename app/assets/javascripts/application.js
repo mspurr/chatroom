@@ -254,30 +254,12 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
 
 
     //THUMBS UP SCRIPT
-    $('.thumbs_down').hide();
     $('.thumbs_up').on('click', function() {
         $(this).hide();
-        $(this).closest("p").find('.thumbs_down').show();
-        $(this).closest("p").find('.thumb_icon').animate({ fontSize: "1.2em" }, 300 );
 
     });
     $('.thumbs_down').on('click', function() {
         $(this).hide();
-        $(this).closest("p").find('.thumbs_up').show();
-        $(this).closest("p").find('.thumb_icon').css({ fontSize: "" });
-
-    });
-
-    $('.thumbs_up').on('click', function() {
-        $(this).hide();
-        $(this).closest("p").find(".thumbs_down").show();
-        $(this).closest("p").find(".thumb_icon").animate({ fontSize: "1.2em" }, 300 );
-
-    });
-    $('.comment_functions_p').find('.thumbs_down').on('click', function() {
-        $(this).hide();
-        $(this).closest("p").find(".thumbs_up").show();
-        $(this).closest("p").find(".thumb_icon").css({ fontSize: "" });
 
     });
 
