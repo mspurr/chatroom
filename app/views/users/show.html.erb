@@ -39,32 +39,39 @@
     					</span>
     				</li>
     				<li>
-    					<i class="fa fa-undo"></i> Last seen: 
-    					15 minutes ago.
+    					<i class="fa fa-undo"></i> Last seen:
+                        <span class="p_about_list_input"> 
+    					   15 minutes ago.
+                        </span>
     				</li>
     				<li>
     					<i class="fa fa-users"></i> 
-    					Team: none
+    					Team: 
+                        <span class="p_about_list_input">
+                            <%= @user.team %>
+                        </span>
     				</li>
     				<li>
     					<i class="fa fa-link p_mem_icon"></i> 
-    					Links:
-    					<a href="#">
+    					Link:
+    					<%= link_to "http://" + @user.links, target: "_blank" do %>
     						<span class="p_about_list_input">
-    							www.chatroom.guru
+    							<%= @user.links %>
     						</span>
-    					</a>
+    					<% end %>
     				</li>
     				<li>
     					<i class="ion-ios-location loc_icon"></i> 
     					Location:
     					<span class="p_about_list_input">
-    						Denmark
+    						<%= IsoCountryCodes.find(@user.location).name %>
     					</span>
     				</li>
                     <li>
-                        <i class="fa fa-eye"></i> Profile Views: 
-                        0
+                        <i class="fa fa-eye"></i> Profile Views:
+                        <span class="p_about_list_input"> 
+                            0
+                        </span>
                     </li>
     			</ul>
     		</div>
@@ -74,8 +81,7 @@
     		<div class="description_area">
     			<span class="p_description_title">About me:</span>
     			<p class="p_description">
-    			This is a random user profile description. Write anything about yourself. Let other people know who you are! </br>
-    			This is a random user profile description. Write anything about yourself. Let other people know who you are! 
+    			<%= @user.about %> 
     			</p>
     		</div>
     		<!-- end profile description -->

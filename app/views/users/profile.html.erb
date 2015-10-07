@@ -34,12 +34,13 @@
 					<div class="col-md-4 col-md-offset-2">
 						<p>Your Links</p>
 						<i class="fa fa-users"></i>
-						<%= f.text_field :links, placeholder: "Paste link here. Seperate with ','", maxlength: 60 %>
+						<%= f.text_field :links, placeholder: "Your website", maxlength: 60 %>
 						<p>Team</p>
 						<i class="fa fa-link"></i>
 						<%= f.text_field :team, placeholder: "Team name", maxlength: 40 %>
 						<p>Location</p>
 						<i class="ion-ios-location"></i>
+						<%= f.country_select :location, label: false, required: false %>
 					</div>
 				</div>
 
