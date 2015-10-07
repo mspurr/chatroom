@@ -21,10 +21,11 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    room = current_user.chatrooms.build(room_params)
-    if room.save
-      redirect_to room
+    @room = current_user.chatrooms.build(room_params)
+    if @room.save
+      redirect_to @room
     else
+      flash.now[:alert] = 'Game not found. Please choose a game from the list.'
       render 'new'
     end
   end

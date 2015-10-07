@@ -44,6 +44,9 @@
     <% if user_signed_in? %>
     	<%= render 'chatrooms/navbarin' %>
     	<%= render 'chatrooms/menuleft' %>
+        <% if flash[:alert] %>
+            <p class="alert"><i class="fa fa-exclamation"></i><%= flash[:alert] %></p>
+        <% end %>
     	<%= yield %>
     <% else %>
     	<%= render 'chatrooms/navbarout' %>

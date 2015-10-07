@@ -57,17 +57,23 @@ a:focus {
 .main_header_bg {
 	min-width: 100%;
 	height: auto;
-	background: url("mainheaderbg.png") center center/cover no-repeat fixed #FFFFFF;
+	background: url("mainheaderbg2.png") center center/cover no-repeat fixed #FFFFFF;
 }
 
 .center_h1 {
 	text-align: center;
-	font-size: 4.0em;
+    font-size: 4.0em;
+    color: #FDD364;
+    font-family: "Viga";
+    text-shadow: 0px 2px 0px #E2B641;
 }
 
 .center_h4 {
 	text-align: center;
 	font-size: 1.7em;
+	font-family: "Viga";
+	color: #EFEFEF;
+	text-shadow: 0px 2px 0px rgba(171, 165, 165, 0.75);
 }
 
 .main_inside_header {
@@ -80,17 +86,23 @@ a:focus {
 }
 
 .default_btn {
-	padding: 0px 20px 0px 20px;
-	border: 1px solid #ECBB11;
+	padding: 5px 20px 5px 20px;
+	border: 1px solid #E4B944;
+    border-bottom: 2px solid #E4B944;
 	text-decoration: none;
-	color: #FFFFFF;
-	font-size: 1.2em;
-	border-radius: 3px;
-	transition: .3s;
-	font-family: "Mallanna";
-}
-.default_btn:hover {
-	background-color: rgba(240,192,0,0.1);
+	color: #EFEFEF;
+	font-size: 1em;
+	border-radius: 2px;
+	transition: .2s;
+	font-family: "viga";
+	background-color: #EFC760;
+	&:hover {
+		color: #EFEFEF;
+		text-shadow: 0px 1px 0px rgba(179, 179, 179, 0.66);
+		border: 1px solid #DEB341;
+    	border-bottom: 2px solid #DEB341;
+    	background-color: #E9C25E;
+	}
 }
 
 .main_header_h5 {
@@ -139,6 +151,11 @@ a:focus {
 	float: left;
 	display: inline;
 	margin-top: 4px;
+	img {
+		width: 45px;
+		height: 45px;
+		margin-top: -5px;
+	}
 }
 .nav_logoarea a {
 	font-size: 1.8em;
@@ -321,7 +338,8 @@ a:focus {
 }
 
 .footer_logo {
-	background: url("mainlogosmall.png") no-repeat;
+	background: url("mainlogosmall2.png") no-repeat;
+	background-size: 45px 45px;
 	width: 100%;
 	height: 40px;
 	opacity: 0.5;
@@ -374,12 +392,12 @@ a:focus {
 }
 
 .simple_form h3 {
-	font-size: 3em;
+	font-size: 2.5em;
 	color: #737373;
 	text-align: center;
 	margin-bottom: 30px;
 	margin-top: 120px;
-	text-shadow: 1px 1px 2px #B0B0B0;
+	font-family: 'Viga'
 }
 
 .main_login_box {
@@ -2890,12 +2908,29 @@ h3.a {
 }
 .alert {
     background-color: rgba(217, 55, 69, 0.29);
-    border: none;
+    border: 1px solid rgba(175, 103, 103, 0.22);
     border-radius: 3px;
     color: #CC6870;
     font-size: 0.9em;
     box-shadow: none;
-    margin: 0px;
     padding: 5px 15px;
+    width: 55.2%;
+    box-shadow: 0px 1px 2px rgba(152, 152, 152, 0.47);
+    position: absolute;
+    top: 10%;
+    margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+}
+.error {
+	background-color: rgb(240, 193, 197);
+    border: 1px solid rgba(175, 103, 103, 0.22);
+    font-size: 0.85em;
+    margin-top: 15px;
+    border-radius: 3px;
+    color: #CC6870;
+    padding: 2px 10px;
     box-shadow: 0px 1px 2px rgba(152, 152, 152, 0.47);
 }

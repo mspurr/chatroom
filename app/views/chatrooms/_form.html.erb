@@ -1,12 +1,9 @@
 <%= simple_form_for @room do |f| %>
-  <p class="ftitle">Chatroom title</p>
+  <p class="ftitle"><i class="fa fa-comments"></i>Chatroom title</p>
   <%= f.input :title, label: false %>
-  <p class="ftitle">Chatroom description</p>
+  <p class="ftitle"><i class="fa fa-file-text-o"></i>Chatroom description</p>
   <%= f.input :description, label: false %>
-  <p class="ftitle">Select related game</p>
+  <p class="ftitle"><i class="fa fa-gamepad"></i>Select related game</p>
   <%= f.text_field :game_name, data: { autocomplete_source: Game.order(:name).map(&:name) } %>
-  	<% if flash[:alert] %>
-		<p class="alert"><%= flash[:alert] %></p>
-	<% end %>
   <%= f.button :submit %>
 <% end %>
