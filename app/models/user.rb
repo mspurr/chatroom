@@ -1,12 +1,16 @@
 class User < ActiveRecord::Base
+  has_many :chatrooms
+  has_many :broadcasts
+
   validates :username, presence: true
   validates :username, uniqueness: true
+
   validates :about, length: { maximum: 350 }
   validates :links, length: { maximum: 60 }
-  validates :team, length: { maximum: 40 }
+  validates :team, length:  { maximum: 40 }
 
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
-  has_attached_file :cover, styles: { medium: "1900x1900>" }
+  has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }
+  has_attached_file :cover, styles:  { medium: '1900x1900>' }
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
@@ -22,9 +26,6 @@ class User < ActiveRecord::Base
 
   # For views count
   is_impressionable
-
-  has_many :chatrooms
-  has_many :broadcasts
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
