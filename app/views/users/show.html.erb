@@ -41,7 +41,7 @@
     				<li>
     					<i class="fa fa-undo"></i> Last seen:
                         <span class="p_about_list_input"> 
-    					   15 minutes ago.
+    				        <%= distance_of_time_in_words(Time.now, @user.last_seen_at) %> ago
                         </span>
     				</li>
     				<li>
@@ -174,12 +174,21 @@
     	
 
     	<div class="p_default_window one_win">
+            <% if @user.last_seen_at > 10.minutes.ago %>
 	    	<div class="p_online_icon">
 	    		<span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="int_on_icon">
 	                Online now
 	                <div class="arrow-down"></div>
 	            </span>
 	    	</div>
+            <% else %>
+            <div class="p_offline_icon">
+                <span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="int_on_icon">
+                    Offline
+                    <div class="arrow-down"></div>
+                </span>
+            </div>
+            <% end %>
 	    	<h3 class="small_h3 inline"></i>Username</h3>
 	    	<div class="p_icon_1 rocket">
 	    		<i class="fa fa-rocket"></i>
