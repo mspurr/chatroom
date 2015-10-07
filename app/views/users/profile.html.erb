@@ -22,9 +22,19 @@
 		    		</div>
 		    		<%= f.file_field :cover %>
 				</div>
-
-				<%= f.input :current_password, required: true %>
-				<%= f.button :submit, "Save Changes" %>
+				<div class="col-md-10 col-md-offset-1">
+					<div class="splitter_light"></div>
+				</div>
+				<div class="col-md-5 col-md-offset-1">
+					
+				</div>
+				<div class="col-md-5 col-md-offset-1">
+					
+				</div>
+				<div class="col-md-6 col-md-offset-3">
+					<%= f.input :current_password, required: true %>
+					<%= f.button :submit, "Save Changes" %>
+				</div>
 				<% end %>
 			</div>
 		</div>
