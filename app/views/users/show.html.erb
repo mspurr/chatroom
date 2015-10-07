@@ -64,13 +64,13 @@
     					<i class="ion-ios-location loc_icon"></i> 
     					Location:
     					<span class="p_about_list_input">
-    						<%= IsoCountryCodes.find(@user.location).name %>
+    						<%= IsoCountryCodes.find(@user.location).name if @user.location.present? %>
     					</span>
     				</li>
                     <li>
                         <i class="fa fa-eye"></i> Profile Views:
                         <span class="p_about_list_input"> 
-                            0
+                            <%= @user.impressionist_count(:filter=>:ip_address) %>
                         </span>
                     </li>
     			</ul>

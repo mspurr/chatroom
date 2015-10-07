@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login
 
+
+  #For views count
+  is_impressionable
+
   has_many :chatrooms
   has_many :broadcasts
 

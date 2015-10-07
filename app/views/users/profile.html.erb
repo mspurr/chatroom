@@ -29,18 +29,18 @@
 					<div class="col-md-4 col-md-offset-1">
 						<p>About yourself</p>
 						<i class="fa fa-pencil"></i>
-						<%= f.text_area :about, placeholder: "Write something about yourself.", maxlength: 350, class: "about_field", label: false, required: false %>
+						<%= f.text_area :about, placeholder: "Write something about yourself.", maxlength: 350, class: "about_field", label: false, required: false, value: current_user.about %>
 					</div>
 					<div class="col-md-4 col-md-offset-2">
-						<p>Your Links</p>
+						<p>Your Website</p>
 						<i class="fa fa-users"></i>
-						<%= f.text_field :links, placeholder: "Your website", maxlength: 60 %>
+						<%= f.text_field :links, placeholder: "Your website", maxlength: 60, value: current_user.links %>
 						<p>Team</p>
 						<i class="fa fa-link"></i>
-						<%= f.text_field :team, placeholder: "Team name", maxlength: 40 %>
+						<%= f.text_field :team, placeholder: "Team name", maxlength: 40, value: current_user.team %>
 						<p>Location</p>
 						<i class="ion-ios-location"></i>
-						<%= f.country_select :location, label: false, required: false %>
+						<%= f.country_select :location, label: false, required: false, selected: current_user.location, include_blank: true %>
 					</div>
 				</div>
 
