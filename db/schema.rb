@@ -104,7 +104,6 @@ ActiveRecord::Schema.define(version: 20151007145604) do
     t.string   "about"
     t.string   "links"
     t.string   "team"
-    t.string   "location"
     t.datetime "last_seen_at"
   end
 

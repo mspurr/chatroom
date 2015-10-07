@@ -553,7 +553,7 @@
 
 
         <div class="wrap_broadcasts">
-            <% if @room.user == current_user %>
+          <% if @room.user == current_user %>
             <div class="broadcastwindow">
                 <div class="broad_title">
                     <p class="broadheader">Create a new broadcast</p>
@@ -562,11 +562,13 @@
                     <%= render 'broadcasts/form' %>
                 </div>
             </div>
-            <% else %>
+          <% else %>
 
-        <!-- BROADCAST WINDOW -->
+          <% end %>
+
         <% @broadcast.each do |broadcast| %>
-            <%= render partial: "broadcasts/show", locals: { broadcast: broadcast } %>
+        <!-- BROADCAST WINDOW -->
+            <%= render :partial => "broadcasts/show", :locals => {:broadcast => broadcast} %>
         <% end %>
 
 
