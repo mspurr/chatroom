@@ -9,6 +9,9 @@ gem 'pg'
 gem 'devise', '~> 3.5.2'
 gem 'paperclip', '~> 4.3.0'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'country_select'
+gem 'iso_country_codes'
+gem 'impressionist'
 
 # Assets
 gem 'bootstrap-sass', '~> 3.3.5.1'
@@ -16,6 +19,7 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks', '~> 2.1.0'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'turbolinks'
+
 
 # Asset compilation
 gem 'sass-rails', '~> 5.0'

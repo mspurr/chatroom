@@ -1,0 +1,58 @@
+<div class="container" id="container2">
+    <div class="body_fill_area">
+    	<div class="create_wrap">
+			<h3><i class="fa fa-pencil-square-o"></i>Edit Profile</h3>
+			<div class="row edit_acc_wrap">
+			<%= simple_form_for("user", :url => "/", html: { method: :put }) do |f| %>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="p_picture_text">
+						<h4 class="edit_title">Profile Picture</h4>
+					</div>
+					<div class="p_picture">
+		                <%= image_tag current_user.avatar.url(:medium) %>
+		    		</div>
+		    		<%= f.file_field :avatar %>
+		    	</div>
+		    	<div class="col-md-7">
+		    		<h4 class="edit_title">Header Picture</h4>
+		    		<div class="profile_page_header">
+				    	<div class="p_header_bg">
+			    			<%= image_tag current_user.cover.url(:medium) %>
+		    			</div>
+		    		</div>
+		    		<%= f.file_field :cover %>
+				</div>
+				<div class="col-md-10 col-md-offset-1">
+					<div class="splitter_light"></div>
+				</div>
+				<div class="col-md-12 user_fields">
+					<div class="col-md-4 col-md-offset-1">
+						<p>About yourself</p>
+						<i class="fa fa-pencil"></i>
+						<%= f.text_area :about, placeholder: "Write something about yourself.", maxlength: 350, class: "about_field", label: false, required: false, value: current_user.about %>
+					</div>
+					<div class="col-md-4 col-md-offset-2">
+						<p>Your Website</p>
+						<i class="fa fa-users"></i>
+						<%= f.text_field :links, placeholder: "Your website", maxlength: 60, value: current_user.links %>
+						<p>Team</p>
+						<i class="fa fa-link"></i>
+						<%= f.text_field :team, placeholder: "Team name", maxlength: 40, value: current_user.team %>
+						<p>Location</p>
+						<i class="ion-ios-location"></i>
+						<%= f.country_select :location, label: false, required: false, selected: current_user.location, include_blank: true %>
+					</div>
+				</div>
+
+				<div class="col-md-10 col-md-offset-1">
+					<div class="splitter_light"></div>
+				</div>
+				<div class="col-md-6 col-md-offset-3 bottom_div">
+					<%= f.input :current_password, required: true %>
+					<%= f.button :submit, "Save Changes" %>
+				</div>
+				<% end %>
+			</div>
+		</div>
+    </div>
+</div>

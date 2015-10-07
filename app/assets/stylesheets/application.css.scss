@@ -2681,6 +2681,19 @@ span.selected:hover {
 .p_online_icon:hover .follow_tool {
 	opacity: 1;
 }
+.p_offline_icon {
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	background-color: #B5B5BA;
+	float: left;
+	margin-right: 10px;
+	margin-top: 5px;
+	box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.p_offline_icon:hover .follow_tool {
+	opacity: 1;
+}
 #int_on_icon {
 	margin-top: -30px;
 	margin-left: -35px;
@@ -2951,6 +2964,27 @@ h3.a {
 	input {
 		margin-bottom: 30px;
 	}
+	.user {
+		width: 100%;
+	}
+	.p_picture {
+		margin: 0px;
+		margin-bottom: 15px;
+		width: 150px;
+		height: 150px;
+	}
+	.profile_page_header {
+		width: 100%;
+		height: 150px;
+		margin: 0px;
+		margin-bottom: 15px;
+	}
+	.col-md-3 {
+		input {
+			font-size: 0.8em;
+			width: 150px;
+		}
+	}
 }
 .wrapper_foot {
 	bottom: 0px;
@@ -2989,4 +3023,53 @@ h3.a {
     position: absolute;
     left: 5%;
     margin-top: 33px;
+}
+.edit_title {
+	text-align: center;
+	font-size: 1em;
+	font-family: 'Fira Sans';
+	font-weight: bold;
+	margin: 0px;
+	margin-bottom: 10px;
+	color: #a0a0a0;	
+}
+.p_picture_text {
+	width: 150px;
+}
+.user_fields {
+	margin-top: 15px;
+	padding-bottom: 15px;
+	p {
+	    font-size: 1em;
+	    font-family: 'Fira Sans';
+	    font-weight: bold;
+	    margin: 0px;
+	    margin-bottom: 5px;
+	    color: #a0a0a0;
+	}
+	#user_about {
+		height: 115px;
+	}
+	i {
+		position: absolute;
+		margin-left: -22px;
+		margin-top: 10px;
+		color: #a0a0a0;
+	}
+}
+.bottom_div {
+	margin-top: 20px;
+}
+#user_location {
+	width: 100%;
+    margin-bottom: 10px;
+    border-radius: 0px;
+    outline: none;
+    border: 1px solid #D5D5D2;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: 0.3s;
+    background-color: #f1f1f1;
+    color: #737373;
 }

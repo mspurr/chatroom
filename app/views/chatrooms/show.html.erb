@@ -103,7 +103,7 @@
                 <div class="chat_input_area">
                     <div class="chat_input_div">
                         <div class="user_chat_pb">
-                            <%= image_tag 'gaben.png' %>
+                            <%= image_tag current_user.avatar.url(:thumb) %>
                         </div>
                         <textarea name="message" placeholder="Write your message here..." ></textarea>
                         <button>Send</button>

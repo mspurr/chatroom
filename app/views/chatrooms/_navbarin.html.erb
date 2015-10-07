@@ -19,7 +19,7 @@
       <div class="ul">
         <div class="li">
           <a href="#" id="toggleuser">
-            <%= image_tag "gaben.png", class: "nav_user_pic" %>
+            <%= image_tag current_user.avatar.url(:thumb), class: "nav_user_pic" %>
             <span id="nav_username"><%= current_user.username.capitalize %></span>
             <span class="ion-arrow-down-b" id="nav_user_dropdown_icon"></span>
           </a>
@@ -29,11 +29,11 @@
               <ul>
                 <li><a href="<%= user_path(current_user.username) %>"><i class="fa fa-male" id="quickmenu_profile_icon"></i>My Profile</a></li>
                 <li><a href="#"><i class="fa fa-inbox"></i>My Messages</a></li>
+                <li><a href="#"><i class="fa fa-comments"></i>My Chatrooms</a></li>
               </ul>
                 <ul>
-                <li><a href="<%= edit_user_registration_path %>"><i class="fa fa-pencil-square-o"></i>Edit Profile</a></li>
+                <li><%= link_to profile_path do %><i class="fa fa-pencil-square-o"></i>Edit Profile<% end %></li>
                 <li><a href="<%= edit_user_registration_path %>"><i class="fa fa-cogs"></i>Account Settings</a></li>
-                <li><a href="#"><i class="fa fa-tags"></i>Change Interests</a></li>
               </ul>
               <ul>
                 <li><a href="<%= destroy_user_session_path %>" data-method="delete"><i class="fa fa-sign-out"></i>Sign Out</a></li>

@@ -5,13 +5,13 @@
     <!-- Profile header design -->
     	<div class="profile_page_header">
     		<div class="p_header_bg">
-    			<img src="https://unsplash.it/1000/250/?random"/>
+    			<%= image_tag @user.cover.url(:medium) %>
     			<!-- <img src="./img/cover5.jpg"/> -->
     		</div>
     		<h2><%= @user.username.capitalize %></h2>
     		<div class="p_picture">
     			<!-- <img src="./img/pb.jpg"/> -->
-                <%= image_tag "pb.jpg" %>
+                <%= image_tag @user.avatar.url(:medium) %>
     			<!-- <img src="https://unsplash.it/120/120/?random"/> -->
     		</div>
     		<a href="#" class="default_btn_gray abs p_add_btn">
@@ -35,49 +35,44 @@
     					<i class="ion-android-time p_mem_icon"></i> 
     					Member since:
     					<span class="p_about_list_input">
-    						24-02-2015
+    						<%= @user.created_at.strftime("%d %B %Y") %>
     					</span>
     				</li>
     				<li>
-    					<i class="ion-ios-game-controller-b p_game_icon"></i> Games: 
-    					<a href="#">
-    						<span class="p_about_list_input">
-    							League Of Legends
-    						</span>
-    					</a>
-    					<span class="small_dot">·</span>
-    					<a href="#">
-    						<span class="p_about_list_input">
-    							Counter Strike: Source
-    						</span>
-    					</a>
-    					<span class="small_dot">·</span>
-    					<a href="#">
-    						<span class="p_about_list_input">
-    							World of Warcraft
-    						</span>
-    					</a>
+    					<i class="fa fa-undo"></i> Last seen:
+                        <span class="p_about_list_input"> 
+    				        <%= distance_of_time_in_words(Time.now, @user.last_seen_at) %> ago
+                        </span>
     				</li>
     				<li>
     					<i class="fa fa-users"></i> 
-    					Team: none
+    					Team: 
+                        <span class="p_about_list_input">
+                            <%= @user.team %>
+                        </span>
     				</li>
     				<li>
     					<i class="fa fa-link p_mem_icon"></i> 
-    					Links:
-    					<a href="#">
+    					Link:
+    					<%= link_to "http://" + @user.links, target: "_blank" do %>
     						<span class="p_about_list_input">
-    							www.chatroom.guru
+    							<%= @user.links %>
     						</span>
-    					</a>
+    					<% end %>
     				</li>
     				<li>
     					<i class="ion-ios-location loc_icon"></i> 
     					Location:
     					<span class="p_about_list_input">
-    						Denmark
+    						<%= IsoCountryCodes.find(@user.location).name if @user.location.present? %>
     					</span>
     				</li>
+                    <li>
+                        <i class="fa fa-eye"></i> Profile Views:
+                        <span class="p_about_list_input"> 
+                            <%= @user.impressionist_count(:filter=>:ip_address) %>
+                        </span>
+                    </li>
     			</ul>
     		</div>
     		<!-- end about list -->
@@ -86,8 +81,7 @@
     		<div class="description_area">
     			<span class="p_description_title">About me:</span>
     			<p class="p_description">
-    			This is a random user profile description. Write anything about yourself. Let other people know who you are! </br>
-    			This is a random user profile description. Write anything about yourself. Let other people know who you are! 
+    			<%= @user.about %> 
     			</p>
     		</div>
     		<!-- end profile description -->
@@ -180,12 +174,21 @@
     	
 
     	<div class="p_default_window one_win">
+            <% if @user.last_seen_at > 10.minutes.ago %>
 	    	<div class="p_online_icon">
 	    		<span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="int_on_icon">
 	                Online now
 	                <div class="arrow-down"></div>
 	            </span>
 	    	</div>
+            <% else %>
+            <div class="p_offline_icon">
+                <span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="int_on_icon">
+                    Offline
+                    <div class="arrow-down"></div>
+                </span>
+            </div>
+            <% end %>
 	    	<h3 class="small_h3 inline"></i>Username</h3>
 	    	<div class="p_icon_1 rocket">
 	    		<i class="fa fa-rocket"></i>
