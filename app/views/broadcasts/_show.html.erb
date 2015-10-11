@@ -1,30 +1,11 @@
 
 
 		<div class="broadcastwindow">
-            <div class="highlighted_broadcast_icon">
-                <i class="ion-bookmark"></i>
-                <span class="ion-star"></span>
-                <span class="upside_tooltip_box follow_tool no_wrap noselect" id="pin_tool">
-                    Pinned broadcast
-                    <div class="arrow-down"></div>
-                </span>
-
-            </div>
             <div class="broad-setting">
                     <p>remove</p>
                     <p>edit</p>
             </div>
             <div class="broadcastwindow_header">
-                <div class="recent_broadcast_icon">
-                    <i class="ion-radio-waves fa-spin"></i>
-                </div>
-                <div class="follow_broadcast_btn">
-                    <i class="fa fa-eye"></i>
-                    <div class="upside_tooltip_box follow_tool no_wrap" id="follow_tool_position">
-                        <span>Follow this broadcast</span>
-                        <div class="arrow-down"></div>
-                    </div>
-                </div>  
             </div>
             <div class="user_poster_info">
                 <%= image_tag "pb.jpg" %>
@@ -47,17 +28,15 @@
             </div>
             <div class="post_functions_area">
                 <p>
+                    
                     <% if current_user.liked? broadcast %>
-                        <i class="fa fa-thumbs-up thumb_icon big_icon"></i>
+                        <%= link_to unlike_chatroom_broadcast_path(@room, broadcast), class: 'thumb_btn', method: :put do %>
+                            <i class="fa fa-thumbs-up"></i><%= broadcast.get_likes.size %>
+                        <% end %>
                     <% else %>
-                        <i class="fa fa-thumbs-up thumb_icon"></i>
-                    <% end %>
-                        <%= broadcast.get_likes.size %> Thumbs up
-                    <span class="small_dot">·</span>
-                    <% if current_user.liked? broadcast %>
-                        <%= link_to "Remove thumbs up", unlike_chatroom_broadcast_path(@room, broadcast), class: 'small_functions_link thumbs_down', method: :put %>
-                    <% else %>
-                        <%= link_to "Thumbs up this broadcast", like_chatroom_broadcast_path(@room, broadcast), class: "small_functions_link thumbs_up", method: :put %>
+                        <%= link_to like_chatroom_broadcast_path(@room, broadcast), class: "thumb_btn", method: :put do %>
+                            <i class="fa fa-thumbs-up"></i><%= broadcast.get_likes.size %>
+                        <% end %>
                     <% end %>
                     
 

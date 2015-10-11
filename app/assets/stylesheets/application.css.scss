@@ -1341,7 +1341,7 @@ label {
 }
 .post_functions_area {
 	width: 100%;
-	padding: 5px 20px 3px 20px;
+	padding: 9px 20px 9px 20px;
 	border-bottom: 1px solid #D5D5D2;
 	border-left: 3px solid #FFC600;
 }
@@ -3284,5 +3284,27 @@ h3.a {
     	background-color: #E8E8E8;
     	border: 1px solid rgba(216, 216, 216, 1);
     	box-shadow: 0px 0px 2px rgba(161, 161, 161, 0.40);
+    }
+}
+.thumb_btn {
+	border: 1px solid #D5D5D2;
+    border-radius: 2px;
+    padding: 1px 10px;
+    background-color: #EFEFEF;
+    box-shadow: 0px 1px 2px #E0DFDF;
+    transition: 0.15s;
+    font-size: 0.98em;
+    i {
+    	border-right: 1px solid #D5D5D2;
+    	padding-right: 6px;
+    	transition: 0.15s;
+    }
+    &:hover {
+    	color: #a0a0a0;
+    	border: 1px solid #C7C7C7;
+    	background-color: #ECECEC;
+    	i {
+    		border-right: 1px solid #C7C7C7;
+    	}
     }
 }
