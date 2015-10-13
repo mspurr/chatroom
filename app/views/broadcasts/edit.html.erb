@@ -1,0 +1,18 @@
+<div class="container" id="container2">
+	<div class="body_fill_area">
+		<div class="create_wrap">
+			<h3>Edit broadcast</h3>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<%= simple_form_for([@room, @broadcast]) do |f| %>
+					  <%= f.input :content, label: false, placeholder: 'What is on your mind?' %>
+					  <%= f.button :submit, class: "input_comment_btn post_broad_btn" %>
+					  <%= f.input :image, input_html: { class: "broad_att_img" }, label: "attach image" %>
+					<% end %>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

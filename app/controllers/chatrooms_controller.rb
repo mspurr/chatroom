@@ -1,7 +1,8 @@
 class ChatroomsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :find_room, only: [:show, :edit, :update, :destroy]
+  before_action :find_room, only: [:show, :edit, :update, :destroy, :featured_broadcasts]
   before_action :random_room, only: [:show, :index]
+  before_action :featured_broadcasts, only: [:show]
 
   def index
     if params[:game].blank?
@@ -42,7 +43,7 @@ class ChatroomsController < ApplicationController
   end
 
   def destroy
-    @room.dest
+    @room.destroy
     redirect_to root_path
   end
 
@@ -54,6 +55,10 @@ class ChatroomsController < ApplicationController
 
   def random_room
     @random = Chatroom.limit(5).shuffle
+  end
+
+  def featured_broadcasts
+    @feat = @room.broadcasts.order(:cached_votes_total => :desc).limit(2)
   end
 
   def room_params

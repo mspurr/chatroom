@@ -1,7 +1,7 @@
 class BroadcastsController < ApplicationController
 	before_action :authenticate_user!
-	before_action :set_broadcast, only: [:like, :unlike]
-	before_action :set_room, only: [:like, :unlike, :index, :show] 
+	before_action :set_broadcast, only: [:like, :unlike, :edit, :update, :destroy]
+	before_action :set_room, only: [:like, :unlike, :index, :show, :edit, :update, :destroy]
 
 
 	def index
@@ -27,6 +27,17 @@ class BroadcastsController < ApplicationController
 		end
 	end
 
+	def edit
+  end
+
+	def update
+  	if @broadcast.update(broadcast_params)
+    		redirect_to @room
+  	else
+    		render :edit
+  	end
+	end
+
 	def like
 		@broadcast.liked_by current_user
 		redirect_to chatroom_path(@room)
@@ -37,6 +48,11 @@ class BroadcastsController < ApplicationController
 		redirect_to chatroom_path(@room)
 	end
 
+	def destroy
+    @broadcast.destroy
+    redirect_to @room
+  end
+
 	private
 
 	def set_broadcast
@@ -46,4 +62,9 @@ class BroadcastsController < ApplicationController
 	def set_room
 		@room = Chatroom.find(params[:chatroom_id])
 	end
+	
+	def broadcast_params
+		params.require(:broadcast).permit(:content, :image)
+	end
+
 end
