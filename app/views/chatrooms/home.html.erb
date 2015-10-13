@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+    <div class="container" id="container2">
+        <div class="body_fill_area">
+            <h2>Welcome back! this is your home page</h2>
+        </div>
+    </div>
+<% else %>
+    <%= render 'chatrooms/welcome' %>
+<% end %>

@@ -1,7 +1,11 @@
 class ChatroomsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :find_room, only: [:show, :edit, :update, :destroy]
-  before_action :random_room, only: [:show, :index]
+  before_action :random_room, only: [:show]
+
+  def home
+    
+  end
 
   def index
     if params[:game].blank?

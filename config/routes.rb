@@ -17,5 +17,5 @@ Rails.application.routes.draw do
 
   get '/users/do/profile', to: 'users#profile', as: 'profile'
 
-  root 'chatrooms#index'
+  root 'chatrooms#home'
 end
