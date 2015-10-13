@@ -581,7 +581,7 @@
             </div>
             <p><i class="fa fa-clock-o"></i>Newest</p>
         </div>
-        <% @broadcast.each do |broadcast| %>
+        <% @broadcast.where.not(id: @feat).each do |broadcast| %>
             <%= render :partial => "broadcasts/show", :locals => {:broadcast => broadcast} %>
         <% end %>
 
