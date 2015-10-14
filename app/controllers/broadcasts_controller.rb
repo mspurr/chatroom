@@ -32,9 +32,9 @@ class BroadcastsController < ApplicationController
 
 	def update
   	if @broadcast.update(broadcast_params)
-    		redirect_to @room
+    	redirect_to @room
   	else
-    		render :edit
+    	render :edit
   	end
 	end
 
