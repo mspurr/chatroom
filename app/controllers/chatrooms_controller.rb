@@ -1,5 +1,5 @@
 class ChatroomsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:home]
   before_action :find_room, only: [:show, :edit, :update, :destroy]
   before_action :random_room, only: [:show]
 
