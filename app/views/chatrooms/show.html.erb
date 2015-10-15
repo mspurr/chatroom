@@ -572,8 +572,8 @@
             <p><i class="fa fa-hand-peace-o"></i>Featured</p>
         </div>
 
-        <% @feat.each do |feat| %>
-            <%= render :partial => "broadcasts/show", :locals => {:broadcast => feat} %>
+        <% @room.broadcasts.top_featured.each do |featured| %>
+            <%= render :partial => "broadcasts/show", locals: {broadcast: featured} %>
         <% end %>
 
         <div class="feat_split_wrap">
@@ -581,8 +581,8 @@
             </div>
             <p><i class="fa fa-clock-o"></i>Newest</p>
         </div>
-        <% @broadcast.where.not(id: @feat).each do |broadcast| %>
-            <%= render :partial => "broadcasts/show", :locals => {:broadcast => broadcast} %>
+        <% @room.broadcasts.where.not(id: @room.broadcasts.top_featured).each do |broadcast| %>
+            <%= render :partial => "broadcasts/show", locals: {broadcast: broadcast} %>
         <% end %>
 
         <div class="broadcastwindow">
