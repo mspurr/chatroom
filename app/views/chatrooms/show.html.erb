@@ -566,12 +566,24 @@
 
           <% end %>
 
-        <% @broadcast.each do |broadcast| %>
-        <!-- BROADCAST WINDOW -->
-            <%= render :partial => "broadcasts/show", :locals => {:broadcast => broadcast} %>
+        <div class="feat_split_wrap">
+            <div class="splitter_light">
+            </div>
+            <p><i class="fa fa-hand-peace-o"></i>Featured</p>
+        </div>
+
+        <% @room.broadcasts.top_featured.each do |featured| %>
+            <%= render :partial => "broadcasts/show", locals: {broadcast: featured} %>
         <% end %>
 
-
+        <div class="feat_split_wrap">
+            <div class="splitter_light">
+            </div>
+            <p><i class="fa fa-clock-o"></i>Newest</p>
+        </div>
+        <% @room.broadcasts.where.not(id: @room.broadcasts.top_featured).each do |broadcast| %>
+            <%= render :partial => "broadcasts/show", locals: {broadcast: broadcast} %>
+        <% end %>
 
         <div class="broadcastwindow">
             <div class="broadcastwindow_header">

@@ -42,7 +42,7 @@ class ChatroomsController < ApplicationController
   end
 
   def destroy
-    @room.dest
+    @room.destroy
     redirect_to root_path
   end
 

@@ -1,33 +1,21 @@
 
 
 		<div class="broadcastwindow">
-            <div class="highlighted_broadcast_icon">
-                <i class="ion-bookmark"></i>
-                <span class="ion-star"></span>
-                <span class="upside_tooltip_box follow_tool no_wrap noselect" id="pin_tool">
-                    Pinned broadcast
-                    <div class="arrow-down"></div>
-                </span>
-
-            </div>
             <div class="broad-setting">
-                    <p>remove</p>
-                    <p>edit</p>
+                <% if broadcast.user == current_user %>
+                    <%= link_to edit_chatroom_broadcast_path(@room, broadcast), class: "broad_func_btn" do %>
+                        <i class="fa fa-pencil"></i>
+                    <% end %>
+                    <%= link_to chatroom_broadcast_path(@room, broadcast), method: :delete, data: { confirm: 'Are you sure you want to delete this broadcast?' }, class: "broad_func_btn" do %>
+                        <i class="fa fa-trash-o"></i>
+                    <% end %>
+                <% else %>
+                <% end %>
             </div>
             <div class="broadcastwindow_header">
-                <div class="recent_broadcast_icon">
-                    <i class="ion-radio-waves fa-spin"></i>
-                </div>
-                <div class="follow_broadcast_btn">
-                    <i class="fa fa-eye"></i>
-                    <div class="upside_tooltip_box follow_tool no_wrap" id="follow_tool_position">
-                        <span>Follow this broadcast</span>
-                        <div class="arrow-down"></div>
-                    </div>
-                </div>  
             </div>
             <div class="user_poster_info">
-                <%= image_tag "pb.jpg" %>
+                <%= image_tag broadcast.user.avatar.url(:thumb) %>
                 <div class="user_poster_info_text">
                     <a href="<%= user_path(@room.user.username) %>"><span class="header_p_link"><%= @room.user.username.capitalize %></span></a>
                     <div class="outer_icon">
@@ -46,30 +34,25 @@
                 </div>
             </div>
             <div class="post_functions_area">
-                <p>
+                    
                     <% if current_user.liked? broadcast %>
-                        <i class="fa fa-thumbs-up thumb_icon big_icon"></i>
+                        <%= link_to unlike_chatroom_broadcast_path(@room, broadcast), class: 'thumb_btn rmv_btn', method: :put do %>
+                            <span class="rmv_thumb">Thumbed up</span><p><%= broadcast.get_likes.size %></p>
+                        <% end %>
                     <% else %>
-                        <i class="fa fa-thumbs-up thumb_icon"></i>
-                    <% end %>
-                        <%= broadcast.get_likes.size %> Thumbs up
-                    <span class="small_dot">·</span>
-                    <% if current_user.liked? broadcast %>
-                        <%= link_to "Remove thumbs up", unlike_chatroom_broadcast_path(@room, broadcast), class: 'small_functions_link thumbs_down', method: :put %>
-                    <% else %>
-                        <%= link_to "Thumbs up this broadcast", like_chatroom_broadcast_path(@room, broadcast), class: "small_functions_link thumbs_up", method: :put %>
+                        <%= link_to like_chatroom_broadcast_path(@room, broadcast), class: "thumb_btn", method: :put do %>
+                            <span>Thumbs up</span><p><%= broadcast.get_likes.size %></p>
+                        <% end %>
                     <% end %>
                     
-
-                </p>
                 <p class="broadcast_float_right"><i class="fa fa-comments-o"></i><span class="small_functions_link comm_toggle noselect"> 0 comments</span></p>
             </div>
             <div class="user_comment_input">
-                <img src="./img/gaben.png" />
+                <%= image_tag broadcast.user.avatar.url(:thumb) %>
                 
-                <!-- 
+                
                 <textarea placeholder="Write a comment ..." name="message" class="input_field_comment"></textarea>
-                <input type="submit" value="Post Comment" class="input_comment_btn"> -->
+                <input type="submit" value="Post Comment" class="input_comment_btn">
             </div>
 
             
@@ -77,4 +60,3 @@
 
             </div>
         </div>
-        <!-- END BROADCAST WINDOW -->

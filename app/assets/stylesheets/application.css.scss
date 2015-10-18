@@ -20,7 +20,6 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
 @import "chatrooms";
 
 * {
@@ -1317,7 +1316,6 @@ label {
 }
 .user_post_area {
 	padding-top: 8px;
-	padding-bottom: 10px;
 	width: 100%;
 	height: 100%;
 	background-color: #EFEFEF;
@@ -1341,9 +1339,8 @@ label {
 }
 .post_functions_area {
 	width: 100%;
-	padding: 5px 20px 3px 20px;
+	padding: 7px 20px 7px 20px;
 	border-bottom: 1px solid #D5D5D2;
-	border-left: 3px solid #FFC600;
 }
 .post_functions_area p {
 	margin: 0px;
@@ -2886,7 +2883,7 @@ h3.a {
 }
 .broad-setting {
 	position: absolute;
-	right: 20%;
+	right: 1%;
 	margin-top: 5px;
 }
 .broad-setting p {
@@ -3285,4 +3282,93 @@ h3.a {
     	border: 1px solid rgba(216, 216, 216, 1);
     	box-shadow: 0px 0px 2px rgba(161, 161, 161, 0.40);
     }
+}
+.thumb_btn {
+	border: 1px solid #D5D5D2;
+    border-radius: 2px;
+    background-color: #EFEFEF;
+    box-shadow: 0px 1px 2px #E0DFDF;
+    transition: 0.15s;
+    font-size: 0.9em;
+    color: #969696;
+    span {
+    	border-right: 1px solid #D5D5D2;
+    	padding-right: 6px;
+    	transition: 0.15s;
+    	background-color: #EFEFEF;
+    	padding-left: 9px;
+    }
+    p {
+    	border-left: 1px solid #F9F9F9;
+    	padding-left: 7px;
+    	padding-right: 10px;
+    	transition: 0.15s;
+    }
+    &:hover {
+    	color: #969696;
+    	border: 1px solid #C7C7C7;
+    	span {
+    		background-color: #ECECEC;
+    		border-right: 1px solid #C7C7C7;
+    	}
+    	i {
+    		border-right: 1px solid #C7C7C7;
+    	}
+    	p {
+    		
+    	}
+    }
+    &:active {
+    	box-shadow: 0px 0px 0px #E0DFDF;
+    	span {
+    		background-color: #E4E4E4;
+    	}
+    }
+    &:focus {
+    	span, p {
+    		color: #969696;
+    	}
+    }
+}
+.rmv_thumb {
+	background-color: #E2E2E2 !important;
+    text-shadow: 0px -1px 0px rgb(208, 208, 208) !important;
+    color: #F5F3F3 !important;
+}
+.rmv_btn {
+	box-shadow: none !important;
+	
+}
+.feat_split_wrap {
+	width: 60%;
+	height: auto;
+	position: relative;
+	float: left;
+	margin-bottom: 30px;
+	p {
+		text-align: center;
+		background-color: #ECECEC;
+    	width: 90px;
+    	margin: -14px auto 0px;
+    	font-size: 0.9em;
+    	color: #D4D4D4;
+	}
+}
+.broad_func_btn {
+	i {
+		background-color: #E2E2E2;
+	    padding: 2px 6px;
+	    border: 1px solid #D8D8D8;
+	    font-size: 0.8em;
+	    color: #a0a0a0;
+	    border-radius: 3px;
+	    box-shadow: 0px 1px 0px rgba(243, 243, 243, 0.44);
+	    border-bottom: 1px solid #DEDEDE;
+	    transition: 0.15s;
+	}
+	&:hover {
+		i {
+			background-color: #DEDEDE;
+		}
+	}
 }
