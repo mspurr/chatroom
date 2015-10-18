@@ -4,7 +4,6 @@ class ChatroomsController < ApplicationController
   before_action :random_room, only: [:show]
 
   def home
-    
   end
 
   def index
