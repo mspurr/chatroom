@@ -149,8 +149,12 @@
       </div>
       <div class="top_broadcasts">
         <h4>Top Broadcasts</h4>
-        <% Broadcast.all.each do |broadcast| %>
-          <p>Broadcast taken from: <%= link_to broadcast.chatroom.title, chatroom_path(broadcast.chatroom) %></p>
+        <% Broadcast.featured.all.each do |broadcast| %>
+          <div class="col-md-12">
+            <p class="top_p_info">Broadcast taken from: <span><%= link_to chatroom_path(broadcast.chatroom) do %><i class="fa fa-comments-o"></i><%= broadcast.chatroom.title %><% end %></span></p>
+            <%= render partial: "broadcasts/show", locals: {broadcast: broadcast} %>
+            <div class="line_spl"></div>
+          </div>
         <% end %>
       </div>
     </div>

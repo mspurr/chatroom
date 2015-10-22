@@ -1044,9 +1044,6 @@ label {
   margin-bottom: 40px;
   position: relative;
 }
-.broadcastwindow:first-child {
-  margin-top: 40px;
-}
 .room_title_area {
   width: 60%;
   height: auto;
@@ -1554,7 +1551,7 @@ label {
   border: 1px solid #D5D5D2;
   resize: none;
   display: inline-block;
-  height: 35px;
+  height: 90px;
   float: left;
   transition: 0.2s;
 }
@@ -2898,6 +2895,8 @@ h3.a {
     position: relative;
     float: right;
     width: 90px;
+    margin-top: 5px;
+    margin-right: 8px;
     cursor: pointer;
     background: url("small_img.png") no-repeat #F0F0F0;
     background-size: 20px 20px;
@@ -2917,7 +2916,7 @@ h3.a {
     margin-left: -24px;
 }
 .broad_post {
-  min-height: 78px;
+  min-height: 110px;
 }
 .broad_img_show {
   box-sizing: border-box;
@@ -3465,14 +3464,15 @@ h3.a {
   h4 {
     font-family: "Fira Sans";
     color: #a0a0a0;
+    font-size: 1.5em;
   }
   .game_cover {
-    height: 150px;
+    height: 170px;
     a {
-      height: 140px;
+      height: 160px;
     }
     img {
-      height: 140px;
+      height: 160px;
     }
   }
 
@@ -3481,5 +3481,89 @@ h3.a {
   h4 {
     font-family: "Fira Sans";
     color: #a0a0a0;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+  }
+  .col-md-12 {
+    padding: 0px;
+  }
+  .broadcastwindow {
+    width: 100%;
+    margin-bottom: 0px;
+  }
+  .line_spl {
+    width: 100%;
+    height: 1px;
+    margin: 30px auto;
+    background-color: rgba(213, 213, 210, 0.4);
+    float: left;
   }
 }
+.m_top {
+  margin-top: 40px;
+}
+.append_broad {
+  position: relative;
+  float: left;
+  width: 60%;
+  .broadcastwindow {
+    width: 100%;
+  }
+}
+.top_p_info {
+  color: #a0a0a0;
+  font-size: 0.85em;
+  a {
+    background-color: #E7E7E6;
+    border: 1px solid;
+    border-radius: 4px;
+    box-sizing: content-box;
+    -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+    position: relative;
+    font-family: 'Fira Sans';
+    border-color: #cccccc #c5c6c8 #C1C1C1;
+    color: #A0A0A0;
+    text-shadow: 0 1px 0 #F3F3F3;
+    padding: 0 8px;
+    transition: 0.15s;
+    &:hover {
+      color: #9F9F9F;
+      background-color: #EFEFEF;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    }
+    &:focus {
+      color: #A7A7A7;
+    }
+  }
+}
+@keyframes blinky {
+    0%   {
+      border: 1px solid rgba(255, 198, 0, 0.05);
+      box-shadow: 0px 0px 4px rgba(255, 198, 0, 0.01);
+    }
+    25%  {
+      border: 1px solid rgba(255, 198, 0, 0.6);
+      box-shadow: 0px 0px 4px rgba(255, 198, 0, 0.93);
+    }
+    50%  {
+      border: 1px solid rgba(255, 198, 0, 0.05);
+      box-shadow: 0px 0px 4px rgba(255, 198, 0, 0.01);
+    }
+    75%  {
+      border: 1px solid rgba(255, 198, 0, 0.6);
+      box-shadow: 0px 0px 4px rgba(255, 198, 0, 0.93);
+    }
+    100% {
+      border: 1px solid rgba(255, 198, 0, 0.05);
+      box-shadow: 0px 0px 4px rgba(255, 198, 0, 0.01);
+    }
+}
+
+#new_create {
+  border: 1px solid #D5D5D2;
+  animation-name: blinky;
+  animation-duration: 2s;
+  animation-iteration-count: 3;
+}
+

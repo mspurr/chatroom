@@ -554,7 +554,7 @@
 
         <div class="wrap_broadcasts">
           <% if @room.user == current_user %>
-            <div class="broadcastwindow">
+            <div class="broadcastwindow m_top">
                 <div class="broad_title">
                     <p class="broadheader">Create a new broadcast</p>
                 </div>
@@ -563,7 +563,14 @@
                 </div>
             </div>
           <% else %>
-
+            <div class="broadcastwindow m_top">
+                <div class="broad_title">
+                    <p class="broadheader">Create a new broadcast</p>
+                </div>
+                <div class="user_post_area broad_post">
+                    <%= render 'broadcasts/form' %>
+                </div>
+            </div>
           <% end %>
 
         <div class="feat_split_wrap">
@@ -581,9 +588,13 @@
             </div>
             <p><i class="fa fa-clock-o"></i>Newest</p>
         </div>
-        <% @room.broadcasts.where.not(id: @room.broadcasts.top_featured).each do |broadcast| %>
+        <div class="append_broad">
+        <div id="append_broad">
+        </div>
+        <% @room.broadcasts.where.not(id: @room.broadcasts.top_featured).order('created_at DESC').each do |broadcast| %>
             <%= render :partial => "broadcasts/show", locals: {broadcast: broadcast} %>
         <% end %>
+        </div>
 
         <div class="broadcastwindow">
             <div class="broadcastwindow_header">

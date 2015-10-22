@@ -8,7 +8,7 @@
         <title>World's best social chatroom for gamers.</title>
 
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-        <%= csrf_meta_tags %>
+
 
         <!-- External links -->
         <%= stylesheet_link_tag "//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" %>
@@ -33,6 +33,8 @@
             document.body.removeChild(load_screen);
         });
         </script>
+
+        <%= csrf_meta_tags %>
     </head>
     <body>
     <div class="se-pre-con" id="load_screen"></div>
