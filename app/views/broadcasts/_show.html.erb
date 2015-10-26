@@ -3,10 +3,10 @@
 		<div class="broadcastwindow">
             <div class="broad-setting">
                 <% if broadcast.user == current_user %>
-                    <%= link_to edit_chatroom_broadcast_path(@room, broadcast), class: "broad_func_btn" do %>
+                    <%= link_to edit_chatroom_broadcast_path(broadcast.chatroom, broadcast), class: "broad_func_btn" do %>
                         <i class="fa fa-pencil"></i>
                     <% end %>
-                    <%= link_to chatroom_broadcast_path(@room, broadcast), method: :delete, data: { confirm: 'Are you sure you want to delete this broadcast?' }, class: "broad_func_btn" do %>
+                    <%= link_to chatroom_broadcast_path(broadcast.chatroom, broadcast), method: :delete, data: { confirm: 'Are you sure you want to delete this broadcast?' }, class: "broad_func_btn" do %>
                         <i class="fa fa-trash-o"></i>
                     <% end %>
                 <% else %>
@@ -17,7 +17,7 @@
             <div class="user_poster_info">
                 <%= image_tag broadcast.user.avatar.url(:thumb) %>
                 <div class="user_poster_info_text">
-                    <a href="<%= user_path(@room.user.username) %>"><span class="header_p_link"><%= @room.user.username.capitalize %></span></a>
+                    <a href="<%= user_path(broadcast.chatroom.user.username) %>"><span class="header_p_link"><%= broadcast.chatroom.user.username.capitalize %></span></a>
                     <div class="outer_icon">
                     <span class="veri_icon ion-ios-checkmark tool_icon">
                             <span class="upside_tooltip_box follow_tool no_wrap" id="user_header_tool_position">Chatroom Admininistator<div class="arrow-down"></div></span>
@@ -34,17 +34,16 @@
                 </div>
             </div>
             <div class="post_functions_area">
-                    
                     <% if current_user.liked? broadcast %>
-                        <%= link_to unlike_chatroom_broadcast_path(@room, broadcast), class: 'thumb_btn rmv_btn', method: :put do %>
-                            <span class="rmv_thumb">Thumbed up</span><p><%= broadcast.get_likes.size %></p>
+                        <%= link_to unlike_chatroom_broadcast_path(broadcast.chatroom, broadcast), class: 'thumb_btn rmv_btn unlike_broadcast', method: :get, remote: true do %>
+                            <span class="rmv_thumb">Thumbed up</span><p class="v_count"><%= broadcast.get_likes.size %></p>
                         <% end %>
                     <% else %>
-                        <%= link_to like_chatroom_broadcast_path(@room, broadcast), class: "thumb_btn", method: :put do %>
-                            <span>Thumbs up</span><p><%= broadcast.get_likes.size %></p>
+                        <%= link_to like_chatroom_broadcast_path(broadcast.chatroom, broadcast), class: "thumb_btn like_broadcast", method: :get, remote: true do %>
+                            <span>Thumbs up</span><p class="v_count"><%= broadcast.get_likes.size %></p>
                         <% end %>
-                    <% end %>
-                    
+                    <% end %> 
+
                 <p class="broadcast_float_right"><i class="fa fa-comments-o"></i><span class="small_functions_link comm_toggle noselect"> 0 comments</span></p>
             </div>
             <div class="user_comment_input">
@@ -60,3 +59,4 @@
 
             </div>
         </div>
+        <!-- END BROADCAST WINDOW -->

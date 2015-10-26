@@ -1,0 +1,9 @@
+<% if current_user.liked? broadcast %>
+  <%= link_to unlike_chatroom_broadcast_path(broadcast.chatroom, broadcast), class: 'thumb_btn rmv_btn unlike_broadcast', method: :get, remote: true do %>
+    <span class="rmv_thumb">Thumbed up</span><p class="v_count"><%= broadcast.get_likes.size %></p>
+  <% end %>
+<% else %>
+    <%= link_to like_chatroom_broadcast_path(broadcast.chatroom, broadcast), class: "thumb_btn like_broadcast", method: :get, remote: true do %>
+      <span>Thumbs up</span><p class="v_count"><%= broadcast.get_likes.size %></p>
+    <% end %>
+<% end %>

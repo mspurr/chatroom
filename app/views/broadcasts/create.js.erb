@@ -1,0 +1,6 @@
+$('#append_broad').append('<%= j render(:partial => "broadcasts/show", locals: {broadcast: @broadcast}) %>');
+$('#broadcast_content').val('');
+$('.append_broad .broadcastwindow:first-child').attr('id', 'new_create');
+$('html, body').animate({
+  scrollTop: $("#new_create").offset().top
+}, 900);

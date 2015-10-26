@@ -51,11 +51,11 @@ $(document).ready(function() {
         $('.int_game_div').removeClass('int_game_height');
 
         setTimeout(function() {
-        	$('#rooms').masonry({
-	            itemSelector: '.box',
-	            isAnimated: true,
-        	});
-       	}, 100);
+            $('#rooms').masonry({
+                itemSelector: '.box',
+                isAnimated: true,
+            });
+        }, 100);
     });
 
 
@@ -266,17 +266,19 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
 
     //Comments REPLY btn dropdown
     $('.reply_comm_section').hide();
-    $('.reply_btn').on('click', function() {
-        $(this).closest('.comm_with_reply').find(".reply_comm_section").slideToggle(200);
+    $('body').on('click','.reply_btn', function() {
+        $(this).closest('.comm_with_reply').find(".reply_comm_section").fadeToggle(200);
+        $(this).closest('.comm_with_reply').find(".input_field_comment").focus();
     });
 
 
     //Comments view dropdown
     $('.post_comment_area').hide();
     $('.user_comment_input').hide();
-    $(".comm_toggle").on('click', function() {
-        $(this).closest('.broadcastwindow').find(".post_comment_area").slideToggle(200);
-        $(this).closest('.broadcastwindow').find(".user_comment_input").slideToggle(200);
+    $('body').on('click', '.comm_toggle', function() {
+        $(this).closest('.broadcastwindow').find(".post_comment_area").fadeToggle(200);
+        $(this).closest('.broadcastwindow').find(".user_comment_input").fadeToggle(200);
+        $(this).closest('.broadcastwindow').find(".input_field_comment").focus();
     });
 
 
@@ -327,7 +329,13 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
     // Alert message fade out
     setTimeout("$('.alert' ).fadeOut(3000)", 5000);
 
+    $('body').on('click', '.like_broadcast', function(){
+        $(this).addClass('clicked_b');
+    });
 
+    $('body').on('click','.unlike_broadcast', function(){
+        $(this).addClass('clicked_b');
+    });
 });
 
 

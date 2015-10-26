@@ -35,4 +35,10 @@ class User < ActiveRecord::Base
       where(conditions.to_h).first
     end
   end
+
+  scope :find_random, -> { order("RANDOM()") }
+
+  def self.find_random_user(number)
+    find_random.limit(number)
+  end
 end

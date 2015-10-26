@@ -1,5 +1,3 @@
-<% if user_signed_in? %>
-
     <div class="container" id="container2">
         <div class="body_fill_area">
         <div class="wel_header">
@@ -8,7 +6,7 @@
 
         <div class="g_tag_header">
         <h3>Top Games</h3>
-        <% Game.all.each do |game| %>
+        <% Game.all.limit(15).each do |game| %>
             <%= link_to game.name, chatrooms_path(game: game.name), class: "game_tag_link" %>
         <% end %>
         </div>
@@ -39,29 +37,7 @@
             </div>
             </div>
 
-        <!--
-            <div class="chatroom_ad">
-                <%= image_tag "chatwowcover.png" %>
-                <h3 class="a">World of Warcraft</h3>
-                <div class="c_ad_d">
-                    <a href="<%= chatroom_path(room) %>">
-                    <h3 class="small_h3"></i><%= room.title %></h3>
-
-                    <div class="chat_ad_tag">
-                        <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
-                    </div>
-                    <p class="d">This is a random user profile description. Write anything about yourself. Let other people know who you are! If you would li ... </p>
-                    </a>
-                </div>
-            </div>
-        -->
-
-
         <% end %>
         </div>
         </div>
     </div>
-
-<% else %>
-    <%= render 'chatrooms/welcome' %>
-<% end %>

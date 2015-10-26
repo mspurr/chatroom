@@ -1,5 +1,5 @@
-<%= simple_form_for([@room, @room.broadcasts.build]) do |f| %>
+<%= simple_form_for([@room, @room.broadcasts.build], remote: true, authenticity_token: true) do |f| %>
   <%= f.input :content, label: false, placeholder: 'What is on your mind?' %>
   <%= f.button :submit, class: "input_comment_btn post_broad_btn" %>
-  <%= f.input :image, input_html: { class: "broad_att_img" }, label: "attach image" %>
+  <%= f.input :image, input_html: { class: "broad_att_img" }, label: "Attach image" %>
 <% end %>

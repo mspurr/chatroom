@@ -1,0 +1,262 @@
+<% if user_signed_in? %>
+  <div class="container" id="container2">
+    <div class="body_fill_area">
+      <div class="g_tag_header">
+        <h2>Hey, <%= current_user.username.capitalize %>!</h2>
+        <h5>Go explore & find people with same interests or purpose as yourself.</h5>
+      </div>
+      <div class="splitter_light"></div>
+      <div class="row">
+        <div class="col-md-7 l_sec">
+        <div class="tabs" id="p_chat_tabs">
+          <ul class="nav nav-tabs tabs_d">
+            <li role="presentation" class="active"><a class="alink" href="#tab1"><i class="fa fa-thumbs-up"></i>Recommended</a></li>
+            <li role="presentation"><a class="alink" href="#tab3"><i class="fa fa-heart"></i>Favorite</a></li>
+        </ul>
+
+        <div class="tab_content h_tab">
+          <div id="tab1" class="tab_d active">
+            <div class="chat_ad_div">
+              <h6>Chatroom Title</h6>
+              <div class="chat_ad_go">
+                <p>Go<i class="fa fa-angle-right"></i></p>
+              </div>
+              <div class="chat_ad_tag">
+                <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+              </div>
+              <div class="chat_title_info small_title_info">
+                <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
+                <p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
+              </div>
+            </div>
+
+            <div class="chat_ad_div">
+              <h6>Chatroom Title</h6>
+              <div class="chat_ad_go">
+                <p>Go<i class="fa fa-angle-right"></i></p>
+              </div>
+              <div class="chat_ad_tag">
+                <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+              </div>
+              <div class="chat_title_info small_title_info">
+                <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
+                <p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
+              </div>
+            </div>
+
+            <div class="chat_ad_div">
+              <h6>Chatroom Title</h6>
+              <div class="chat_ad_go">
+                <p>Go<i class="fa fa-angle-right"></i></p>
+              </div>
+              <div class="chat_ad_tag">
+                  <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+              </div>
+              <div class="chat_title_info small_title_info">
+                <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
+                <p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
+              </div>
+            </div>
+            <div class="chat_ad_div">
+              <h6>Chatroom Title</h6>
+              <div class="chat_ad_go">
+                <p>Go<i class="fa fa-angle-right"></i></p>
+              </div>
+              <div class="chat_ad_tag">
+                  <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+              </div>
+              <div class="chat_title_info small_title_info">
+                <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
+                <p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
+              </div>
+            </div>
+
+          </div>
+          <div id="tab3" class="tab_d">
+            <div class="chat_ad_div">
+              <h6>Favorite room</h6>
+              <div class="chat_ad_go">
+                <p>Go<i class="fa fa-angle-right"></i></p>
+              </div>
+              <div class="chat_ad_tag">
+                <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+              </div>
+              <div class="chat_title_info small_title_info">
+                <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
+                <p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
+              </div>
+            </div>
+
+            <div class="chat_ad_div">
+              <h6>Favorite room</h6>
+              <div class="chat_ad_go">
+                <p>Go<i class="fa fa-angle-right"></i></p>
+              </div>
+              <div class="chat_ad_tag">
+                <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+              </div>
+              <div class="chat_title_info small_title_info">
+                <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
+                <p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
+              </div>
+            </div>
+
+            <div class="chat_ad_div">
+              <h6>Favorite room</h6>
+              <div class="chat_ad_go">
+                <p>Go<i class="fa fa-angle-right"></i></p>
+              </div>
+              <div class="chat_ad_tag">
+                <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+              </div>
+              <div class="chat_title_info small_title_info">
+                <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
+                <p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
+              </div>
+            </div>
+            <div class="chat_ad_div">
+              <h6>Favorite room</h6>
+              <div class="chat_ad_go">
+                <p>Go<i class="fa fa-angle-right"></i></p>
+              </div>
+              <div class="chat_ad_tag">
+                  <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+              </div>
+              <div class="chat_title_info small_title_info">
+                <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
+                <p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top_games">
+        <h4>Top Games</h4>
+        <div class="row games_list">
+        <% Game.all.limit(4).each do |game| %>
+          <div class="col-md-3 game_cover">
+            <a href="<%= chatrooms_path(game: game.name) %>">
+              <%= image_tag game.cover.url(:medium) %>
+              <p>
+              <%= truncate game.name, length: 35 %>
+              <i class="fa fa-angle-right"></i>
+              </p>
+            </a>
+          </div>
+        <% end %>
+        </div>
+      </div>
+      <div class="top_broadcasts">
+        <h4>Top Broadcasts</h4>
+        <% Broadcast.featured.all.each do |broadcast| %>
+          <div class="col-md-12">
+            <p class="top_p_info">Broadcast taken from: <span><%= link_to chatroom_path(broadcast.chatroom) do %><i class="fa fa-comments-o"></i><%= broadcast.chatroom.title %><% end %></span></p>
+            <%= render partial: "broadcasts/show", locals: {broadcast: broadcast} %>
+            <div class="line_spl"></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-4 col-md-offset-1 r_sec">
+      <div class="friend_ac_sec">
+        <div class="sec_title">
+          <h4><i class="ion-ios-people"></i>Friend Activity</h4>
+        </div>
+        <div class="ac_wrap">
+          <div class="activity_list">
+            <%= image_tag 'pb.png' %>
+            <p>Username: <br/> created a new chatroom 'Chatroom Title'</p>
+          </div>
+          <div class="activity_list">
+            <%= image_tag 'pb.png' %>
+            <p>Username: <br/> created a new chatroom 'Chatroom Title'</p>
+          </div>
+          <div class="activity_list">
+            <%= image_tag 'pb.png' %>
+            <p>Username: <br/> created a new chatroom 'Chatroom Title'</p>
+          </div>
+          <div class="activity_list">
+            <%= image_tag 'pb.png' %>
+            <p>Username: <br/> created a new chatroom 'Chatroom Title'</p>
+          </div>
+          <div class="activity_list">
+            <%= image_tag 'pb.png' %>
+            <p>Username: <br/> created a new chatroom 'Chatroom Title'</p>
+          </div>
+          <div class="activity_list">
+            <%= image_tag 'pb.png' %>
+            <p>Username: <br/> created a new chatroom 'Chatroom Title'</p>
+          </div>
+          <div class="activity_list">
+            <%= image_tag 'pb.png' %>
+            <p>Username: <br/> created a new chatroom 'Chatroom Title'</p>
+          </div>
+          <div class="activity_list">
+            <%= image_tag 'pb.png' %>
+            <p>Username: <br/> created a new chatroom 'Chatroom Title'</p>
+          </div>
+          <div class="activity_list">
+            <%= image_tag 'pb.png' %>
+            <p>Username: <br/> created a new chatroom 'Chatroom Title'</p>
+          </div>
+          <div class="activity_list">
+            <%= image_tag 'pb.png' %>
+            <p>Username: <br/> created a new chatroom 'Chatroom Title'</p>
+          </div>
+          
+          <p id="msg_end_p">No more friend activity.</p>
+        </div>
+      </div>
+      <div class="friend_ac_sec">
+        <div class="sec_title">
+          <h4><i class="fa fa-tags"></i>Popular tags</h4>
+        </div>
+          <div class="used_tags_list p_int_list f_tags_list">
+            <span>Gaming</span>
+            <span>Computer</span>
+            <span>Playstation 4</span>
+            <span>Xbox one</span>
+            <span>Multiplayer games</span>
+            <span>Indie</span>
+            <span>Multiplayer games</span>
+            <span>Indie</span>
+            <span>Gaming</span>
+            <span>Computer</span>
+            <span>Playstation 4</span>
+            <span>Xbox one</span>
+            <span>Multiplayer games</span>
+            <span>Indie</span>
+            <span>Multiplayer games</span>
+            <span>Indie</span>
+          </div>
+        </div>
+        <div class="exp_sec">
+          <div class="sec_title">
+            <h4><i class="fa fa-users"></i>Explorer people</h4>
+          </div>
+          <div class="exp_users_list">
+          <% User.find_random_user(5).all.each do |user| %>
+            <div class="user">
+              <%= image_tag user.avatar.url(:thumb) %>
+              <p><%= link_to user.username.capitalize, user_path(user.username) %></p>
+              <a href="#" class="default_btn_gray abs p_add_btn">
+                <i class="ion-person-add"></i> Add Friend
+              </a>
+            </div>
+          <% end %>
+          </div>
+      </div>
+      <div class="create_room_sec">
+        <h4>Can't find what you are looking for?</h4>
+        <h2>Create Your Own<br/> Chatroom</h2>
+        <a href="/chatrooms/new" class="default_div_btn"><i class="fa fa-plus"></i>Create Room</a>
+      </div>
+      
+      </div>
+    </div>
+    </div>
+  </div>
+<% else %>
+  <%= render 'chatrooms/welcome' %>
+<% end %>

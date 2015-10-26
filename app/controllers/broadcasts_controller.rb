@@ -20,10 +20,13 @@ class BroadcastsController < ApplicationController
     @broadcast.user_id = current_user.id
     @broadcast.chatroom_id = @room.id
 
-    if @broadcast.save
-      redirect_to chatroom_path(@room)
-    else
-      redirect_to chatroom_path(@room), notice: 'Please try again.'
+    respond_to do |format|
+      if @broadcast.save
+        format.html { redirect_to @room }
+        format.js {}
+      else
+        format.html { redirect_to chatroom_path(@room), notice: 'Please try again.' }
+      end
     end
   end
 
@@ -40,12 +43,18 @@ class BroadcastsController < ApplicationController
 
   def like
     @broadcast.liked_by current_user
-    redirect_to chatroom_path(@room)
+    respond_to do |format|
+      format.html { redirect_to chatroom_path(@broadcast.chatroom) }
+      format.js { render :layout => false }
+    end
   end
 
   def unlike
     @broadcast.unliked_by current_user
-    redirect_to chatroom_path(@room)
+    respond_to do |format|
+      format.html { redirect_to chatroom_path(@broadcast.chatroom) }
+      format.js { render :layout => false }
+    end
   end
 
   def destroy

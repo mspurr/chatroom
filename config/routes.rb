@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :chatrooms do
     resources :broadcasts do
       member do
-        put :like, to: 'broadcasts#like'
-        put :unlike, to: 'broadcasts#unlike'
+        get :like, to: 'broadcasts#like'
+        get :unlike, to: 'broadcasts#unlike'
       end
     end
   end
@@ -17,5 +17,5 @@ Rails.application.routes.draw do
 
   get '/users/do/profile', to: 'users#profile', as: 'profile'
 
-  root 'chatrooms#index'
+  root 'chatrooms#home'
 end
