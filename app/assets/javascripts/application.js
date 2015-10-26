@@ -51,11 +51,11 @@ $(document).ready(function() {
         $('.int_game_div').removeClass('int_game_height');
 
         setTimeout(function() {
-        	$('#rooms').masonry({
-	            itemSelector: '.box',
-	            isAnimated: true,
-        	});
-       	}, 100);
+            $('#rooms').masonry({
+                itemSelector: '.box',
+                isAnimated: true,
+            });
+        }, 100);
     });
 
 

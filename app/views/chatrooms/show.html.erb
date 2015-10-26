@@ -528,8 +528,9 @@
                 <h4>Explore</h4>
                 <h5>Related chatrooms</h5>
                 <div class="explore_list">
-                    <% @random.each do |room| %>
+                    <% Chatroom.find_random_room(5).all.each do |room| %>
                     <div class="chat_ad_div">
+                        <%= link_to chatroom_path(room) do %>
                         <h6><%= room.title %></h6>
                         <div class="chat_ad_go">
                             <p>Go<i class="fa fa-angle-right"></i></p>
@@ -541,6 +542,7 @@
                             <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
                             <p><i class="fa fa-users"></i>80</p>
                         </div>
+                        <% end %>
                     </div>
                     <% end %>
 

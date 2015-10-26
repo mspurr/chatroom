@@ -1,2 +1,3 @@
 $('.clicked_b').hide();
 $('.clicked_b').closest('.post_functions_area').append('<%= j render(:partial => "broadcasts/like", locals: {broadcast: @broadcast}) %>');
+$('.clicked_b').remove();
