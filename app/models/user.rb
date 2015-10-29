@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   has_many :chatrooms
   has_many :broadcasts
 
+  has_many :user_friendships
+  has_many :friends, through: :user_friendships
+
   validates :username, presence: true
   validates :username, uniqueness: true
 
