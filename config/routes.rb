@@ -12,7 +12,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :user_friendships
+  resources :user_friendships do
+    member do
+      put :accept
+    end
+  end
+
   resources :users, only: [:show, :profile]
   resources :games
 

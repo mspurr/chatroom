@@ -90,7 +90,7 @@
             <h3 class="small_h3"><i class="ion-ios-people"></i>Friendlist</h3>
             <span class="p_description_title">Friends</span>
             <span class="small_dot">·</span>
-            <span class="p_description_title">Total: 102</span>
+            <span class="p_description_title">Total: <%= @user.friends.count %></span>
             <div class="friendlist_area">
                 <% for user in @user.friends %>
                   <p><%= user.username %></p>
