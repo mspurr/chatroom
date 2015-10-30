@@ -30,6 +30,7 @@
                 <li><a href="<%= user_path(current_user.username) %>"><i class="fa fa-male" id="quickmenu_profile_icon"></i>My Profile</a></li>
                 <li><a href="#"><i class="fa fa-inbox"></i>My Messages</a></li>
                 <li><a href="#"><i class="fa fa-comments"></i>My Chatrooms</a></li>
+                <li><%= link_to user_friendships_path do %><i class="fa fa-comments"></i>My Friends<% end %></li>
               </ul>
                 <ul>
                 <li><%= link_to profile_path do %><i class="fa fa-pencil-square-o"></i>Edit Profile<% end %></li>

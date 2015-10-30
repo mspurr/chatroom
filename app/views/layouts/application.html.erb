@@ -46,6 +46,12 @@
         <% if flash[:alert] %>
             <p class="alert"><i class="fa fa-exclamation"></i><%= flash[:alert] %></p>
         <% end %>
+        <% if flash[:error] %>
+            <p class="alert"><i class="fa fa-exclamation"></i><%= flash[:error] %></p>
+        <% end %>
+        <% if flash[:success] %>
+            <p class="alert success"><i class="fa fa-exclamation"></i><%= flash[:success] %></p>
+        <% end %>
     	<%= yield %>
     <% else %>
     	<%= render 'chatrooms/navbarout' %>

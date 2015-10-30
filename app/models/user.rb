@@ -2,6 +2,17 @@ class User < ActiveRecord::Base
   has_many :chatrooms
   has_many :broadcasts
 
+  has_many :user_friendships, dependent: :destroy
+  has_many :friends, -> { where(user_friendships: { state: 'accepted' }).order('name DESC') }, :through => :user_friendships
+  has_many :pending_user_friendships, -> { where(state: 'pending') }, class_name: 'UserFriendship', foreign_key: 'user_id'
+  has_many :pending_friends, through: :pending_user_friendships, source: :friend
+  has_many :requested_user_friendships, -> { where(state: 'requested') }, class_name: 'UserFriendship', foreign_key: 'user_id'
+  has_many :requested_friends, through: :requested_user_friendships, source: :friend
+  has_many :blocked_user_friendships, -> { where(state: 'blocked') }, class_name: 'UserFriendship', foreign_key: 'user_id'
+  has_many :blocked_friends, through: :blocked_user_friendships, source: :friend
+  has_many :accepted_user_friendships, -> { where(state: 'accepted') }, class_name: 'UserFriendship', foreign_key: 'user_id'
+  has_many :accepted_friends, through: :accepted_user_friendships, source: :friend
+
   validates :username, presence: true
   validates :username, uniqueness: true
 

@@ -1,0 +1,17 @@
+<div class="container" id="container2">
+  <div class="body_fill_area">
+    <% if @friend %>
+
+      <h1>Add <%= @friend.username %> as friend</h1>
+
+      <p>Are you sure you want to request this friend?</p>
+
+      <%= form_for @user_friendship, method: :post do |form| %>
+        <%= form.hidden_field :friend_id, value: @friend %>
+        <%= submit_tag "Yes, add friend", class: "btn btn-success" %>
+        <%= link_to "Cancel", user_path(@friend.username), class: "btn btn-danger" %>
+      <% end %>
+
+    <% end %>
+  </div>
+</div>
