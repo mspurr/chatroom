@@ -2,17 +2,16 @@
   <div class="body_fill_area">
     <% if @friend %>
 
-      <h1><%= @friend.username %></h1>
+      <h1>Add <%= @friend.username %> as friend</h1>
 
-      <p>Do you really want to friend <%= @friend.username %>?</p>
+      <p>Are you sure you want to request this friend?</p>
 
-      <%= form_for @user_friendship, method: :post do |form|  %>
-        <div class="form form-actions">
-          <%= form.hidden_field :friend_id, value: @friend.id %>
-          <%= submit_tag "Yes, add friend", class: "btn btn-primary" %>
-          <%= link_to "Cancel", user_path(@friend.username), class: "btn" %>
-        </div>
+      <%= form_for @user_friendship, method: :post do |form| %>
+        <%= form.hidden_field :friend_id, value: @friend %>
+        <%= submit_tag "Yes, add friend", class: "btn btn-success" %>
+        <%= link_to "Cancel", user_path(@friend.username), class: "btn btn-danger" %>
       <% end %>
+
     <% end %>
   </div>
 </div>

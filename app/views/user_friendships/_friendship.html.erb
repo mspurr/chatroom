@@ -1,0 +1,11 @@
+<% friend = user_friendship.friend %>
+<tr id="<%= dom_id(user_friendship) %>">
+  <td><%= image_for(friend, :icon, 28) %></td>
+  <td><strong><%= link_to friend.username, user_path(friend.username) %></strong></td>
+  <td><p class="<%= user_friendship.state_color_class %>"><%= user_friendship.friendship_state %></p></td>
+  <td>
+    <% unless user_friendship.blocked? %>
+    <%= link_to 'Edit', edit_user_friendship_path(user_friendship), class: "btn btn-xs btn-warning" %>
+    <% end %>
+  </td>
+</tr>
