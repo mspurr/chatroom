@@ -1,0 +1,17 @@
+<div class="col-md-3">
+  <div class="user_col">
+    <%= link_to user_path(user.username) do %>
+      <%= image_tag user.cover.url(:medium), class: "user_img_cover" %>
+      <%= image_tag user.avatar.url(:thumb), class: "user_img_thumb" %>
+    <% end %>
+    <div class="user_col_info">
+      <%= link_to user_path(user.username) do %>
+        <h4><%= user.username %></h4>
+      <% end %>
+    </div>
+    <div class="user_col_foot">
+      <%= action_buttons(user)%>
+    </div>
+  </div>
+</div>
+

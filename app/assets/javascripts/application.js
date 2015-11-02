@@ -336,6 +336,18 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
     $('body').on('click','.unlike_broadcast', function(){
         $(this).addClass('clicked_b');
     });
+
+    // Hover friends dropdown menu
+    $('.p_fr_btn').mouseover(function() {
+        //$(this).closest('a').addClass('.show_menu');
+        //$(this).find('.hidden_hover_btn').append("Remove Friend");
+        $(this).find('.hidden_hover_btn').addClass("show_menu");
+    });
+    $('.p_fr_btn').mouseout(function() {
+        //$(this).closest('a').addClass('.show_menu');
+        //$(this).find('.hidden_hover_btn').append("Remove Friend");
+        $(this).find('.hidden_hover_btn').removeClass("show_menu");
+    });
 });
 
 
