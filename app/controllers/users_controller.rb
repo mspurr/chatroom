@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   private
 
   def find_user
-    @user = User.find_by_username(params[:id])
+    @user = User.find_by(username: params[:id])
     #@user = User.where("LOWER(username) = ?", params[:id].downcase)
   end
 

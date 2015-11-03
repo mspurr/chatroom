@@ -20,7 +20,10 @@ class ApplicationController < ActionController::Base
   end
 
   def request_count
-    current_user.pending_friend_requests_from.map(&:user).size
+    if current_user?
+      current_user.pending_friend_requests_from.map(&:user).size
+    else
+    end
   end
 
 end
