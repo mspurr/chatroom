@@ -236,13 +236,14 @@
             <h4><i class="fa fa-users"></i>Explorer people</h4>
           </div>
           <div class="exp_users_list">
-          <% User.find_random_user(5).all.each do |user| %>
+          <% User.find_random_user(5).where.not(id: current_user).all.each do |user| %>
             <div class="user">
               <%= image_tag user.avatar.url(:thumb) %>
               <p><%= link_to user.username.capitalize, user_path(user.username) %></p>
-              <a href="#" class="default_btn_gray abs p_add_btn">
+              <%= action_buttons(user)%>
+              <!-- <a href="#" class="default_btn_gray abs p_add_btn">
                 <i class="ion-person-add"></i> Add Friend
-              </a>
+              </a> -->
             </div>
           <% end %>
           </div>

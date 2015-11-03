@@ -1,0 +1,43 @@
+<div class="container" id="container2">
+  <div class="body_fill_area">
+    <div class="create_wrap">
+      <h3><i class="ion-person-stalker m_friends"></i>Manage Friends</h3>
+      <div class="row edit_acc_wrap">
+        <div class="col-md-6 col-md-offset-3 no_pad">
+          <div class="btn-group" role="group" aria-label="Default Button Groups">
+            <%= link_to "My Friends", users_path(people: "friends"), class: "button_default #{'active' unless (params[:people] == 'requests' || params[:people] == 'pending')}" %>
+            <%= link_to users_path(people: "requests"), class: "button_default #{'active' if params[:people] == 'requests'}" do %>
+              Requests <span class="badge"><%= request_count %></span>
+            <% end %>
+            <%= link_to users_path(people: "pending"), class: "button_default #{'active' if params[:people] == 'pending'}" do %>
+              Pending <span class="badge"><%= @pending_count %></span>
+            <% end %>
+          </div>
+        </div>
+        
+
+        <div class="col-md-11 users_col_area">
+          <% if @users.size > 0 %>
+            <%= render @users %>
+          <% else %>
+            <% if params[:people] == 'requests' %>
+              <div class="em_mess col-md-12">
+                <p>You got no friend requests.</p>
+              </div>
+            <% elsif params[:people] == 'pending'%>
+              <div class="em_mess col-md-12">
+                <p>You haven't sent any requests.</p>
+              </div>
+            <% else %>
+              <div class="em_mess col-md-12">
+                <p><i class="fa fa-frown-o"></i>You don't have any friends yet!</p>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

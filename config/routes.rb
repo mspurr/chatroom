@@ -12,7 +12,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:show, :profile]
+  resources :friendships, only: [:create, :destroy, :accept] do 
+    member do 
+      put :accept
+    end
+  end
+  
+  resources :users, only: [:show, :profile, :index]
   resources :games
 
   get '/users/do/profile', to: 'users#profile', as: 'profile'
