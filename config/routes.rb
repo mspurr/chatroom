@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   devise_for :users, path: '', path_names: { sign_in: 'login',
                                              sign_out: 'logout',
                                              edit: '/users/do/edit' }
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
         get :like, to: 'broadcasts#like'
         get :unlike, to: 'broadcasts#unlike'
       end
+      resources :comments
     end
   end
 

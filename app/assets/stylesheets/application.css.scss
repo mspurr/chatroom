@@ -1442,8 +1442,6 @@ label {
 }
 .user_comment {
   width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
   padding-top: 10px;
   margin-left: auto;
   margin-right: auto;
@@ -1452,6 +1450,10 @@ label {
   min-height: 50px;
   border-bottom: 1px solid #e0e0e0;
   transition: 0.2s;
+}
+.user_comment_wrap {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .user_comment:hover {
   background-color: #F0F0F0;
@@ -1469,10 +1471,11 @@ label {
   display: inline;
   margin-left: 10px;
   transition: 0.25s;
-  border-bottom: 1px solid #D5D5D2;
+  font-weight: bold;
+  text-decoration: none;
 }
 .comment_header:hover {
-  color: #9F9F9F;
+  color: #a0a0a0;
 }
 .comment_header_p {
   display: inline;
@@ -3930,4 +3933,16 @@ h3.a {
     color: #737373 !important;
     background-color: #E4E4E4;
   }
+}
+.new_comment {
+  width: 100%;
+}
+.comment_footer {
+  width: 80%;
+  padding: 8px 0px;
+  margin: 3px auto;
+  height: 33px;
+  border: none;
+  font-size: 0.82em;
+  border-top: 1px solid rgba(212, 212, 212, 0.45);
 }

@@ -1,6 +1,7 @@
 class Broadcast < ActiveRecord::Base
   belongs_to :chatroom
   belongs_to :user
+  has_many :comments
   acts_as_votable
 
   validates :content, presence: true, length: { minimum: 1, maximum: 1000 }
