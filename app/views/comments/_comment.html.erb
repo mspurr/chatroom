@@ -4,7 +4,7 @@
         <%= image_tag comment.user.avatar(:thumb) %>
         <a href="#"><span class="comment_header"><%= comment.user.username.capitalize %></span></a>
 
-        <p class="comment_header_p"><span class="small_dot">·</span><%= distance_of_time_in_words(Time.now, comment.created_at) %></p><br/>
+        <p class="comment_header_p"><span class="small_dot">·</span><%= distance_of_time_in_words(Time.now, comment.created_at) %> ago</p><br/>
         <p class="user_comment_text"><%= comment.body %><p class="comment_functions_p">
       </div>
         <div class="post_functions_area comment_footer">

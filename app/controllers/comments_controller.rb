@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [:like, :unlike, :show, :edit, :update, :destroy]
 
   def create
     @room = Chatroom.find(params[:chatroom_id])
@@ -18,6 +18,22 @@ class CommentsController < ApplicationController
 
   end
 
+
+  def like
+    @comment.liked_by current_user
+    respond_to do |format|
+      format.html { redirect_to chatroom_path(@comment.broadcast.chatroom) }
+      format.js { render :layout => false }
+    end
+  end
+
+  def unlike
+    @comment.unliked_by current_user
+    respond_to do |format|
+      format.html { redirect_to chatroom_path(@comment.broadcast.chatroom) }
+      format.js { render :layout => false }
+    end
+  end
 
   # DELETE /comments/1
   def destroy
