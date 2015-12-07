@@ -1,6 +1,6 @@
 $('#comment_focused').val('');
 $('#comment_focused').closest('.broadcastwindow').find('.post_comment_area').prepend('<%= j render @comment %>');
-$('.post_comment_area .comm_with_reply:first-child').attr('id', 'new_create');
+$('#comment_focused').closest('.broadcastwindow').find('.post_comment_area .comm_with_reply:first-child').attr('id', 'new_create');
 $('html, body').animate({
   scrollTop: $("#new_create").offset().top
 }, 900);
