@@ -389,6 +389,7 @@ a:focus {
   background-position-y: 5%;
   padding-bottom: 60px;
   padding-top: 5px;
+  min-height: 750px;
 }
 
 .simple_form h3 {
@@ -530,6 +531,7 @@ i {
   background-position-y: 5%;
   padding-bottom: 60px;
   padding-top: 5px;
+  min-height: 750px;
 }
 
 label {
@@ -3471,13 +3473,13 @@ h3.a {
     font-size: 1.5em;
   }
   .game_cover {
-    height: 170px;
     a {
       height: 160px;
     }
     img {
-      height: 160px;
+      height: 110%;
     }
+    margin-bottom: 60px;
   }
 
 }
