@@ -6,7 +6,7 @@
 @import "bootstrap";
 
 .room_set {
-	background-color: #E7E7E6;
+    background-color: #E7E7E6;
     border: 1px solid #D5D5D2;
     border-bottom: 2px solid #D5D5D2;
     box-shadow: 0px 0px 1px rgba(195, 195, 195, 0.72);
@@ -15,41 +15,41 @@
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     h3 {
-    	color: #a0a0a0;
-    	margin: 0;
+        color: #a0a0a0;
+        margin: 0;
     }
     a:hover {
-    	color: #a0a0a0;
+        color: #a0a0a0;
     }
     &:hover {
-    	background-color: #EAEAEA;
-    	border: 1px solid #D0CFCD;
-    	border-bottom: 2px solid #D0CFCD;
-    	img {
-    		opacity: 1;
-    	}
-    	.foot {
-    		background-color: #E9E7E2;
-    	}
-	}
+        background-color: #EAEAEA;
+        border: 1px solid #D0CFCD;
+        border-bottom: 2px solid #D0CFCD;
+        img {
+            opacity: 1;
+        }
+        .foot {
+            background-color: #E9E7E2;
+        }
+    }
 
     img {
-    	width: 100%;
-    	height: 60px;
-    	opacity: 0.9;
-    	transition: 0.2s;
-    	border-bottom: 1px solid #D5D5D2;
+        width: 100%;
+        height: 60px;
+        opacity: 0.9;
+        transition: 0.2s;
+        border-bottom: 1px solid #D5D5D2;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
     }
     p {
-    	font-size: 0.9em;
-    	margin: 0px;
+        font-size: 0.9em;
+        margin: 0px;
     }
     h3 {
-    	font-family: 'Viga', 'Fira Sans', 'serif';
-    	font-weight: 400;
-    	font-size: 1.4em;
+        font-family: 'Viga', 'Fira Sans', 'serif';
+        font-weight: 400;
+        font-size: 1.4em;
         text-shadow: 0px 2px 0px #DEDEDE;
     }
     .game_tag_t {
@@ -57,25 +57,25 @@
         text-shadow: 0px 2px 0px #DEDEDE;
     }
     .foot {
-    	width: 100%;
-	    background-color: #E4E3DE;
-	    padding: 5px 10px;
-	    border-top: 1px solid #D5D5D2;
-	    transition: 0.2s;
-    	p {
-    		margin: 0px;
+        width: 100%;
+        background-color: #E4E3DE;
+        padding: 5px 10px;
+        border-top: 1px solid #D5D5D2;
+        transition: 0.2s;
+        p {
+            margin: 0px;
             text-shadow: 0px 2px 0px #DEDEDE;
-    	}
-    	.small_dot {
-    		margin-left: 10px;
-    		margin-right: 10px;
-    	}
+        }
+        .small_dot {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
     }
 }
 
 
 .wel_header {
-    width: 120%;
+    width: 130%;
     margin-left: -10%;
     border-bottom: 1px solid #D5D5D2;
     margin-bottom: 5px;
@@ -84,36 +84,36 @@
     padding-top: 10px;
     text-align: center;
     background-color: #E7E7E6;
-	h3 {
-		color: #a0a0a0;
+    h3 {
+        color: #a0a0a0;
         padding-top: 10px;
         text-shadow: 0px 2px 0px #DEDEDE;
-	}
-	p {
-		color: #a0a0a0;
-		margin: 0px;
+    }
+    p {
+        color: #a0a0a0;
+        margin: 0px;
         font-size: 0.9em;
-	}
+    }
 }
 .go-sign {
-	display: inline;
+    display: inline;
     font-size: 1.2em;
     font-weight: bold;
     right: 8%;
     bottom: 24px;
     position: absolute;
     i {
-    	margin-left: 5px;
-		transition: 0.3s;
-		color: #FEC52E;
+        margin-left: 5px;
+        transition: 0.3s;
+        color: #FEC52E;
     }
 }
 .splitter {
-	width: 100%;
-	height: 1px;
-	background-color: #D5D5D2;
-	margin-top: 5px;
-	margin-bottom: 5px;
+    width: 100%;
+    height: 1px;
+    background-color: #D5D5D2;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .splitter_light {
     width: 100%;
@@ -123,7 +123,7 @@
     margin-bottom: 5px;
 }
 .r_wrap {
-	padding: 5px 10px;
+    padding: 5px 10px;
 }
 .game_tag_link {
     color: #A0A0A0;

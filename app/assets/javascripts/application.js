@@ -348,6 +348,14 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
         //$(this).find('.hidden_hover_btn').append("Remove Friend");
         $(this).find('.hidden_hover_btn').removeClass("show_menu");
     });
+
+
+    //add id to focus commenting
+    $( ".input_field_comment" ).focus(function() {
+        $('#comment_focused').removeAttr('id');
+        $( this ).attr('id', 'comment_focused');
+    });
+
 });
 
 

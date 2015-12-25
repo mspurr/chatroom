@@ -389,6 +389,7 @@ a:focus {
   background-position-y: 5%;
   padding-bottom: 60px;
   padding-top: 5px;
+  min-height: 750px;
 }
 
 .simple_form h3 {
@@ -530,6 +531,7 @@ i {
   background-position-y: 5%;
   padding-bottom: 60px;
   padding-top: 5px;
+  min-height: 750px;
 }
 
 label {
@@ -1442,8 +1444,6 @@ label {
 }
 .user_comment {
   width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
   padding-top: 10px;
   margin-left: auto;
   margin-right: auto;
@@ -1452,6 +1452,10 @@ label {
   min-height: 50px;
   border-bottom: 1px solid #e0e0e0;
   transition: 0.2s;
+}
+.user_comment_wrap {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .user_comment:hover {
   background-color: #F0F0F0;
@@ -1469,10 +1473,11 @@ label {
   display: inline;
   margin-left: 10px;
   transition: 0.25s;
-  border-bottom: 1px solid #D5D5D2;
+  font-weight: bold;
+  text-decoration: none;
 }
 .comment_header:hover {
-  color: #9F9F9F;
+  color: #a0a0a0;
 }
 .comment_header_p {
   display: inline;
@@ -3261,7 +3266,8 @@ h3.a {
       border-color: transparent transparent #D5D5D2 transparent;
       position: absolute;
       bottom: 0px;
-      right: 1px;
+      right: 0px;
+      margin-right: 1.7%;
       z-index: 1;
       -webkit-animation-name: moveee; /* Chrome, Safari, Opera */
           -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
@@ -3467,13 +3473,13 @@ h3.a {
     font-size: 1.5em;
   }
   .game_cover {
-    height: 170px;
     a {
       height: 160px;
     }
     img {
-      height: 160px;
+      height: 110%;
     }
+    margin-bottom: 60px;
   }
 
 }
@@ -3930,4 +3936,16 @@ h3.a {
     color: #737373 !important;
     background-color: #E4E4E4;
   }
+}
+.new_comment {
+  width: 100%;
+}
+.comment_footer {
+  width: 80%;
+  padding: 8px 0px;
+  margin: 3px auto;
+  height: 33px;
+  border: none;
+  font-size: 0.82em;
+  border-top: 1px solid rgba(212, 212, 212, 0.45);
 }
