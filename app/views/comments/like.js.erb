@@ -1,0 +1,3 @@
+$('.clicked_b').hide();
+$('.clicked_b').closest('.comment_footer').append('<%= j render(:partial => "comments/like", locals: {comment: @comment}) %>');
+$('.clicked_b').remove();
