@@ -34,6 +34,9 @@
                 <p id="small_p_ex">Go explore some <%= link_to "chatrooms", chatrooms_path %> and find more favorites! </p>
               <% end %>
             <% end %>
+              <% if current_user.favorites.all.count < 1 %>
+                <p id="small_p_ex">You don't have any favorite chatrooms yet.. Go explorer some <%= link_to "chatrooms", chatrooms_path %>!</p>
+              <% end %>
           </div>
           <div id="tab3" class="tab_d">
             <p id="small_p_ex">Coming Soon, stay tuned.</p>
