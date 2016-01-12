@@ -5,15 +5,38 @@
         </div>
 
         <div class="g_tag_header">
-        <h3>Top Games</h3>
-        <% Game.all.limit(15).each do |game| %>
-            <%= link_to game.name, chatrooms_path(game: game.name), class: "game_tag_link" %>
+        <% if @game %>
+            <h3 class="game_title"><%= @game.name.capitalize %></h3>
+                <div class="col-md-4 col-md-offset-4 fav_count">
+                    <span class="fav_by_btn"><i class="fa fa-gamepad"></i><%= @game.favorited_by.count %></span>
+                </div>
+                <% if current_user.fav_games.where(name: @game.name).count > 0 %>
+                    <%= link_to favorite_game_path(@game, type: "unfavorite"), class: "unfav_btn", method: :put, remote: true do %>
+                        <span class="fav_room_btn unfav">
+                            <i class="fa fa-gamepad"></i>
+                            Unfavorite game
+                        </span>
+                    <% end %>
+                <% else %>
+                    <%= link_to favorite_game_path(@game, type: "favorite"), class: "fav_btn", method: :put, remote: true do %>
+                        <span class="fav_room_btn fav_game">
+                            <i class="fa fa-gamepad"></i>
+                            Favorite game
+                        </span>
+                    <% end %>
+                <% end %>
+        <% else %>
+            <h3>Top Games</h3>
+            <% Game.all.limit(15).each do |game| %>
+                <%= link_to game.name, chatrooms_path(game: game.name), class: "game_tag_link" %>
+            <% end %>
         <% end %>
         </div>
 
         <div class="splitter_light"></div>
 
         <div class="transitions-enabled row" id="rooms">
+
         <% @room.each do |room| %>
             <div class="col-md-4 col-xs-6 box">
             <div class="room_set">

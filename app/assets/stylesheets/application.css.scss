@@ -323,7 +323,7 @@ a:focus {
   border-top: 2px solid #D5D5D2;
   bottom: 0;
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .main_footer_grid {
@@ -560,6 +560,7 @@ label {
   background-color: #E7E7E6;
   border-right: 1px solid #D5D5D2;
   padding-top: 13px;
+  z-index: 2;
 }
 
 .menu_left_btn_grid {
@@ -1654,6 +1655,17 @@ label {
     background-color: #D8D8D8 !important;
     color: #a0a0a0 !important;
     border: 1px solid #CECECE !important;
+  }
+}
+.fav_game {
+  color: #EAFCFF;
+  border: 1px solid #2D8EE2;
+  border-bottom: 2px solid #2D86E2;
+  background-color: #43A0E2;
+  &:hover {
+    border: 1px solid #2A89DC !important;
+    border-bottom: 2px solid #2A83DE !important;
+    background-color: #3D96D7 !important;
   }
 }
 .fav_room_btn i {
@@ -3486,12 +3498,11 @@ h3.a {
   }
   .game_cover {
     a {
-      height: 160px;
+      
     }
     img {
-      height: 110%;
+      height: 200px;
     }
-    margin-bottom: 60px;
   }
 
 }
@@ -3974,4 +3985,33 @@ h3.a {
       color: #a0a0a0;
     }
   }
+}
+.front_title {
+  font-family: "Fira Sans";
+  color: #a0a0a0;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+.game_title {
+  font-size: 2.2em !important;
+  margin-bottom: 20px !important;
+}
+.fav_by_btn {
+  background-color: #E7E7E6;
+  border: 1px solid #D5D5D2;
+  padding: 0px 10px;
+  color: #A0A0A0;
+  border-radius: 10px;
+}
+.fav_count {
+  text-align: center;
+  margin-top: -8px;
+}
+.games_head {
+  height: 50px !important;
+  padding-top: 8px !important;
+}
+.home_header {
+  padding-top: 0px !important;
+  height: auto !important;
 }

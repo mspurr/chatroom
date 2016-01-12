@@ -29,7 +29,12 @@ Rails.application.routes.draw do
   end
   
   resources :users, only: [:show, :profile, :index]
-  resources :games
+  
+  resources :games do
+    member do
+      put :favorite
+    end
+  end
 
   get '/users/do/profile', to: 'users#profile', as: 'profile'
 

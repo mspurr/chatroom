@@ -1,0 +1,15 @@
+<% if current_user.fav_games.where(name: @game.name).count > 0 %>
+  <%= link_to favorite_game_path(@game, type: "unfavorite"), class: "unfav_btn", method: :put, remote: true do %>
+    <span class="fav_room_btn unfav">
+        <i class="fa fa-gamepad"></i>
+        Unfavorite game
+    </span>
+  <% end %>
+<% else %>
+  <%= link_to favorite_game_path(@game, type: "favorite"), class: "fav_btn", method: :put, remote: true do %>
+    <span class="fav_room_btn fav_game">
+        <i class="fa fa-gamepad"></i>
+        Favorite game
+    </span>
+  <% end %>
+<% end %>
