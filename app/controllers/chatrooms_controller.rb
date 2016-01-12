@@ -1,6 +1,6 @@
 class ChatroomsController < ApplicationController
   before_action :authenticate_user!, except: [:home]
-  before_action :find_room, only: [:show, :edit, :update, :destroy]
+  before_action :find_room, only: [:show, :edit, :update, :destroy, :favorite]
 
   def home
   end
@@ -46,6 +46,28 @@ class ChatroomsController < ApplicationController
   def destroy
     @room.destroy
     redirect_to root_path
+  end
+
+  # Add and remove favorite chatrooms
+  # for current_user
+  def favorite
+    type = params[:type]
+    if type == "favorite"
+      current_user.favorites << @room
+      respond_to do |format|
+        format.js { render layout: false, content_type: 'text/javascript' }
+      end
+
+    elsif type == "unfavorite"
+      current_user.favorites.delete(@room)
+      respond_to do |format|
+        format.js { render layout: false, content_type: 'text/javascript' }
+      end
+
+    else
+      # Type missing, nothing happens
+      redirect_to :back
+    end
   end
 
   private

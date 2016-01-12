@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   has_many :friendships, dependent: :destroy
   has_many :inverse_friendships, class_name: "Friendship", foreign_key: "friend_id", dependent: :destroy
+  has_many :favorite_chatrooms
+  has_many :favorites, through: :favorite_chatrooms, source: :chatroom
 
   validates :username, presence: true
   validates :username, uniqueness: true
@@ -82,4 +84,5 @@ class User < ActiveRecord::Base
   def self.find_random_user(number)
     find_random.limit(number)
   end
+
 end

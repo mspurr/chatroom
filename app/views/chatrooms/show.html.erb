@@ -1,5 +1,4 @@
     <!-- CHATROOM SITE DESIGN -->
-
     <div class="container" id="container2">
         <div class="body_fill_area">
 
@@ -313,29 +312,21 @@
 
         <!-- Chatroom site funtions buttons // Follow & Favorite //INVITE -->
         <div class="chatroom_functions">
-            <span class="follow_room_btn">
-                <i class="fa fa-eye noselect"></i>
-                <span class="upside_tooltip_box follow_tool no_wrap tool_after_follow noselect" id="square_btn_position">
-                    Unfollow this Chatroom
-                    <div class="arrow-down"></div>
+            <% if current_user.favorites(@room).count > 0 %>
+              <%= link_to favorite_chatroom_path(@room, type: "unfavorite"), class: "unfav_btn", method: :put, remote: true do %>
+                <span class="fav_room_btn unfav">
+                    <i class="fa fa-heart noselect"></i>
+                    Unfavorite room
                 </span>
-                <span class="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="square_btn_position">
-                    Follow this Chatroom
-                    <div class="arrow-down"></div>
+              <% end %>
+            <% else %>
+              <%= link_to favorite_chatroom_path(@room, type: "favorite"), class: "fav_btn", method: :put, remote: true do %>
+                <span class="fav_room_btn">
+                    <i class="fa fa-heart noselect"></i>
+                    Favorite room
                 </span>
-            </span>
-
-            <span class="fav_room_btn">
-                <i class="fa fa-heart noselect"></i>
-                <span class="upside_tooltip_box follow_tool no_wrap tool_after_fav noselect" id="square_btn_position">
-                    Unfavorite this Chatroom
-                    <div class="arrow-down"></div>
-                </span>
-                <span class="upside_tooltip_box follow_tool no_wrap tool_before_fav noselect" id="square_btn_position">
-                    Favorite this Chatroom
-                    <div class="arrow-down"></div>
-                </span>
-            </span>
+              <% end %>
+            <% end %>
         </div>
         <!-- PART END -->
 

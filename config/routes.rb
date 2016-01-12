@@ -5,12 +5,20 @@ Rails.application.routes.draw do
                                              edit: '/users/do/edit' }
 
   resources :chatrooms do
+    member do
+      put :favorite
+    end
     resources :broadcasts do
       member do
         get :like, to: 'broadcasts#like'
         get :unlike, to: 'broadcasts#unlike'
       end
-      resources :comments
+      resources :comments do
+        member do
+          get :like, to: 'comments#like'
+          get :unlike, to: 'comments#unlike'
+        end
+      end
     end
   end
 
