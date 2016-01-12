@@ -11,6 +11,7 @@ class ChatroomsController < ApplicationController
     else
       game = Game.where(name: params[:game])
       @room = Chatroom.where(game: game).order(created_at: :desc)
+      @game = Game.where(name: params[:game]).first
     end
   end
 

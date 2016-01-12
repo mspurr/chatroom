@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <div class="container" id="container2">
     <div class="body_fill_area">
-      <div class="g_tag_header">
+      <div class="g_tag_header home_header">
         <h2>Hey, <%= current_user.username.capitalize %>!</h2>
         <h5>Go explore & find people with same interests or purpose as yourself.</h5>
       </div>
@@ -17,6 +17,7 @@
         <div class="tab_content h_tab">
         <div id="tab1" class="tab_d active">
             <% FavoriteChatroom.find_random_favorite(current_user, 5).each do |favorite| %>
+            <%= link_to chatroom_path(favorite.chatroom) do %>
             <div class="chat_ad_div">
               <h6><%= favorite.chatroom.title %></h6>
               <div class="chat_ad_go">
@@ -30,12 +31,12 @@
                 <p><i class="fa fa-users"></i>Current users: 100</p>
               </div>
             </div>
-              <% if current_user.favorites.all.count < 3 %>
-                <p id="small_p_ex">Go explore some <%= link_to "chatrooms", chatrooms_path %> and find more favorites! </p>
-              <% end %>
+            <% end %>
             <% end %>
               <% if current_user.favorites.all.count < 1 %>
                 <p id="small_p_ex">You don't have any favorite chatrooms yet.. Go explorer some <%= link_to "chatrooms", chatrooms_path %>!</p>
+              <% elsif current_user.favorites.all.count < 3 %>
+                <p id="small_p_ex">Go explore some <%= link_to "chatrooms", chatrooms_path %> and find more favorites! </p>
               <% end %>
           </div>
           <div id="tab3" class="tab_d">

@@ -40,7 +40,11 @@
             <%= f.text_field :team, placeholder: "Team name", maxlength: 40, value: current_user.team %>
             <p>Location</p>
             <i class="ion-ios-location"></i>
-            <%= f.country_select :location, label: false, required: false, selected: current_user.location, include_blank: true %>
+            <% if current_user.location %>
+              <%= f.country_select :location, label: false, required: false, selected: current_user.location, include_blank: true %>
+            <% else %>
+              <%= f.country_select :location, label: false, required: false, include_blank: true %>
+            <% end %>
           </div>
         </div>
 

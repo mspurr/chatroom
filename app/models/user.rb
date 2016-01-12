@@ -2,11 +2,14 @@ class User < ActiveRecord::Base
   has_many :chatrooms
   has_many :broadcasts
   has_many :comments
+  has_many :games
 
   has_many :friendships, dependent: :destroy
   has_many :inverse_friendships, class_name: "Friendship", foreign_key: "friend_id", dependent: :destroy
   has_many :favorite_chatrooms
   has_many :favorites, through: :favorite_chatrooms, source: :chatroom
+  has_many :favorite_games
+  has_many :fav_games, through: :favorite_games, source: :game
 
   validates :username, presence: true
   validates :username, uniqueness: true

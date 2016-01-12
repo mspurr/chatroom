@@ -75,8 +75,8 @@
 
 
 .wel_header {
-    width: 130%;
-    margin-left: -10%;
+    width: 100%;
+    left: 0%;
     border-bottom: 1px solid #D5D5D2;
     margin-bottom: 5px;
     margin-top: -20px;
@@ -84,6 +84,8 @@
     padding-top: 10px;
     text-align: center;
     background-color: #E7E7E6;
+    position: absolute;
+    z-index: 1;
     h3 {
         color: #a0a0a0;
         padding-top: 10px;
@@ -151,8 +153,16 @@
     margin-top: 20px;
 }
 .g_tag_header {
+    padding-top: 40px;
     margin-top: 10px;
     padding-bottom: 5px;
+    position: relative;
+    height: 118px;
+    .fav_room_btn {
+        position: absolute;
+        left: 0.5%;
+        margin-top: -6px;
+    }
     p {
         text-align: center;
         color: #a0a0a0;

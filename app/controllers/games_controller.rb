@@ -29,6 +29,27 @@ class GamesController < ApplicationController
   def edit
   end
 
+  def favorite
+    @game = Game.find(params[:id])
+    type = params[:type]
+    if type == "favorite"
+      current_user.fav_games << @game
+      respond_to do |format|
+        format.js { render layout: false, content_type: 'text/javascript' }
+      end
+
+    elsif type == "unfavorite"
+      current_user.fav_games.delete(@game)
+      respond_to do |format|
+        format.js { render layout: false, content_type: 'text/javascript' }
+      end
+
+    else
+      # Type missing, nothing happens
+      redirect_to :back, notice: 'Nothing happened.'
+    end
+  end
+
   private
 
 end

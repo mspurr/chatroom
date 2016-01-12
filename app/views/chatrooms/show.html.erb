@@ -312,7 +312,7 @@
 
         <!-- Chatroom site funtions buttons // Follow & Favorite //INVITE -->
         <div class="chatroom_functions">
-            <% if current_user.favorites(@room).count > 0 %>
+            <% if current_user.favorites.where(title: @room.title).count > 0 %>
               <%= link_to favorite_chatroom_path(@room, type: "unfavorite"), class: "unfav_btn", method: :put, remote: true do %>
                 <span class="fav_room_btn unfav">
                     <i class="fa fa-heart noselect"></i>
