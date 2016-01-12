@@ -10,124 +10,35 @@
         <div class="col-md-7 l_sec">
         <div class="tabs" id="p_chat_tabs">
           <ul class="nav nav-tabs tabs_d">
-            <li role="presentation" class="active"><a class="alink" href="#tab1"><i class="fa fa-thumbs-up"></i>Recommended</a></li>
-            <li role="presentation"><a class="alink" href="#tab3"><i class="fa fa-heart"></i>Favorite</a></li>
+          <li role="presentation" class="active"><a class="alink" href="#tab1"><i class="fa fa-heart"></i>Favorite</a></li>
+            <li role="presentation"><a class="alink" href="#tab3"><i class="fa fa-thumbs-up"></i>Recommended</a></li>
         </ul>
 
         <div class="tab_content h_tab">
-          <div id="tab1" class="tab_d active">
+        <div id="tab1" class="tab_d active">
+            <% FavoriteChatroom.find_random_favorite(current_user, 5).each do |favorite| %>
             <div class="chat_ad_div">
-              <h6>Chatroom Title</h6>
+              <h6><%= favorite.chatroom.title %></h6>
               <div class="chat_ad_go">
                 <p>Go<i class="fa fa-angle-right"></i></p>
               </div>
               <div class="chat_ad_tag">
-                <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
+                <i class="fa fa-user"></i>Owner: <%= favorite.chatroom.user.username.capitalize %>
               </div>
               <div class="chat_title_info small_title_info">
-                <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
-                <p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
+                <p><i class="fa fa-gamepad"></i><%= favorite.chatroom.game.name %></p><span class="small_dot">·</span>
+                <p><i class="fa fa-users"></i>Current users: 100</p>
               </div>
             </div>
-
-            <div class="chat_ad_div">
-              <h6>Chatroom Title</h6>
-              <div class="chat_ad_go">
-                <p>Go<i class="fa fa-angle-right"></i></p>
-              </div>
-              <div class="chat_ad_tag">
-                <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
-              </div>
-              <div class="chat_title_info small_title_info">
-                <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
-                <p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
-              </div>
-            </div>
-
-            <div class="chat_ad_div">
-              <h6>Chatroom Title</h6>
-              <div class="chat_ad_go">
-                <p>Go<i class="fa fa-angle-right"></i></p>
-              </div>
-              <div class="chat_ad_tag">
-                  <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
-              </div>
-              <div class="chat_title_info small_title_info">
-                <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
-                <p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
-              </div>
-            </div>
-            <div class="chat_ad_div">
-              <h6>Chatroom Title</h6>
-              <div class="chat_ad_go">
-                <p>Go<i class="fa fa-angle-right"></i></p>
-              </div>
-              <div class="chat_ad_tag">
-                  <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
-              </div>
-              <div class="chat_title_info small_title_info">
-                <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
-                <p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
-              </div>
-            </div>
-
+              <% if current_user.favorites.all.count < 3 %>
+                <p id="small_p_ex">Go explore some <%= link_to "chatrooms", chatrooms_path %> and find more favorites! </p>
+              <% end %>
+            <% end %>
           </div>
           <div id="tab3" class="tab_d">
-            <div class="chat_ad_div">
-              <h6>Favorite room</h6>
-              <div class="chat_ad_go">
-                <p>Go<i class="fa fa-angle-right"></i></p>
-              </div>
-              <div class="chat_ad_tag">
-                <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
-              </div>
-              <div class="chat_title_info small_title_info">
-                <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
-                <p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
-              </div>
-            </div>
-
-            <div class="chat_ad_div">
-              <h6>Favorite room</h6>
-              <div class="chat_ad_go">
-                <p>Go<i class="fa fa-angle-right"></i></p>
-              </div>
-              <div class="chat_ad_tag">
-                <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
-              </div>
-              <div class="chat_title_info small_title_info">
-                <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
-                <p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
-              </div>
-            </div>
-
-            <div class="chat_ad_div">
-              <h6>Favorite room</h6>
-              <div class="chat_ad_go">
-                <p>Go<i class="fa fa-angle-right"></i></p>
-              </div>
-              <div class="chat_ad_tag">
-                <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
-              </div>
-              <div class="chat_title_info small_title_info">
-                <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
-                <p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
-              </div>
-            </div>
-            <div class="chat_ad_div">
-              <h6>Favorite room</h6>
-              <div class="chat_ad_go">
-                <p>Go<i class="fa fa-angle-right"></i></p>
-              </div>
-              <div class="chat_ad_tag">
-                  <i class="fa fa-tag"></i><span>League of legends</span><span class="small_dot">·</span><span>5v5</span><span class="small_dot">·</span><span>Platinum</span>
-              </div>
-              <div class="chat_title_info small_title_info">
-                <p><i class="fa fa-gamepad"></i>League of Legends</p><span class="small_dot">·</span>
-                <p><i class="fa fa-users"></i>80</p><span class="small_dot">·</span><p><i class="fa fa-keyboard-o"></i>Computer</p>
-              </div>
-            </div>
+            <p id="small_p_ex">Coming Soon, stay tuned.</p>
           </div>
+          
         </div>
       </div>
 

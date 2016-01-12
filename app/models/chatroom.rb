@@ -3,6 +3,8 @@ class Chatroom < ActiveRecord::Base
   belongs_to :game
 
   has_many :broadcasts
+  has_many :favorite_chatrooms
+  has_many :favorited_by, through: :favorite_chatrooms, source: :user 
 
   validates :game, presence: true
   validates :title, presence: true
@@ -21,4 +23,5 @@ class Chatroom < ActiveRecord::Base
   def self.find_random_room(number)
     find_random.limit(number)
   end
+
 end

@@ -1,0 +1,3 @@
+$('.clicked_fav').hide();
+$('.clicked_fav').closest('.chatroom_functions').append('<%= j render(:partial => "chatrooms/favorite", locals: {chatroom: @room}) %>');
+$('.clicked_fav').remove();

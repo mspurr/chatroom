@@ -171,22 +171,6 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
     $(".tool_after_fav").hide();
     $(".tool_before_fav").show();
 
-    $('.fav_room_btn').click(function() {
-        if($(this).attr("id") == "fav_room_btn_click") {
-                $(this).attr("id", "none");
-                $(".tool_after_fav").hide();
-                $(".tool_before_fav").show();
-                $(".tool_before_fav").attr("id", "square_btn_position");
-        }
-        else {
-            $(this).attr("id", "fav_room_btn_click")
-            $(".tool_after_fav").show();
-            $(".tool_before_fav").hide();
-
-        }
-
-    });
-
     $('.follow_room_btn').click(function() {
         if($(this).attr("id") == "follow_room_btn_click") {
                 $(this).attr("id", "none");
@@ -356,6 +340,16 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
         $( this ).attr('id', 'comment_focused');
     });
 
+    // Favorite btn javascript
+    $('body').on('click','.fav_btn', function(){
+        $(this).addClass('clicked_fav');
+    });
+
+    $('body').on('click','.unfav_btn', function(){
+        $(this).addClass('clicked_fav');
+    });
+
+    
 });
 
 

@@ -1,0 +1,15 @@
+<% if current_user.favorites(@room).count > 0 %>
+  <%= link_to favorite_chatroom_path(@room, type: "unfavorite"), class: "unfav_btn", method: :put, remote: true do %>
+    <span class="fav_room_btn unfav">
+        <i class="fa fa-heart noselect"></i>
+        Unfavorite room
+    </span>
+  <% end %>
+<% else %>
+  <%= link_to favorite_chatroom_path(@room, type: "favorite"), class: "fav_btn", method: :put, remote: true do %>
+    <span class="fav_room_btn">
+        <i class="fa fa-heart noselect"></i>
+        Favorite room
+    </span>
+  <% end %>
+<% end %>

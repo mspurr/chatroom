@@ -1633,26 +1633,35 @@ label {
   margin-right: 20px;
   color: #FFFFFF;
   border-radius: 2px;
-  border: 1px solid #BD6767;
-  border-bottom: 2px solid #BD6767; 
-  background-color: #D56969;
-  box-shadow: 0px 0px 2px #B8B8B8;
+  border: 1px solid #E2B12D;
+  border-bottom: 2px solid #E2B12D;
+  background-color: #FEC52E;
+  box-shadow: 0px 0px 2px rgba(184, 184, 184, 0.37);
   transition: 0.2s;
   cursor: pointer;
+  font-size: 0.85em;
+  font-family: 'Fira Sans';
+  font-weight: bold;
+}
+.unfav {
+  background-color: #D8D8D8;
+  color: #a0a0a0;
+  border: 1px solid #CECECE;
+  opacity: 0.7;
+  transition: 0.15s;
+  &:hover {
+    opacity: 1;
+    background-color: #D8D8D8 !important;
+    color: #a0a0a0 !important;
+    border: 1px solid #CECECE !important;
+  }
 }
 .fav_room_btn i {
   margin: 0px;
-  font-size: 1.0em;
-}
-.follow_room_btn:hover .follow_tool {
-  opacity: 1.0;
-}
-.fav_room_btn:hover .follow_tool {
-  opacity: 1.0;
 }
 .fav_room_btn:hover {
-  background-color: #DC7E7E;
-  border-bottom: 2px solid #B76C6C;
+  background-color: #F7BD2A;
+  border-bottom: 2px solid #D9AA2B;
 }
 .follow_room_btn:hover {
   background-color: #E1E1DF;
@@ -3951,4 +3960,18 @@ h3.a {
   border: none;
   font-size: 0.82em;
   border-top: 1px solid rgba(212, 212, 212, 0.45);
+}
+#small_p_ex {
+  text-align: center;
+  color: #a0a0a0;
+  font-size: 0.9em;
+  margin: 25px auto;
+  a {
+    color: #909090;
+    text-decoration: underline;
+    transition: 0.15s;
+    &:hover {
+      color: #a0a0a0;
+    }
+  }
 }
