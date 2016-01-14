@@ -2,7 +2,9 @@
     <div class="user_comment">
       <div class="user_comment_wrap">
         <%= image_tag comment.user.avatar(:thumb) %>
-        <a href="#"><span class="comment_header"><%= comment.user.username.capitalize %></span></a>
+        <%= link_to user_path(comment.user.username) do %>
+        <span class="comment_header"><%= comment.user.username.capitalize %></span>
+        <% end %>
 
         <p class="comment_header_p"><span class="small_dot">·</span><%= distance_of_time_in_words(Time.now, comment.created_at) %> ago</p><br/>
         <p class="user_comment_text"><%= comment.body %><p class="comment_functions_p">
@@ -21,6 +23,7 @@
     </div>
         <!-- END -->
         <!-- REPLY COMMENT INPUT SECTION -->
+        <!-- 
         <div class="reply_comm_section">
             <div class="user_comment_input" id="comm_reply_input">
                 <%= image_tag current_user.avatar(:thumb) %>
@@ -28,6 +31,8 @@
                 <input type="submit" value="Post Comment" class="input_comment_btn">
             </div>
         </div>
+        -->
         <!-- END COMMENT INPUT -->
+
     </div>
 

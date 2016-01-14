@@ -35,7 +35,6 @@ $(document).ready(function() {
         $('#menu_big').hide(300);
         $('#menu_small').show(300);
         $('#container2').attr('id', 'container3');
-        $('.p_user_friend').addClass('p_friend_height');
         $('.int_game_div').addClass('int_game_height');
         $('#rooms').masonry({
             itemSelector: '.box',
@@ -47,7 +46,6 @@ $(document).ready(function() {
         $('#menu_big').show(300);
         $('#menu_small').hide(300);
         $('#container3').attr('id', 'container2');
-        $('.p_user_friend').removeClass('p_friend_height');
         $('.int_game_div').removeClass('int_game_height');
 
         setTimeout(function() {
