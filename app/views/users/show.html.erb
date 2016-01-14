@@ -105,7 +105,7 @@
             <span class="p_description_title">Total: <%= @friend_count %></span>
             <div class="friendlist_area">
                 <% @friends.each do |user| %>
-                  <%= link_to user_path(user.username), class: "p_user_friend" do %>
+                  <%= link_to user_path(user.username), class: "p_user_friend p_friend_height" do %>
                     <%= image_tag user.avatar.url(:thumb) %>
                   <% end %>
                 <% end %>
