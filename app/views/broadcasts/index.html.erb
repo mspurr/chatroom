@@ -1,7 +1,7 @@
 <div class="container" id="container2">
 		<div class="body_fill_area">
-		<% @broadcasts.each do |broad| %>
-			<p><%= broad.content %>
+		<% @broadcasts.each do |broadcast| %>
+			<%= render partial: "broadcasts/show", locals: {broadcast: broadcast} %>
 			<br/>
 		<% end %>
 		</div>

@@ -4015,3 +4015,33 @@ h3.a {
   padding-top: 0px !important;
   height: auto !important;
 }
+.b_tag_link {
+  color: #737373;
+  border-radius: 5px;
+  padding-right: 5px;
+  text-decoration: underline;
+  transition: 0.15s;
+  &:hover {
+    color: #a0a0a0;
+    text-decoration: underline;
+  }
+}
+.broadcast_tag_list {
+  margin-top: 60px;
+  input {
+    width: 75%;
+    background-color: #EFEFEF;
+    margin-left: 12px;
+    font-size: 0.9em;
+    outline: none;
+    padding: 5px 5px 5px 5px;
+    border: 1px solid #D5D5D2;
+    resize: none;
+    display: inline-block;
+    transition: 0.2s;
+    margin-bottom: 9px;
+    &:focus {
+      background-color: #F9F9F9;
+    }
+  }
+}

@@ -12,6 +12,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'country_select'
 gem 'iso_country_codes'
 gem 'impressionist'
+gem 'acts-as-taggable-on', '~> 3.5'
 
 # Assets
 gem 'bootstrap-sass', '~> 3.3.5.1'
