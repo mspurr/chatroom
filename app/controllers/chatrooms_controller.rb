@@ -3,6 +3,11 @@ class ChatroomsController < ApplicationController
   before_action :find_room, only: [:show, :edit, :update, :destroy, :favorite]
 
   def home
+    if params[:tag]
+      @broadcast = Broadcast.tagged_with(params[:tag])
+    else
+      @broadcast = Broadcast.all
+    end
   end
 
   def index

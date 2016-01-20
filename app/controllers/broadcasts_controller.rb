@@ -16,7 +16,7 @@ class BroadcastsController < ApplicationController
 
   def create
     @room = Chatroom.find(params[:chatroom_id])
-    @broadcast = Broadcast.create(params[:broadcast].permit(:content, :image))
+    @broadcast = Broadcast.create(params[:broadcast].permit(:content, :image, :tag_list))
     @broadcast.user_id = current_user.id
     @broadcast.chatroom_id = @room.id
 
@@ -73,7 +73,7 @@ class BroadcastsController < ApplicationController
   end
   
   def broadcast_params
-    params.require(:broadcast).permit(:content, :image)
+    params.require(:broadcast).permit(:content, :image, :tag_list)
   end
 
 end

@@ -64,7 +64,10 @@
       </div>
       <div class="top_broadcasts">
         <h4>Top Broadcasts</h4>
-        <% Broadcast.featured.all.each do |broadcast| %>
+        <% if params[:tag] %>
+          <div class=" col-md-12 tag_header">Browsing broadcasts tagged with: <span><%= params[:tag].capitalize %></span></div>
+        <% end %>
+        <% @broadcast.featured.all.each do |broadcast| %>
           <div class="col-md-12">
             <p class="top_p_info">Broadcast taken from: <span><%= link_to chatroom_path(broadcast.chatroom) do %><i class="fa fa-comments-o"></i><%= broadcast.chatroom.title %><% end %></span></p>
             <%= render partial: "broadcasts/show", locals: {broadcast: broadcast} %>
@@ -72,6 +75,7 @@
           </div>
         <% end %>
       </div>
+
     </div>
     <div class="col-md-4 col-md-offset-1 r_sec">
       <div class="friend_ac_sec">
@@ -128,22 +132,9 @@
           <h4><i class="fa fa-tags"></i>Popular tags</h4>
         </div>
           <div class="used_tags_list p_int_list f_tags_list">
-            <span>Gaming</span>
-            <span>Computer</span>
-            <span>Playstation 4</span>
-            <span>Xbox one</span>
-            <span>Multiplayer games</span>
-            <span>Indie</span>
-            <span>Multiplayer games</span>
-            <span>Indie</span>
-            <span>Gaming</span>
-            <span>Computer</span>
-            <span>Playstation 4</span>
-            <span>Xbox one</span>
-            <span>Multiplayer games</span>
-            <span>Indie</span>
-            <span>Multiplayer games</span>
-            <span>Indie</span>
+            <% tag_cloud Broadcast.tag_counts, %w[s m l] do |tag, css_class| %>
+              <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+            <% end %>
           </div>
         </div>
         <div class="exp_sec">

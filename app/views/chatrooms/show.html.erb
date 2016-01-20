@@ -482,35 +482,25 @@
                 <h4>About</h4>
                 <p><%= @room.description %></p>
                 <div class="chatroom_info_icons">
-                    <i class="fa fa-tags"></i>
-                    <span class="poster_tag_link">League of legends</span><span class="small_dot">·</span><span class="poster_tag_link">5v5</span><span class="small_dot">·</span><span class="poster_tag_link">Platinum</span>
+                    
                 </div>
                 <div class="chatroom_info_icons border_bottom">
                     <i class="fa fa-globe"></i>
                     <span class="small_dot">·</span>
                     <i class="fa fa-calendar-o"></i><span class="small_size">Chatroom created <%= distance_of_time_in_words(Time.now, @room.created_at) %> ago.</span>
                 </div>
-                <h5>Chatroom administators</h5>
+                <h5>Chatroom administator</h5>
                 <div class="admin_list">
                     <div class="admin_img_status">
-                        <%= image_tag 'pb.jpg' %>
-                        <div class="admin_status_icon">
-                        </div>
-                    </div>
-                    <div class="admin_img_status">
-                        <%= image_tag 'pb2.png' %>
-                        <div class="admin_status_icon" id="offline_icon">
-                        </div>
-                    </div>
-                    <div class="admin_img_status">
-                        <%= image_tag 'gaben.png' %>
-                        <div class="admin_status_icon" id="offline_icon">
-                        </div>
-                    </div>
-                    <div class="admin_img_status">
-                        <%= image_tag 'pb2.gif' %>
-                        <div class="admin_status_icon">
-                        </div>
+                        <%= image_tag @room.user.avatar.url(:thumb) %>
+                        <% if @room.user.last_seen_at > 10.minutes.ago %>
+                            <div class="admin_status_icon">
+                            </div>
+                        <% else %>
+                            <div class="admin_status_icon" id="offline_icon">
+                            </div>
+                        <% end %>
+                        
                     </div>
                 </div>
             </div>
@@ -589,6 +579,11 @@
         <% end %>
         </div>
 
+
+
+
+
+        <!-- BROADCAST WITH COMMENTS (TEMPLATE)
         <div class="broadcastwindow">
             <div class="broadcastwindow_header">
                 <div class="recent_broadcast_icon">
@@ -640,7 +635,7 @@
 
             <div class="post_comment_area">
 
-                <!-- USER COMMENT -->
+
                 <div class="comm_with_reply">
                     <div class="user_comment">
                         <%= image_tag 'pb2.png' %>
@@ -655,8 +650,7 @@
                             <i class="fa fa-thumbs-up thumb_icon"></i>98 Thumbs up<span class="small_dot">·</span><span class="small_functions_link thumbs_up">Thumbs up this comment</span><span class="small_functions_link thumbs_down">Remove thumbs up</span></p>
                             <p class="broadcast_float_right comment_functions_p"><i class="fa fa-comments-o"></i>2 Comments<span class="small_dot">·</span><span class="small_functions_link reply_btn noselect">Reply</span></p></p>
                         </div>
-                        <!-- END -->
-                        <!-- REPLY COMMENT INPUT SECTION -->
+
                         <div class="reply_comm_section">
                             <div class="user_comment_input" id="comm_reply_input">
                                 <%= image_tag 'gaben.png' %>
@@ -664,10 +658,9 @@
                                 <input type="submit" value="Post Comment" class="input_comment_btn">
                             </div>
                         </div>
-                        <!-- END COMMENT INPUT -->
+
                     </div>
 
-                    <!-- USER COMMENT REPLY -->
                     <div class="user_comment user_comment_reply">
                         <%= image_tag 'pb2.png' %>
                         <a href="#"><span class="comment_header">Usernamislongwtfe</span></a>
@@ -679,7 +672,6 @@
                         <p class="comment_header_p"><span class="small_dot">·</span>10 minutes ago.</p><br/>
                         <p class="user_comment_text">This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!<p class="comment_functions_p"><i class="fa fa-thumbs-up thumb_icon"></i>98 Thumbs up<span class="small_dot">·</span><span class="small_functions_link thumbs_up">Thumbs up this comment</span><span class="small_functions_link thumbs_down">Remove thumbs up</span></p>
                     </div>
-                    <!-- END -->
 
 
                     <div class="user_comment user_comment_reply">
@@ -689,7 +681,7 @@
                         <p class="user_comment_text">This is a random comment. <i class="fa fa-smile-o"></i><p class="comment_functions_p"><i class="fa fa-thumbs-up thumb_icon"></i>98 Thumbs up<span class="small_dot">·</span><span class="small_functions_link thumbs_up">Thumbs up this comment</span><span class="small_functions_link thumbs_down">Remove thumbs up</span></p>
                     </div>
 
-                    <!-- USER COMMENT -->
+
                     <div class="comm_with_reply">
                         <div class="user_comment">
                             <%= image_tag 'pb2.png' %>
@@ -704,8 +696,7 @@
                                 <i class="fa fa-thumbs-up thumb_icon"></i>98 Thumbs up<span class="small_dot">·</span><span class="small_functions_link thumbs_up">Thumbs up this comment</span><span class="small_functions_link thumbs_down">Remove thumbs up</span></p>
                                 <p class="broadcast_float_right comment_functions_p"><i class="fa fa-comments-o"></i>2 Comments<span class="small_dot">·</span><span class="small_functions_link reply_btn noselect">Reply</span></p></p>
                             </div>
-                            <!-- END -->
-                            <!-- REPLY COMMENT INPUT SECTION -->
+
                             <div class="reply_comm_section">
                                 <div class="user_comment_input" id="comm_reply_input">
                                     <%= image_tag 'gaben.png' %>
@@ -713,10 +704,12 @@
                                     <input type="submit" value="Post Comment" class="input_comment_btn">
                                 </div>
                             </div>
-                            <!-- END COMMENT INPUT -->
+
                         </div>
                     </div>
                 </div>
+                -->
+
             </div>
         </div>
     </div>

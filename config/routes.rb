@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   end
 
   get '/users/do/profile', to: 'users#profile', as: 'profile'
+  get '/tags/:tag', to: 'chatrooms#home', as: :tag
 
   root 'chatrooms#home'
 end

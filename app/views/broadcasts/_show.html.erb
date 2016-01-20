@@ -19,7 +19,11 @@
                 <div class="user_poster_info_text">
                     <a href="<%= user_path(broadcast.user.username) %>"><span class="header_p_link"><%= broadcast.user.username.capitalize %></span></a>
                     <p class="poster_info_p"><i class="fa fa-clock-o"></i>Posted <%= distance_of_time_in_words(Time.now, broadcast.created_at) %> ago.</p>
-                    <p class="poster_info_p"><i class="fa fa-tag"></i><span class="poster_tag_link">League of legends</span><span>·</span><span class="poster_tag_link">5v5</span><span>·</span><span class="poster_tag_link">Platinum</span></p>
+                    <% if broadcast.tag_list.count > 0 %>
+                    <p class="poster_info_p"><i class="fa fa-tag"></i><%= raw broadcast.tag_list.map { |t| link_to t, tag_path(t), class: "b_tag_link" }.join(", ") %></p>
+                    <% else %>
+                        <p class="poster_info_p"><i class="fa fa-tag"></i>No tags used.</p>
+                    <% end %>
                 </div>
             </div>
             <div class="user_post_area">
