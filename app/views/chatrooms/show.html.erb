@@ -482,35 +482,25 @@
                 <h4>About</h4>
                 <p><%= @room.description %></p>
                 <div class="chatroom_info_icons">
-                    <i class="fa fa-tags"></i>
-                    <span class="poster_tag_link">League of legends</span><span class="small_dot">·</span><span class="poster_tag_link">5v5</span><span class="small_dot">·</span><span class="poster_tag_link">Platinum</span>
+                    
                 </div>
                 <div class="chatroom_info_icons border_bottom">
                     <i class="fa fa-globe"></i>
                     <span class="small_dot">·</span>
                     <i class="fa fa-calendar-o"></i><span class="small_size">Chatroom created <%= distance_of_time_in_words(Time.now, @room.created_at) %> ago.</span>
                 </div>
-                <h5>Chatroom administators</h5>
+                <h5>Chatroom administator</h5>
                 <div class="admin_list">
                     <div class="admin_img_status">
-                        <%= image_tag 'pb.jpg' %>
-                        <div class="admin_status_icon">
-                        </div>
-                    </div>
-                    <div class="admin_img_status">
-                        <%= image_tag 'pb2.png' %>
-                        <div class="admin_status_icon" id="offline_icon">
-                        </div>
-                    </div>
-                    <div class="admin_img_status">
-                        <%= image_tag 'gaben.png' %>
-                        <div class="admin_status_icon" id="offline_icon">
-                        </div>
-                    </div>
-                    <div class="admin_img_status">
-                        <%= image_tag 'pb2.gif' %>
-                        <div class="admin_status_icon">
-                        </div>
+                        <%= image_tag @room.user.avatar.url(:thumb) %>
+                        <% if @room.user.last_seen_at > 10.minutes.ago %>
+                            <div class="admin_status_icon">
+                            </div>
+                        <% else %>
+                            <div class="admin_status_icon" id="offline_icon">
+                            </div>
+                        <% end %>
+                        
                     </div>
                 </div>
             </div>

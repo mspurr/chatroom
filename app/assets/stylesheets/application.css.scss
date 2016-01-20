@@ -4045,3 +4045,27 @@ h3.a {
     }
   }
 }
+.tag_header {
+  background-color: rgba(245, 186, 0, 0.76);
+  padding: 10px !important;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #F1F1F1;
+  box-shadow: 0px 0px 1px #B5B5B5;
+  span {
+    font-size: 1.25em;
+    text-shadow: 0px 1px 1px rgba(181, 146, 94, 0.59);
+    padding-left: 5px;
+  }
+}
+.l {
+  font-size: 1.0em !important;
+}
+.m {
+  font-size: 0.9em !important;
+}
+.s {
+  font-size: 0.8em !important;
+}
