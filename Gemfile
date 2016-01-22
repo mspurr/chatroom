@@ -2,17 +2,18 @@ ruby '2.2.3'
 
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.1'
+gem 'rails', '5.0.0.beta1'
+# gem 'railties', '~> 5.0', '>= 5.0.0.beta1'
 
 # ORM
 gem 'pg'
-gem 'devise', '~> 3.5.2'
+gem 'devise', github: 'plataformatec/devise'
 gem 'paperclip', '~> 4.3.0'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'country_select'
 gem 'iso_country_codes'
 gem 'impressionist'
-gem 'acts-as-taggable-on', '~> 3.5'
+gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
 
 # Assets
 gem 'bootstrap-sass', '~> 3.3.5.1'
@@ -29,7 +30,7 @@ gem 'uglifier', '>= 1.3.0'
 # Templating
 gem 'coffee-rails', '~> 4.1.0'
 
-gem 'simple_form', '~> 3.1.1'
+gem 'simple_form'
 
 group :development do
   gem 'better_errors'
