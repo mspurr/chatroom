@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   attr_accessor :login
 
   # For views count
-  is_impressionable
+  # is_impressionable
 
   def request_friendship(user_2)
     self.friendships.create(friend: user_2)

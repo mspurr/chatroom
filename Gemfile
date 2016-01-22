@@ -12,7 +12,7 @@ gem 'paperclip', '~> 4.3.0'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'country_select'
 gem 'iso_country_codes'
-gem 'impressionist'
+# gem 'impressionist', github: 'charlotte-ruby/impressionist'
 gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
 
 # Assets

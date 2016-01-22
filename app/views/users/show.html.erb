@@ -42,7 +42,7 @@
             <div class="about_list">
                 <ul>
                     <li>
-                        <i class="ion-android-time p_mem_icon"></i> 
+                        <i class="ion-android-time p_mem_icon"></i>
                         Member since:
                         <span class="p_about_list_input">
                             <%= @user.created_at.strftime("%d %B %Y") %>
@@ -50,19 +50,19 @@
                     </li>
                     <li>
                         <i class="fa fa-undo"></i> Last seen:
-                        <span class="p_about_list_input"> 
+                        <span class="p_about_list_input">
                             <%= distance_of_time_in_words(Time.now, @user.last_seen_at) %> ago
                         </span>
                     </li>
                     <li>
-                        <i class="fa fa-users"></i> 
-                        Team: 
+                        <i class="fa fa-users"></i>
+                        Team:
                         <span class="p_about_list_input">
                             <%= @user.team %>
                         </span>
                     </li>
                     <li>
-                        <i class="fa fa-link p_mem_icon"></i> 
+                        <i class="fa fa-link p_mem_icon"></i>
                         Link:
                         <% if @user.links? %>
                         <%= link_to "http://" + @user.links, target: "_blank" do %>
@@ -73,7 +73,7 @@
                         <% end %>
                     </li>
                     <li>
-                        <i class="ion-ios-location loc_icon"></i> 
+                        <i class="ion-ios-location loc_icon"></i>
                         Location:
                         <span class="p_about_list_input">
                             <%= IsoCountryCodes.find(@user.location).name if @user.location.present? %>
@@ -81,8 +81,7 @@
                     </li>
                     <li>
                         <i class="fa fa-eye"></i> Profile Views:
-                        <span class="p_about_list_input"> 
-                            <%= @user.impressionist_count(:filter=>:ip_address) %>
+                        <span class="p_about_list_input">
                         </span>
                     </li>
                 </ul>
@@ -93,7 +92,7 @@
             <div class="description_area">
                 <span class="p_description_title">About me:</span>
                 <p class="p_description">
-                <%= @user.about %> 
+                <%= @user.about %>
                 </p>
             </div>
             <!-- end profile description -->
@@ -109,15 +108,15 @@
                     <%= image_tag user.avatar.url(:thumb) %>
                   <% end %>
                 <% end %>
-                
-                
+
+
             </div>
 
 
             <!-- End Friendlist -->
         </div>
 
-        
+
 
         <div class="p_default_window one_win">
             <% if @user.last_seen_at > 10.minutes.ago %>
@@ -201,7 +200,7 @@
                     </div>
 
                     <div id="tab5" class="tab_d">
-                        
+
                         <span class="p_description_title">Games of my interest:</span>
                         <p class="list_game_a">
                             <a href="#" class="alink">Browse all games</a><i class="fa fa-angle-right"></i>
@@ -359,7 +358,7 @@
                         </div>
 
                         <% end %>
-                        
+
                     </div>
                     <div id="tab3" class="tab_d">
                         <div class="chat_ad_div">
@@ -423,7 +422,7 @@
 
         </div>
         </div>
-        
+
 
         <div class="p_default_window about_win" id="Explore_win">
             <div class="ex_people_area">
