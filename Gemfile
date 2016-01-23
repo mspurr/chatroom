@@ -13,6 +13,7 @@ gem 'country_select'
 gem 'iso_country_codes'
 gem 'impressionist'
 gem 'acts-as-taggable-on', '~> 3.5'
+gem 'searchkick'
 
 # Assets
 gem 'bootstrap-sass', '~> 3.3.5.1'
