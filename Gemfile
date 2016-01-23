@@ -13,6 +13,7 @@ gem 'country_select'
 gem 'iso_country_codes'
 gem 'impressionist'
 gem 'acts-as-taggable-on', '~> 3.5'
+gem 'searchkick'
 
 # Assets
 gem 'bootstrap-sass', '~> 3.3.5.1'
@@ -20,6 +21,7 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks', '~> 2.1.0'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'turbolinks'
+gem 'jquery-ui-rails'
 
 
 # Asset compilation

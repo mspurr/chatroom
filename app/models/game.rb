@@ -13,4 +13,6 @@ class Game < ActiveRecord::Base
   validates_attachment_content_type :thumb, content_type: /\Aimage\/.*\Z/
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
 
+  searchkick text_start: [:name]
+
 end

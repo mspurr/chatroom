@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require masonry/jquery.masonry
 //= require bootstrap-sprockets
 //= require_tree .
@@ -347,7 +348,11 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
         $(this).addClass('clicked_fav');
     });
 
-    
+    // autocomplete search function
+    $( "#searchq" ).autocomplete({
+      source: "/search/autocomplete",
+      minLength: 2
+    });
 });
 
 

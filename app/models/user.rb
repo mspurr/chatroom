@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
 
   acts_as_voter
+  searchkick text_start: [:username]
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
          :trackable, :validatable

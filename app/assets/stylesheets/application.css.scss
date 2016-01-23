@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require jquery-ui
  *= require 'masonry/transitions'
  */
 
@@ -4068,4 +4069,113 @@ h3.a {
 }
 .s {
   font-size: 0.8em !important;
+}
+
+ul.ui-autocomplete {
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #D5D5D2;
+    border-top: none;
+    cursor: pointer;
+    z-index: 2000;
+    box-shadow: 0px 2px 4px rgba(125, 125, 125, 0.35);
+    li {
+        background-color: rgb(241, 241, 241) !important;
+        border-top: 1px solid #ddd;
+        margin: 0 !important;
+        padding: 10px 10px !important;
+        transition: 0.2s;
+        color: #a0a0a0;
+        font-size: 0.85em;
+        &:hover {
+            background-color: #F7F7F7 !important;
+            border-top: 1px solid #D5D5D2;
+            border-left: 2px solid #FFC600;
+            outline: none;
+        }
+    }
+    .ui-state-focus {
+      color: #a0a0a0 !important;
+      border-top: 1px solid #D5D5D2;
+      border-right: none;
+      border-bottom: none;
+      border-left: 2px solid #FFC600;
+      background: none;
+      background-color: #F7F7F7 !important;
+      outline: none;
+    }
+}
+
+.searching {
+  p {
+    color: #a0a0a0;
+  }
+  h3 {
+    font-family: 'Fira Sans';
+    font-size: 1.6em;
+    color: #a0a0a0;
+    margin-bottom: 5px;
+  }
+  .user {
+    height: 80px;
+    background-color: #E7E7E6;
+    border: 1px solid #D5D5D2;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    img {
+      width: 60px;
+      margin-top: 9px;
+      border-radius: 3px;
+    }
+    p {
+      display: inline;
+      position: absolute;
+      top: 10px;
+      left: 92px;
+      font-size: 1.1em;
+    }
+    a {
+      color: #a0a0a0;
+      &:hover {
+        color: #a0a0a0;
+      }
+    }
+    .default_btn_gray {
+      bottom: 20%;
+      left: 15.3%;
+      right: inherit;
+    }
+    span {
+      margin-left: 5px;
+      font-size: 0.85em;
+      color: #a0a0a0;
+      .loc_icon {
+        margin-right: 9px;
+      }
+      .mar_icon {
+        margin-right: 7px;
+        margin-left: 2px;
+      }
+    }
+  }
+}
+.users_search_list {
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+.user_outer {
+  margin-bottom: 20px;
+}
+.s_user_info {
+  height: 65px;
+  border-left: 2px solid #D2D2D2;
+  width: 24%;
+  right: 23px;
+  position: absolute;
+  top: 7px;
+  padding: 3px;
 }

@@ -1,0 +1,75 @@
+<div class="container" id="container2">
+  <div class="body_fill_area">
+    <div class="g_tag_header home_header">
+      <h2>Search Results</h2>
+      <h5>Found the best results based on your search input</h5>
+    </div>
+    <div class="splitter_light"></div>
+    <div class="row searching">
+      <h3>Chatrooms</h3>
+      <% if @chatrooms.suggestions.any? %>
+        <p>Did you mean: <%= @chatrooms.suggestions.first %>?</p>
+      <% end %>
+      <div class="transitions-enabled row" id="rooms">
+      <% @chatrooms.each do |chatroom| %>
+        <div class="col-md-4 col-xs-6 box">
+          <div class="room_set">
+            <a href="<%= chatroom_path(chatroom) %>">
+              <%= image_tag chatroom.game.thumb.url(:medium) %>
+              <div class="r_wrap">
+                  <p class="game_tag_t"><i class="fa fa-gamepad"></i><%= chatroom.game.name %></p>
+                  <h3><%= chatroom.title %></h3>
+                  <div class="splitter"></div>
+
+
+                  <p><%= truncate chatroom.description, length: 200 %></p>
+              </div>
+              <div class="foot">
+                  <p><i class="fa fa-child"></i><%= chatroom.user.username.capitalize %><span class="small_dot">·</span><i class="fa fa-users"></i>24</p>
+              </div>
+              <div class="go-sign">
+                  <p>Go<i class="fa fa-angle-right" id="spin"></i></p>
+              </div>
+            </a>
+          </div>
+        </div>
+      <% end %>
+      </div>
+      <br/>
+      <h3>Games</h3>
+      <div class="row games_list">
+        <% @games.each do |game| %>
+          <div class="col-md-2 game_cover">
+            <a href="<%= chatrooms_path(game: game.name) %>">
+              <%= image_tag game.cover.url(:medium) %>
+              <p>
+              <%= truncate game.name, length: 35 %>
+              <i class="fa fa-angle-right"></i>
+              </p>
+            </a>
+          </div>
+        <% end %>
+      </div>
+      <br/>
+      <h3>Users</h3>
+      <div class="users_search_list">
+      <% @users.each do |user| %>
+        <div class="col-md-6 user_outer">
+          <div class="user">
+            <%= image_tag user.avatar.url(:thumb) %>
+            <p><%= link_to user.username.capitalize, user_path(user.username) %></p>
+            <%= action_buttons(user)%>
+            <div class="s_user_info">
+              <span><i class="ion-android-time p_mem_icon"></i><%= user.created_at.strftime("%d %B %Y") %></span>
+              <br/>
+              <span><i class="ion-ios-location loc_icon"></i><%= IsoCountryCodes.find(user.location).name if user.location.present? %></span>
+              <br/>
+              <span><i class="fa fa-undo"></i><%= distance_of_time_in_words(Time.now, user.last_seen_at) %> ago</span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

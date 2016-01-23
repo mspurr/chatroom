@@ -132,7 +132,7 @@
           <h4><i class="fa fa-tags"></i>Popular tags</h4>
         </div>
           <div class="used_tags_list p_int_list f_tags_list">
-            <% tag_cloud Broadcast.tag_counts, %w[s m l] do |tag, css_class| %>
+            <% tag_cloud Broadcast.tag_counts.limit(25), %w[s m l] do |tag, css_class| %>
               <%= link_to tag.name, tag_path(tag.name), class: css_class %>
             <% end %>
           </div>
