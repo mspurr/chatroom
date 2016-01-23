@@ -113,6 +113,8 @@ GEM
     jquery-turbolinks (2.1.0)
       railties (>= 3.1.0)
       turbolinks
+    jquery-ui-rails (5.0.5)
+      railties (>= 3.2.16)
     json (1.8.3)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
@@ -238,6 +240,7 @@ DEPENDENCIES
   iso_country_codes
   jquery-rails
   jquery-turbolinks (~> 2.1.0)
+  jquery-ui-rails
   masonry-rails (~> 0.2.4)
   paperclip (~> 4.3.0)
   pg

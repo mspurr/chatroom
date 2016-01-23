@@ -10,7 +10,7 @@ class Chatroom < ActiveRecord::Base
   validates :title, presence: true
   validates :description, presence: true
 
-  searchkick
+  searchkick text_start: [:title], suggest: [:title]
 
   def game_name
     game.try :name

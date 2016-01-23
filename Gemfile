@@ -21,6 +21,7 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks', '~> 2.1.0'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'turbolinks'
+gem 'jquery-ui-rails'
 
 
 # Asset compilation
