@@ -1,5 +1,9 @@
 class GamesController < ApplicationController
   def index
+    if params[:sort] == "favorites"
+      @fav = true
+      @game = current_user.fav_games
+    end
   end
 
   def show
