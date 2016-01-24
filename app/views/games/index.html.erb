@@ -1,3 +1,6 @@
+<% if @fav %>
+  <%= render 'games/favorite_games' %>
+<% else %>
 <div class="container" id="container2">
   <div class="body_fill_area">
     
@@ -24,3 +27,4 @@
 
   </div>
 </div>
+<% end %>

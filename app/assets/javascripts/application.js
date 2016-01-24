@@ -353,6 +353,22 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
       source: "/search/autocomplete",
       minLength: 2
     });
+
+    //menu-left favorite dropdown
+    $('#fav_dropdown').hide();
+
+    $('#fav_btn_drop').on('click', function() {
+        $('#fav_dropdown').slideToggle(100);
+        if($('#fav_dropdown_icon').hasClass('ion-arrow-down-b')){
+           $('#fav_dropdown_icon').removeClass();
+           $('#fav_dropdown_icon').addClass('ion-arrow-right-b');
+        }else{
+           $('#fav_dropdown_icon').removeClass();
+           $('#fav_dropdown_icon').addClass('ion-arrow-down-b');
+        }
+    });
+
+
 });
 
 

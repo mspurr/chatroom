@@ -11,7 +11,10 @@ class ChatroomsController < ApplicationController
   end
 
   def index
-    if params[:game].blank?
+    if params[:sort] == "favorites"
+      @fav = true
+      @room = current_user.favorites
+    elsif params[:game].blank?
       @room = Chatroom.order(created_at: :desc)
     else
       game = Game.where(name: params[:game])
