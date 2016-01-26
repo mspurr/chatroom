@@ -1,0 +1,22 @@
+<div class="container" id="container2">
+  <div class="body_fill_area">
+    <div class="g_tag_header home_header">
+      <h2>Your Favorite Games</h2>
+      <h5>Here's a list of all the games that you've marked as favorite.</h5>
+    </div>
+    <div class="splitter_light"></div>
+      <div class="row games_list">
+        <% @game.each do |game| %>
+          <div class="col-md-2 game_cover">
+            <a href="<%= chatrooms_path(game: game.name) %>">
+              <%= image_tag game.cover.url(:medium) %>
+              <p>
+              <%= truncate game.name, length: 35 %>
+              <i class="fa fa-angle-right"></i>
+              </p>
+            </a>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>

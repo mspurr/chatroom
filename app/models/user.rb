@@ -18,13 +18,14 @@ class User < ActiveRecord::Base
   validates :links, length: { maximum: 60 }
   validates :team, length:  { maximum: 40 }
 
-  has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }
-  has_attached_file :cover, styles:  { medium: '1900x1900>' }
+  has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: ":style/missingavatar.png"
+  has_attached_file :cover, styles:  { medium: '1900x1900>' }, default_url: ":style/missingcover.png"
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
 
   acts_as_voter
+  searchkick text_start: [:username]
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
          :trackable, :validatable

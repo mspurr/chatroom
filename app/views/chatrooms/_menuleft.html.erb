@@ -10,7 +10,11 @@
 		<ul>
 			<li><a href="<%= chatrooms_path %>"><i class="fa fa-comments-o"></i>Browse Chatrooms</a></li>
 			<li><a href="<%= games_path %>"><i class="fa fa-gamepad"></i>Browse Games</a></li>
-			<li><a href="#"><i class="fa fa-heart"></i>Favorite Rooms</a></li>
+			<li><a href="#" id="fav_btn_drop"><i class="fa fa-heart"></i>Favorites<span class="ion-arrow-right-b" id="fav_dropdown_icon"></span></a></li>
+			<ul id="fav_dropdown">
+			<li><a href="<%= chatrooms_path(sort: 'favorites') %>">Favorite Chatrooms</a></li>
+			<li><a href="<%= games_path(sort: 'favorites') %>">Favorite Games</a></li>
+			</ul>
 			<li><a href="<%= new_chatroom_path %>"><i class="fa fa-plus-circle"></i>Create Room</a></li>
 		</ul>
 	</div>
