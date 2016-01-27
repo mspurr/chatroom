@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show, :profile]
   before_action :authenticate_user!
   before_action :get_counts, only: [:index, :show]
-  impressionist :actions=>[:show]
+  # impressionist :actions=>[:show]
 
 
   def index
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    impressionist(@user)
+    # impressionist(@user)
     @friends = @user.active_friends
   end
 
