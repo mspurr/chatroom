@@ -1,0 +1,35 @@
+<div class="container" id="container2">
+  <div class="body_fill_area">
+    <div class="g_tag_header home_header">
+      <h2>Your Own Chatrooms</h2>
+      <h5>Here's a list of all the chatrooms which you've created.</h5>
+    </div>
+    <div class="splitter_light"></div>
+    <div class="col-md-12">
+      <% @room.each do |room| %>
+        <div class="col-md-4 col-xs-6 box">
+        <div class="room_set">
+            <a href="<%= chatroom_path(room) %>">
+                <%= image_tag room.game.thumb.url(:medium) %>
+                <div class="r_wrap">
+                    <p class="game_tag_t"><i class="fa fa-gamepad"></i><%= room.game.name %></p>
+                    <h3><%= room.title %></h3>
+                    <div class="splitter"></div>
+
+
+                    <p><%= truncate room.description, length: 200 %></p>
+                </div>
+                <div class="foot">
+                    <p><i class="fa fa-child"></i><%= room.user.username.capitalize %><span class="small_dot">·</span><i class="fa fa-users"></i>24</p>
+                </div>
+                <div class="go-sign">
+                    <p>Go<i class="fa fa-angle-right" id="spin"></i></p>
+                </div>
+            </a>
+        </div>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

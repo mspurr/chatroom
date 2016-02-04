@@ -14,6 +14,9 @@ class ChatroomsController < ApplicationController
     if params[:sort] == "favorites"
       @fav = true
       @room = current_user.favorites
+    elsif params[:sort] == "own"
+      @own = true
+      @room = Chatroom.where(user_id: current_user.id).order(created_at: :desc)
     elsif params[:game].blank?
       @room = Chatroom.order(created_at: :desc)
     else

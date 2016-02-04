@@ -29,7 +29,7 @@
               <ul>
                 <li><a href="<%= user_path(current_user.username) %>"><i class="fa fa-male" id="quickmenu_profile_icon"></i>My Profile</a></li>
                 <li><a href="#"><i class="fa fa-inbox"></i>My Messages</a></li>
-                <li><a href="#"><i class="fa fa-comments"></i>My Chatrooms</a></li>
+                <li><a href="<%= chatrooms_path(sort: 'own') %>"><i class="fa fa-comments"></i>My Chatrooms</a></li>
                 <li><%= link_to users_path, class: "margin-right-li" do %><i class="ion-person-stalker m_friends"></i>Manage Friends<% end %></li>
               </ul>
                 <ul>

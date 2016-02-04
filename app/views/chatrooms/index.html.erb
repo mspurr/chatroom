@@ -1,5 +1,7 @@
 <% if @fav %>
  <%= render 'chatrooms/favorite_chatrooms' %>
+<% elsif @own %>
+ <%= render 'chatrooms/own_chatrooms' %>
 <% else %>
     <div class="container" id="container2">
         <div class="body_fill_area">
