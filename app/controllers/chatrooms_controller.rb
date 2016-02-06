@@ -28,6 +28,7 @@ class ChatroomsController < ApplicationController
 
   def show
     @broadcast = @room.broadcasts.order(created_at: :desc)
+    @messages = Message.all
   end
 
   def new

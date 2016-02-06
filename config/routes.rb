@@ -46,4 +46,6 @@ Rails.application.routes.draw do
   get '/tags/:tag', to: 'chatrooms#home', as: :tag
 
   root 'chatrooms#home'
+
+  mount ActionCable.server => '/cable'
 end
