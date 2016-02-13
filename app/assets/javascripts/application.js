@@ -15,6 +15,7 @@
 //= require jquery-ui
 //= require masonry/jquery.masonry
 //= require bootstrap-sprockets
+//= require channels
 //= require_tree .
 
 //Loading icon ALL pages

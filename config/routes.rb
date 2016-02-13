@@ -22,8 +22,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :friendships, only: [:create, :destroy, :accept] do 
-    member do 
+  resources :friendships, only: [:create, :destroy, :accept] do
+    member do
       put :accept
     end
   end
@@ -46,4 +46,6 @@ Rails.application.routes.draw do
   get '/tags/:tag', to: 'chatrooms#home', as: :tag
 
   root 'chatrooms#home'
+
+  mount ActionCable.server => '/cable'
 end
