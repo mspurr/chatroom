@@ -4,6 +4,7 @@ module ApplicationCable
 
     def connect
       self.current_user = find_verified_user
+      @room_id = request.path_parameters['id']
     end
 
     protected
