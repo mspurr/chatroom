@@ -1,0 +1,35 @@
+# -- TODO:
+# --
+
+App.game = App.cable.subscriptions.create "GameChannel",
+  connected: ->
+    # Called when the subscription is ready for use on the server
+    console.log("connected")
+
+  disconnected: ->
+    # Called when the subscription has been terminated by the server
+
+  received: (data) ->
+    # Called when there's incoming data on the websocket for this channel
+    messageBlock = '''
+      <div class="user_chat_message">
+        <div class="chat_msg_sender">
+          <%= image_tag 'pb2.gif', class: 'chat_user_img' %>
+          <a href="#"><span class="comment_header chat_msg_username">''' + data['user_name'] + '''</span></a><span>:</span>
+        </div>
+        <div class="user_msg_info">
+          <p>''' + data['time'] + '''</p>
+        </div>
+        <div class="user_chat_msg_div">
+          <p class="user_chat_msg_p">''' + data['content'] + '''</p>
+        </div>
+      </div>
+    '''
+
+    $ ->
+      $('.chat_message_area').append(messageBlock);
+
+    console.log("speaking: #{data['content']}")
+
+  speak: (content) ->
+    @perform 'speak', content: content

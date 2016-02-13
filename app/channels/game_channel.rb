@@ -2,6 +2,8 @@
 class GameChannel < ApplicationCable::Channel
   def subscribed
     # stream_from "some_channel"
+    # -- TODO:
+    # -- stream_from use a string that is unique to a room, use chatroom_id?
     stream_from "games"
   end
 
@@ -11,12 +13,11 @@ class GameChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    puts "speaking!"
-
     puts "Spoken: #{data['content']}"
+    ActionCable.server.broadcast "games", content: data['content'], user_name: User.first.username, time: Time.now.strftime('%H:%M')
   end
 
   def receive(data)
-    # ActionCable.server.broadcast "chat_#{params[:room]}", data
+
   end
 end
