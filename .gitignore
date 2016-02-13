@@ -9,6 +9,9 @@ vendor/bundle
 /tmp
 /spec/tmp
 
+# Ignore redis dump file
+dump.rdb
+
 # Lint files
 .eslintrc
 
