@@ -89,4 +89,29 @@ class User < ActiveRecord::Base
     find_random.limit(number)
   end
 
+  # Redis
+  def join_room(room)
+    $redis.multi do
+      $redis.sadd(self.redis_key(:joined_room), room.id)
+      $redis.sadd(room.redis_key(:users), self.id)
+    end
+  end
+
+  def leave_room(room)
+    $redis.multi do
+      $redis.srem(self.redis_key(:joined_room), room.id)
+      $redis.srem(room.redis_key(:users), self.id)
+    end
+  end
+
+  def rooms
+    room_ids = $redis.smembers(self.redis_key(:joined_room))
+    Chatroom.where(:id => room_ids)
+  end
+
+  # helper method to generate redis keys
+  def redis_key(str)
+    "user:#{self.id}:#{str}"
+  end
+
 end
