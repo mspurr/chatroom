@@ -14,7 +14,7 @@ class GameChannel < ApplicationCable::Channel
 
   def speak(data)
     puts "Spoken: #{data['content']}"
-    ActionCable.server.broadcast "games", content: data['content'], user_name: User.first.username, time: Time.now.strftime('%H:%M')
+    ActionCable.server.broadcast "games", content: data['content'], user_name: current_user.username, time: Time.now.strftime('%H:%M')
   end
 
   def receive(data)
