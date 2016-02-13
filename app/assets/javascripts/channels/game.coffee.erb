@@ -11,25 +11,27 @@ App.game = App.cable.subscriptions.create "GameChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    messageBlock = '''
-      <div class="user_chat_message">
-        <div class="chat_msg_sender">
-          <%= image_tag 'pb2.gif', class: 'chat_user_img' %>
-          <a href="#"><span class="comment_header chat_msg_username">''' + data['user_name'] + '''</span></a><span>:</span>
-        </div>
-        <div class="user_msg_info">
-          <p>''' + data['time'] + '''</p>
-        </div>
-        <div class="user_chat_msg_div">
-          <p class="user_chat_msg_p">''' + data['content'] + '''</p>
-        </div>
-      </div>
-    '''
 
-    $ ->
-      $('.chat_message_area').append(messageBlock);
+    if data['user_count']?
+      $('#user_count').html("Current users: #{data['user_count']}")
 
-    console.log("speaking: #{data['content']}")
+    if data['content']
+      messageBlock = '''
+        <div class="user_chat_message">
+          <div class="chat_msg_sender">
+            <%= image_tag 'pb2.gif', class: 'chat_user_img' %>
+            <a href="#"><span class="comment_header chat_msg_username">''' + data['user_name'].replace(/^\s+|\s+$/g, "") + ''':</span></a>
+          </div>
+          <div class="user_msg_info">
+            <p>''' + data['time'] + '''</p>
+          </div>
+          <div class="user_chat_msg_div">
+            <p class="user_chat_msg_p">''' + data['content'] + '''</p>
+          </div>
+        </div>
+      '''
+      $('.chat_message_area').append(messageBlock)
+      console.log("received: #{data['content']}")
 
   speak: (content) ->
     @perform 'speak', content: content
