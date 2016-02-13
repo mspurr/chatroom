@@ -1,14 +1,18 @@
 $ ->
   textArea = $('textarea[name="message"]')
 
+  truncateSend = (message) ->
+    for line in message
+      if line isnt ''
+        App.game.speak line
+    textArea.val(null)
+
   $('#submitMessage').click ->
-    App.game.speak textArea.val().replace( /[\s\n\r]+/g, ' ' )
+    message = textArea.val().split('\n')
+    truncateSend(message)
 
   textArea.focus ->
     $(this).keydown (e) ->
       if e.which is 13
         message = $(this).val().split('\n')
-        for line in message
-          if line isnt ''
-            App.game.speak line
-        textArea.val(null)
+        truncateSend(message)
