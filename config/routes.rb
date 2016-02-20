@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
+
   resources :comments
   devise_for :users, path: '', path_names: { sign_in: 'login',
                                              sign_out: 'logout',
@@ -47,5 +49,4 @@ Rails.application.routes.draw do
 
   root 'chatrooms#home'
 
-  mount ActionCable.server => '/cable'
 end
