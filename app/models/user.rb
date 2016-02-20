@@ -104,7 +104,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  def rooms
+  def chat_rooms
     room_ids = $redis.smembers(self.redis_key(:joined_room))
     Chatroom.where(:id => room_ids)
   end

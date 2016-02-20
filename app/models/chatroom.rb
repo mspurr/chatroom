@@ -44,7 +44,7 @@ class Chatroom < ActiveRecord::Base
     $redis.scard(self.redis_key(:users))
   end
 
-  def users
+  def chat_users
     user_ids = $redis.smembers(self.redis_key(:users))
     User.where(:id => user_ids)
   end
