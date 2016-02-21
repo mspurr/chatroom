@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   has_many :favorite_games
   has_many :fav_games, through: :favorite_games, source: :game
 
+  has_many :chat_messages
+
   validates :username, presence: true
   validates :username, uniqueness: true
 

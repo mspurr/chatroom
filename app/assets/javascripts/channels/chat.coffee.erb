@@ -1,0 +1,43 @@
+# -- TODO:
+# --
+chatroom_regex = /(\d*).$/g       # picks up the id of a page, eg. http://localhost:3000/chatrooms/1 matches "1"
+cable_chatroom_id = document.URL  # gets the url of the page
+
+App.chat = App.cable.subscriptions.create {channel: "ChatChannel", room_id: parseFloat(cable_chatroom_id.match(chatroom_regex)[0]) },
+  connected: ->
+    # Called when the subscription is ready for use on the server
+    console.log "Chatroom connected"
+    @perform 'get_user_count'
+
+  disconnected: ->
+    # Called when the subscription has been terminated by the server
+    console.log "Chatroom disconnected"
+    # @perform 'disconnected'
+
+  received: (data) ->
+    # Called when there's incoming data on the websocket for this channel
+    if data['user_count']
+      $('#user_count').html("Current users: #{data['user_count']}")
+
+    if data['message']
+      message = JSON.parse(data['message'])
+      user = JSON.parse(data['user'])
+      message_time = new Date(message.created_at)
+      messageBlock = '''
+        <div class="user_chat_message" id="''' + user.username + "_" + message.id + '''">
+          <div class="chat_msg_sender">
+            <%= image_tag 'pb2.gif', class: 'chat_user_img' %>
+            <a href="#"><span class="comment_header chat_msg_username">''' + user.username + ''':</span></a>
+          </div>
+          <div class="user_msg_info">
+            <p>''' + message_time.getHours() + ":" + message_time.getMinutes() + '''</p>
+          </div>
+          <div class="user_chat_msg_div">
+            <p class="user_chat_msg_p">''' + message.message + '''</p>
+          </div>
+        </div>
+      '''
+      $('.chat_message_area').append(messageBlock)
+
+  speak: (content) ->
+    @perform 'speak', content: content

@@ -4,7 +4,7 @@ $ ->
   truncateSend = (message) ->
     for line in message
       if line isnt ''
-        App.game.speak line
+        App.chat.speak line
     textArea.val(null)
 
   $('#submitMessage').click ->

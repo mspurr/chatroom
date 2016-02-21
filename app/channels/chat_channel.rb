@@ -1,5 +1,5 @@
 # Be sure to restart your server when you modify this file. Action Cable runs in an EventMachine loop that does not support auto reloading.
-class GameChannel < ApplicationCable::Channel
+class ChatChannel < ApplicationCable::Channel
 
   def subscribed
     # stream_from "some_channel"
@@ -8,25 +8,25 @@ class GameChannel < ApplicationCable::Channel
     @chatroom = Chatroom.find(params[:room_id])
     puts params[:room_id]
     current_user.join_room(@chatroom)
-    stream_from "games_#{@chatroom.id}"
+    stream_from "chatroom_#{@chatroom.id}"
   end
 
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
     current_user.leave_room(@chatroom)
-    ActionCable.server.broadcast "games_#{@chatroom.id}", user_count: @chatroom.user_count
-    stop_stream "games_#{@chatroom.id}"
+    ActionCable.server.broadcast "chatroom_#{@chatroom.id}", user_count: @chatroom.user_count
+    stop_stream "chatroom_#{@chatroom.id}"
   end
 
   def speak(data)
-    ActionCable.server.broadcast "games_#{@chatroom.id}", content: data['content'], user_name: current_user.username, time: Time.now.strftime('%H:%M')
+    ChatMessage.create(chatroom_id: @chatroom.id, user_id: current_user.id, message: data['content'])
   end
 
   def get_user_count
-    ActionCable.server.broadcast "games_#{@chatroom.id}", user_count: @chatroom.user_count
+    ActionCable.server.broadcast "chatroom_#{@chatroom.id}", user_count: @chatroom.user_count
   end
 
   def disconnected
-    ActionCable.server.broadcast "games_#{@chatroom.id}", user_count: @chatroom.user_count
+    ActionCable.server.broadcast "chatroom_#{@chatroom.id}", user_count: @chatroom.user_count
   end
 end

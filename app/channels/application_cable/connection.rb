@@ -3,8 +3,6 @@ module ApplicationCable
     identified_by :current_user
 
     def connect
-      @room_id = request.path_parameters['id']
-      puts @room_id
       self.current_user = find_verified_user
       @messages = ChatMessage.where(user_id: self.current_user.id)
     end
