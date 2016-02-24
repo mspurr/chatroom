@@ -46,8 +46,8 @@
             <div class="arrow_up" id="user_menu_arrow"></div>
             <div class="nav_dropdown_header">
               <h4>My Inbox</h4>
-            </div>
-            <div id="notifications" class="dropdown_fill_area before">
+
+
               <!-- MESSAGES ARE APPENDED HERE -->
             </div>
               <p id="msg_end_p">No more messages</p>
@@ -110,9 +110,26 @@
             <div class="nav_dropdown_header">
               <h4>Notifications</h4>
             </div>
-            <div class="dropdown_fill_area">
+            <!-- <div class="dropdown_fill_area"> -->
+              <div id="notifications" class="dropdown_fill_area before">
+                <% if @notifications %>
+                  <% @notifications.each do |notification| %>
+                    <div class="inbox_message test-not" id=<%= if notification.read then "read" else "unread" end%>>
+                      <div class="msg_from_pic">
+                        <img src="<%= User.find(notification.sender).avatar.url %>" />
+                      </div>
+                      <div class="msg_info_from">
+                        <h5><%= notification.user.username %></h5>
+                        <h6><%= notification.created_at %></h6>
+                      </div>
+                      <div class="inbox_msg_area">
+                        <p><%= notification.content %></p>
+                      </div>
+                    </div>
+                  <% end %>
+                <% end %>
               <div class="dropdown_nodata">
-                <p><i class="fa fa-folder-open-o"></i>Nothing new!</p>
+                <p><i class="fa fa-folder-open-o"></i>Nothing else!</p>
               </div>
             </div>
             <div class="dropdown_footer">
