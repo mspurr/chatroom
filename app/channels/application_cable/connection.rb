@@ -4,7 +4,6 @@ module ApplicationCable
 
     def connect
       self.current_user = find_verified_user
-      @messages = ChatMessage.where(user_id: self.current_user.id)
     end
 
     protected
