@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :broadcasts
   has_many :comments
   has_many :games
+  has_many :notifications
 
   has_many :friendships, dependent: :destroy
   has_many :inverse_friendships, class_name: "Friendship", foreign_key: "friend_id", dependent: :destroy
@@ -91,24 +92,57 @@ class User < ActiveRecord::Base
     find_random.limit(number)
   end
 
-  # Redis
-  def join_room(room)
+  ## REDIS FRIENDSHIP FUNCTIONALITY
+  def follow!(user)
     $redis.multi do
-      $redis.sadd(self.redis_key(:joined_room), room.id)
-      $redis.sadd(room.redis_key(:users), self.id)
+      $redis.sadd(self.redis_key(:following), user.id)
+      $redis.sadd(user.redis_key(:followers), self.id)
     end
   end
 
-  def leave_room(room)
+  def unfollow!(user)
     $redis.multi do
-      $redis.srem(self.redis_key(:joined_room), room.id)
-      $redis.srem(room.redis_key(:users), self.id)
+      $redis.srem(self.redis_key(:following), user.id)
+      $redis.srem(user.redis_key(:followers), self.id)
     end
   end
 
-  def chat_rooms
-    room_ids = $redis.smembers(self.redis_key(:joined_room))
-    Chatroom.where(:id => room_ids)
+  # users that self follows
+  def followers
+    user_ids = $redis.smembers(self.redis_key(:followers))
+    User.where(:id => user_ids)
+  end
+
+  # users that follow self
+  def following
+    user_ids = $redis.smembers(self.redis_key(:following))
+    User.where(:id => user_ids)
+  end
+
+  # users who follow and are being followed by self
+  def friends
+    user_ids = $redis.sinter(self.redis_key(:following), self.redis_key(:followers))
+    User.where(:id => user_ids)
+  end
+
+  # does the user follow self
+  def followed_by?(user)
+    $redis.sismember(self.redis_key(:followers), user.id)
+  end
+
+  # does self follow user
+  def following?(user)
+    $redis.sismember(self.redis_key(:following), user.id)
+  end
+
+  # number of followers
+  def followers_count
+    $redis.scard(self.redis_key(:followers))
+  end
+
+  # number of users being followed
+  def following_count
+    $redis.scard(self.redis_key(:following))
   end
 
   # helper method to generate redis keys

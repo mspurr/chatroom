@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219202759) do
+ActiveRecord::Schema.define(version: 20160224030754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 20160219202759) do
     t.text     "message"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["chatroom_id"], name: "index_chat_messages_on_chatroom_id", using: :btree
+    t.index ["user_id"], name: "index_chat_messages_on_user_id", using: :btree
   end
 
   create_table "chatrooms", force: :cascade do |t|
@@ -127,12 +129,24 @@ ActiveRecord::Schema.define(version: 20160219202759) do
 
   create_table "notifications", force: :cascade do |t|
     t.string   "content"
-    t.integer  "user"
+    t.integer  "user_id"
     t.integer  "sender"
     t.boolean  "read",       default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.index ["user"], name: "index_notifications_on_user", using: :btree
+    t.index ["sender"], name: "index_notifications_on_sender", using: :btree
+    t.index ["user_id"], name: "index_notifications_on_user_id", using: :btree
+  end
+
+  create_table "private_messages", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "sender"
+    t.text     "content"
+    t.boolean  "read",       default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["sender"], name: "index_private_messages_on_sender", using: :btree
+    t.index ["user_id"], name: "index_private_messages_on_user_id", using: :btree
   end
 
   create_table "taggings", force: :cascade do |t|
