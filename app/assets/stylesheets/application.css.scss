@@ -58,7 +58,16 @@ a:focus {
 .main_header_bg {
   min-width: 100%;
   height: auto;
-  background: url("mainheaderbg2.png") center center/cover no-repeat fixed #FFFFFF;
+  background: transparent;
+  // background: url("mainheaderbg2.png") center center/cover no-repeat fixed #FFFFFF;
+}
+#bg-video {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.main_index_body {
+  background-color: #ececec;
 }
 
 .center_h1 {

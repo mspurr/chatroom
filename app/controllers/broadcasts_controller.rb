@@ -71,7 +71,7 @@ class BroadcastsController < ApplicationController
   def set_room
     @room = Chatroom.find(params[:chatroom_id])
   end
-  
+
   def broadcast_params
     params.require(:broadcast).permit(:content, :image, :tag_list)
   end
