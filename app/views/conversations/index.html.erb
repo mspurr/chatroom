@@ -1,0 +1,13 @@
+<div class="container" id="container2">
+  <div class="body_fill_area">
+    <h1>All Conversations</h1>
+
+    <% @conversations.each do |conversation| %>
+      <div>
+        <%= link_to "username: #{conversation.subject}", conversation_path(conversation) %>
+      </div>
+    <% end %>
+
+    <%= link_to "New Conversations", new_conversation_path %>
+  </div>
+</div>

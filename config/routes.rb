@@ -22,14 +22,14 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :friendships, only: [:create, :destroy, :accept] do 
-    member do 
+  resources :friendships, only: [:create, :destroy, :accept] do
+    member do
       put :accept
     end
   end
-  
+
   resources :users, only: [:show, :profile, :index]
-  
+
   resources :games do
     member do
       put :favorite
@@ -40,6 +40,10 @@ Rails.application.routes.draw do
     collection do
       get :autocomplete
     end
+  end
+
+  resources :conversations do
+    resources :messages
   end
 
   get '/users/do/profile', to: 'users#profile', as: 'profile'

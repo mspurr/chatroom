@@ -1,0 +1,21 @@
+<div class="container" id="container2">
+  <div class="body_fill_area">
+    <h1>New Conversation</h1>
+
+    <%= form_tag conversations_path, method: :post do %>
+      <div>
+        <%= select_tag :user_id, options_from_collection_for_select(@recipients, :id, :username) %>
+      </div>
+
+      <div>
+        <%= text_field_tag :subject, nil, placeholder: "Subject" %>
+      </div>
+
+      <div>
+        <%= text_area_tag :body, nil, placeholder: "Leave a comment" %>
+      </div>
+
+      <%= submit_tag %>
+    <% end %>
+  </div>
+</div>
