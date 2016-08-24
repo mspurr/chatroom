@@ -19,20 +19,9 @@
                 <div class="chat_inside">
                   <div class="chat_message_area" data-behavior="chat-messages">
 
-                    <% @chat_messages.each do |message| %>
-                      <div class="user_chat_message">
-                            <div class="chat_msg_sender">
-                                <%= image_tag message.user.avatar.url(:thumb), class: 'chat_user_img' %>
-                                <a href="#"><span class="comment_header chat_msg_username"><%= message.user.username %></span></a><span>:</span>
-                            </div>
-                            <div class="user_msg_info">
-                              <p><%= message.created_at.strftime("%H:%M") %></p>
-                            </div>
-                            <div class="user_chat_msg_div">
-                              <p class="user_chat_msg_p"><%= message.body %></p>
-                            </div>
-                        </div>
-                      <% end %>                    <!--
+                    <% @chat_messages.each do |chat_message| %>
+                      <%= render chat_message %>
+                    <% end %>                    <!--
                                               <div class="user_chat_message">
                             <div class="chat_msg_sender">
                                 <%= image_tag 'pb2.gif', class: 'chat_user_img' %>

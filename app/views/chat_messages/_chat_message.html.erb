@@ -1,0 +1,12 @@
+<div class="user_chat_message">
+  <div class="chat_msg_sender">
+    <%= image_tag chat_message.user.avatar.url(:thumb), class: 'chat_user_img' %>
+    <a href="#"><span class="comment_header chat_msg_username"><%= chat_message.user.username %></span></a><span>:</span>
+  </div>
+  <div class="user_msg_info">
+    <p><%= chat_message.created_at.strftime("%H:%M") %></p>
+  </div>
+  <div class="user_chat_msg_div">
+    <p class="user_chat_msg_p"><%= chat_message.body %></p>
+  </div>
+</div>

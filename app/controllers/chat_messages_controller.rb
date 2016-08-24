@@ -6,6 +6,7 @@ class ChatMessagesController < ApplicationController
     chat_message = @chatroom.chat_messages.new(chat_message_params)
     chat_message.user = current_user
     chat_message.save
+    MessageRelayJob.perform_later(chat_message)
   end
 
   private
