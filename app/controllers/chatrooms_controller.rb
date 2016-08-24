@@ -28,6 +28,7 @@ class ChatroomsController < ApplicationController
 
   def show
     @broadcast = @room.broadcasts.order(created_at: :desc)
+    @chat_messages = @room.chat_messages.order(created_at: :desc).limit(500).reverse
   end
 
   def new

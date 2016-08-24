@@ -368,8 +368,15 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
         }
     });
 
+    $(".chat_message_area").prop({ scrollTop: $(".chat_message_area").prop("scrollHeight") });
 
+
+    $("#new_chat_message").on("keypress", function(e) {
+      if (e && e.keyCode === 13) {
+        e.preventDefault();
+        $(this).submit();
+      }
+    });
 });
-
 
 //= require turbolinks

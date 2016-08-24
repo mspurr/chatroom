@@ -2,9 +2,11 @@ ruby '2.2.3'
 
 source 'https://rubygems.org'
 
-gem 'rails', '5.0.0.beta2'
+gem 'rails', '>= 5.0.0.rc2', '< 5.1'
+
 # gem 'railties', '~> 5.0', '>= 5.0.0.beta1'
 gem 'puma'
+gem 'redis'
 
 # ORM
 gem 'pg'

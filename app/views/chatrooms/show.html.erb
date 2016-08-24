@@ -17,20 +17,23 @@
             </div>
             <div class="chatwindow">
                 <div class="chat_inside">
-                    <div class="chat_message_area">
-                        <div class="user_chat_message">
+                  <div class="chat_message_area" data-behavior="chat-messages">
+
+                    <% @chat_messages.each do |message| %>
+                      <div class="user_chat_message">
                             <div class="chat_msg_sender">
-                                <%= image_tag 'pb.png', class: 'chat_user_img' %>
-                                <a href="#"><span class="comment_header chat_msg_username">Username</span></a><span>:</span>
+                                <%= image_tag message.user.avatar.url(:thumb), class: 'chat_user_img' %>
+                                <a href="#"><span class="comment_header chat_msg_username"><%= message.user.username %></span></a><span>:</span>
                             </div>
                             <div class="user_msg_info">
-                                <p>15:17</p>
+                              <p><%= message.created_at.strftime("%H:%M") %></p>
                             </div>
                             <div class="user_chat_msg_div">
-                                <p class="user_chat_msg_p">This is a random chat message. What is up?? <span class="p_hashtag">#Randomhashtag</span> This is a random chat message. What is up?? #Randomhashtag This is a random chat message. What is up?? #Randomhashtag</p>
+                              <p class="user_chat_msg_p"><%= message.body %></p>
                             </div>
                         </div>
-                        <div class="user_chat_message">
+                      <% end %>                    <!--
+                                              <div class="user_chat_message">
                             <div class="chat_msg_sender">
                                 <%= image_tag 'pb2.gif', class: 'chat_user_img' %>
                                 <a href="#"><span class="comment_header chat_msg_username">Usern</span></a><span>:</span>
@@ -93,7 +96,11 @@
                         <div class="user_chat_msg_div">
                             <p class="user_chat_msg_p">This is a random chat message. What is up?? #Randomhashtag This is a random chat message. What is up?? #Randomhashtag This is a random chat message. What is up?? #Randomhashtag</p>
                         </div>
-                    </div>
+                      </div>
+                      -->
+
+
+
                 </div>
                 <div class="chat_menu_area">
                     <p><i class="fa fa-smile-o"></i></p>
@@ -104,8 +111,11 @@
                         <div class="user_chat_pb">
                             <%= image_tag current_user.avatar.url(:thumb) %>
                         </div>
-                        <textarea name="message" placeholder="Write your message here..." ></textarea>
-                        <button>Send</button>
+                        <%= form_for [@room, ChatMessage.new], remote: true do |f| %>
+                          <%= f.text_area :body, rows: 2, autofocus: true, placeholder: "Write your message here..." %>
+                          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                        <% end %>
+                       <button>Send</button>
                     </div>
                 </div>
             </div>
@@ -482,7 +492,6 @@
                 <h4>About</h4>
                 <p><%= @room.description %></p>
                 <div class="chatroom_info_icons">
-                    
                 </div>
                 <div class="chatroom_info_icons border_bottom">
                     <i class="fa fa-globe"></i>
@@ -500,7 +509,6 @@
                             <div class="admin_status_icon" id="offline_icon">
                             </div>
                         <% end %>
-                        
                     </div>
                 </div>
             </div>

@@ -4,7 +4,8 @@ class Chatroom < ActiveRecord::Base
 
   has_many :broadcasts
   has_many :favorite_chatrooms
-  has_many :favorited_by, through: :favorite_chatrooms, source: :user 
+  has_many :favorited_by, through: :favorite_chatrooms, source: :user
+  has_many :chat_messages
 
   validates :game, presence: true
   validates :title, presence: true
