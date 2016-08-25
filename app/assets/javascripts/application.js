@@ -15,6 +15,7 @@
 //= require jquery-ui
 //= require masonry/jquery.masonry
 //= require bootstrap-sprockets
+//= require ./channels/application_cable
 //= require_tree .
 
 //Loading icon ALL pages
@@ -368,8 +369,28 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
         }
     });
 
+    $(".chat_message_area").prop({ scrollTop: $(".chat_message_area").prop("scrollHeight") });
 
+
+    $("#new_chat_message").on("keypress", function(e) {
+      if (e && e.keyCode === 13) {
+        e.preventDefault();
+        $(this).submit();
+      }
+    });
+
+    $("#new_chat_message").on("submit", function(e) {
+      e.preventDefault();
+      var chatroom_id = $("[data-behavior='chat-messages']").data("chatroom-id");
+      var body = $("#chat_message_body");
+      if (body.val().indexOf(' ') < 0 && body.val() != "") {
+        App.chatrooms.send_message(chatroom_id, body.val());
+        body.val("");
+      }
+      else {
+        body.val("");
+      }
+    });
 });
-
 
 //= require turbolinks

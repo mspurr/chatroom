@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160122021941) do
+ActiveRecord::Schema.define(version: 20160823183121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +28,16 @@ ActiveRecord::Schema.define(version: 20160122021941) do
     t.integer  "cached_votes_total", default: 0
     t.index ["chatroom_id"], name: "index_broadcasts_on_chatroom_id", using: :btree
     t.index ["user_id"], name: "index_broadcasts_on_user_id", using: :btree
+  end
+
+  create_table "chat_messages", force: :cascade do |t|
+    t.integer  "chatroom_id"
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["chatroom_id"], name: "index_chat_messages_on_chatroom_id", using: :btree
+    t.index ["user_id"], name: "index_chat_messages_on_user_id", using: :btree
   end
 
   create_table "chatrooms", force: :cascade do |t|
@@ -113,10 +122,10 @@ ActiveRecord::Schema.define(version: 20160122021941) do
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
-    t.integer  "taggable_id"
     t.string   "taggable_type"
-    t.integer  "tagger_id"
+    t.integer  "taggable_id"
     t.string   "tagger_type"
+    t.integer  "tagger_id"
     t.string   "context",       limit: 128
     t.datetime "created_at"
     t.index ["context"], name: "index_taggings_on_context", using: :btree
@@ -169,10 +178,10 @@ ActiveRecord::Schema.define(version: 20160122021941) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer  "votable_id"
     t.string   "votable_type"
-    t.integer  "voter_id"
+    t.integer  "votable_id"
     t.string   "voter_type"
+    t.integer  "voter_id"
     t.boolean  "vote_flag"
     t.string   "vote_scope"
     t.integer  "vote_weight"
@@ -184,5 +193,7 @@ ActiveRecord::Schema.define(version: 20160122021941) do
 
   add_foreign_key "broadcasts", "chatrooms"
   add_foreign_key "broadcasts", "users"
+  add_foreign_key "chat_messages", "chatrooms"
+  add_foreign_key "chat_messages", "users"
   add_foreign_key "comments", "users"
 end
