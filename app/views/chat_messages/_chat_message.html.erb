@@ -1,7 +1,13 @@
 <div class="user_chat_message">
   <div class="chat_msg_sender">
     <%= image_tag chat_message.user.avatar.url(:thumb), class: 'chat_user_img' %>
-    <a href="#"><span class="comment_header chat_msg_username"><%= chat_message.user.username %></span></a><span>:</span>
+    <% if chat_message.user == chat_message.chatroom.user %>
+      <a href="#"><span class="comment_header chat_msg_username"><%= chat_message.user.username %></span></a><div class="outer_icon">
+      <span class="ion-ios-checkmark tool_icon">
+       <span class="upside_tooltip_box follow_tool no_wrap">Chatroom Admininistator<div class="arrow-down"></div></span> </span></div><span>:</span>
+    <% else %>
+      <a href="#"><span class="comment_header chat_msg_username"><%= chat_message.user.username %></span></a><span>:</span>
+    <% end %>
   </div>
   <div class="user_msg_info">
     <p><%= chat_message.created_at.strftime("%H:%M") %></p>
