@@ -1,5 +1,5 @@
 $(document).ready ->
-  if $("meta[name='current_user']").length > 0
+  if $("meta[name='current_user']").length > 0 #checks if currently at a chatrooms show page
     #chatroom_regex = /(\d*).$/g       # picks up the id of a page, eg. http://localhost:3000/chatrooms/1 matches "1"
     #cable_chatroom_id = document.URL  # gets the url of the page
     cable_chatroom_id = $("meta[name='current_user']").data("chatroom-id")

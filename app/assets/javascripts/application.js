@@ -373,7 +373,7 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
 
 
     $("#new_chat_message").on("keypress", function(e) {
-      if (e && e.keyCode === 13) {
+      if (e && e.keyCode == 13 && !e.shiftKey) {
         e.preventDefault();
         $(this).submit();
       }
@@ -390,6 +390,10 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
       else {
         body.val("");
       }
+    });
+
+    $("#chat_msg_send").click(function() {
+      $("#new_chat_message").submit();
     });
 
 });
