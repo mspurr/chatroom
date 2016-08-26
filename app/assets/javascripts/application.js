@@ -383,7 +383,7 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
       e.preventDefault();
       var chatroom_id = $("[data-behavior='chat-messages']").data("chatroom-id");
       var body = $("#chat_message_body");
-      if (body.val().indexOf(' ') < 0 && body.val() != "") {
+      if (/\S/.test(body.val())) {
         App.chatrooms.send_message(chatroom_id, body.val());
         body.val("");
       }
@@ -391,6 +391,7 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
         body.val("");
       }
     });
+
 });
 
 //= require turbolinks
