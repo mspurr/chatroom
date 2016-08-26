@@ -18,3 +18,5 @@ coverage*
 
 # DB Config
 config/database.yml
+
+.DS_Store
