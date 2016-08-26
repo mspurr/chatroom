@@ -16,9 +16,26 @@ $(document).ready ->
 
       received: (data) ->
         # Called when there's incoming data on the websocket for this channel
-        $("[data-behavior='chat-messages'][data-chatroom-id='#{data.chatroom_id}']").append(data.chat_message)
+        message = data.chat_message
+        $("[data-behavior='chat-messages'][data-chatroom-id='#{data.chatroom_id}']").append(message)
         $("[data-behavior='chat-messages'][data-chatroom-id='#{data.chatroom_id}']").prop({ scrollTop: $(".chat_message_area").prop("scrollHeight") })
 
       send_message: (chatroom_id, message) ->
         @perform "send_message", {chatroom_id: chatroom_id, body: message}
   else
+    null
+
+  # $('#chat_message_body').keydown (e) ->
+  #   e.preventDefault()
+  #   # console.log(e)
+  #   console.log "Pressed key: #{e.key}"
+  #   $('#chat_message_body').append(e.key)
+  #   $('#new_chat_message').submit()
+
+  $('#chat_message_body').bind 'input propertychange', ->
+    # e.preventDefault()
+    # console.log(e)
+    console.log "Pressed key: #{$(this).val()}"
+    # $('#chat_message_body').append(e.key)
+    # $('#new_chat_message').submit()
+
