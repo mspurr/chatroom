@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :broadcasts
   has_many :comments
   has_many :games
+  has_many :notifications
 
   has_many :friendships, dependent: :destroy
   has_many :inverse_friendships, class_name: "Friendship", foreign_key: "friend_id", dependent: :destroy
@@ -10,6 +11,8 @@ class User < ActiveRecord::Base
   has_many :favorites, through: :favorite_chatrooms, source: :chatroom
   has_many :favorite_games
   has_many :fav_games, through: :favorite_games, source: :game
+
+  has_many :chat_messages
 
   validates :username, presence: true
   validates :username, uniqueness: true
@@ -87,6 +90,64 @@ class User < ActiveRecord::Base
 
   def self.find_random_user(number)
     find_random.limit(number)
+  end
+
+  ## REDIS FRIENDSHIP FUNCTIONALITY
+  def follow!(user)
+    $redis.multi do
+      $redis.sadd(self.redis_key(:following), user.id)
+      $redis.sadd(user.redis_key(:followers), self.id)
+    end
+  end
+
+  def unfollow!(user)
+    $redis.multi do
+      $redis.srem(self.redis_key(:following), user.id)
+      $redis.srem(user.redis_key(:followers), self.id)
+    end
+  end
+
+  # users that self follows
+  def followers
+    user_ids = $redis.smembers(self.redis_key(:followers))
+    User.where(:id => user_ids)
+  end
+
+  # users that follow self
+  def following
+    user_ids = $redis.smembers(self.redis_key(:following))
+    User.where(:id => user_ids)
+  end
+
+  # users who follow and are being followed by self
+  def friends
+    user_ids = $redis.sinter(self.redis_key(:following), self.redis_key(:followers))
+    User.where(:id => user_ids)
+  end
+
+  # does the user follow self
+  def followed_by?(user)
+    $redis.sismember(self.redis_key(:followers), user.id)
+  end
+
+  # does self follow user
+  def following?(user)
+    $redis.sismember(self.redis_key(:following), user.id)
+  end
+
+  # number of followers
+  def followers_count
+    $redis.scard(self.redis_key(:followers))
+  end
+
+  # number of users being followed
+  def following_count
+    $redis.scard(self.redis_key(:following))
+  end
+
+  # helper method to generate redis keys
+  def redis_key(str)
+    "user:#{self.id}:#{str}"
   end
 
 end

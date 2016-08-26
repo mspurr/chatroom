@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
+
   resources :comments
   devise_for :users, path: '', path_names: { sign_in: 'login',
                                              sign_out: 'logout',
@@ -22,8 +24,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :friendships, only: [:create, :destroy, :accept] do 
-    member do 
+  resources :friendships, only: [:create, :destroy, :accept] do
+    member do
       put :accept
     end
   end
@@ -46,4 +48,5 @@ Rails.application.routes.draw do
   get '/tags/:tag', to: 'chatrooms#home', as: :tag
 
   root 'chatrooms#home'
+
 end

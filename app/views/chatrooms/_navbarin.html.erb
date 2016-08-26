@@ -42,87 +42,15 @@
             </div>
           </div>
         </div>
-        <div class="li"><a href="#" id="toggleinbox"><i class="fa fa-inbox"></i><div class="nav_notify_icon">2</div></a><div class="nav_dropdown" id="inbox_dropdown">
+        <div class="li"><a href="#" id="toggleinbox"><i class="fa fa-inbox"></i><div id="num_notifications" class="nav_notify_icon"></div></a><div class="nav_dropdown" id="inbox_dropdown">
             <div class="arrow_up" id="user_menu_arrow"></div>
             <div class="nav_dropdown_header">
               <h4>My Inbox</h4>
-            </div>
-            <div class="dropdown_fill_area before">
-              <div class="inbox_message" id="unread">
-                <div class="msg_from_pic">
-                  <%= image_tag 'pb.png' %>
-                </div>
-                <div class="msg_info_from">
-                  <h5>Username</h5>
-                  <h6>12:49</h6>
-                </div>
-                <div class="inbox_msg_area">
-                  <p>This is a custom message from me to you. Please answer.</p>
-                </div>
-              </div>
-              <div class="inbox_message" id="unread">
-                <div class="msg_from_pic">
-                  <%= image_tag 'pb.png' %>
-                </div>
-                <div class="msg_info_from">
-                  <h5>Username</h5>
-                  <h6>04-02-2015</h6>
-                </div>
-                <div class="inbox_msg_area">
-                  <p>This is a custom message from me to you. Please answer.</p>
-                </div>
-              </div>
-              <div class="inbox_message" id="read">
-                <div class="msg_from_pic">
-                  <%= image_tag 'pb.png' %>
-                </div>
-                <div class="msg_info_from">
-                  <h5>Username</h5>
-                  <h6>01-02-2015</h6>
-                </div>
-                <div class="inbox_msg_area">
-                  <p>This is a custom message from me to you. Please answer.</p>
-                </div>
-              </div>
-              <div class="inbox_message" id="read">
-                <div class="msg_from_pic">
-                  <%= image_tag 'pb.png' %>
-                </div>
-                <div class="msg_info_from">
-                  <h5>Username</h5>
-                  <h6>01-02-2015</h6>
-                </div>
-                <div class="inbox_msg_area">
-                  <p>This is a custom message from me to you. Please answer.</p>
-                </div>
-              </div>
-              <div class="inbox_message" id="read">
-                <div class="msg_from_pic">
-                  <%= image_tag 'pb.png' %>
-                </div>
-                <div class="msg_info_from">
-                  <h5>Username</h5>
-                  <h6>01-02-2015</h6>
-                </div>
-                <div class="inbox_msg_area">
-                  <p>This is a custom message from me to you. Please answer.</p>
-                </div>
-              </div>
-              <div class="inbox_message" id="read">
-                <div class="msg_from_pic">
-                  <%= image_tag 'pb.png' %>
-                </div>
-                <div class="msg_info_from">
-                  <h5>Username</h5>
-                  <h6>01-02-2015</h6>
-                </div>
-                <div class="inbox_msg_area">
-                  <p>This is a custom message from me to you. Please answer.</p>
-                </div>
-              </div>
 
-                <p id="msg_end_p">No more messages</p>
+
+              <!-- MESSAGES ARE APPENDED HERE -->
             </div>
+              <p id="msg_end_p">No more messages</p>
             <div class="dropdown_footer">
               <a href="#" id="dropdown_a">View all messages</a>
             </div>
@@ -182,9 +110,26 @@
             <div class="nav_dropdown_header">
               <h4>Notifications</h4>
             </div>
-            <div class="dropdown_fill_area">
+            <!-- <div class="dropdown_fill_area"> -->
+              <div id="notifications" class="dropdown_fill_area before">
+                <% if @notifications %>
+                  <% @notifications.each do |notification| %>
+                    <div class="inbox_message test-not" id=<%= if notification.read then "read" else "unread" end%>>
+                      <div class="msg_from_pic">
+                        <img src="<%= User.find(notification.sender).avatar.url %>" />
+                      </div>
+                      <div class="msg_info_from">
+                        <h5><%= notification.user.username %></h5>
+                        <h6><%= notification.created_at %></h6>
+                      </div>
+                      <div class="inbox_msg_area">
+                        <p><%= notification.content %></p>
+                      </div>
+                    </div>
+                  <% end %>
+                <% end %>
               <div class="dropdown_nodata">
-                <p><i class="fa fa-folder-open-o"></i>Nothing new!</p>
+                <p><i class="fa fa-folder-open-o"></i>Nothing else!</p>
               </div>
             </div>
             <div class="dropdown_footer">

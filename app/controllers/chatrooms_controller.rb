@@ -1,6 +1,7 @@
 class ChatroomsController < ApplicationController
   before_action :authenticate_user!, except: [:home]
   before_action :find_room, only: [:show, :edit, :update, :destroy, :favorite]
+  before_action :get_notifications
 
   def home
     if params[:tag]
@@ -11,6 +12,7 @@ class ChatroomsController < ApplicationController
   end
 
   def index
+
     if params[:sort] == "favorites"
       @fav = true
       @room = current_user.favorites
@@ -86,6 +88,10 @@ class ChatroomsController < ApplicationController
 
   def find_room
     @room = Chatroom.find(params[:id])
+  end
+
+  def get_notifications
+    @notifications = Notification.for(current_user)
   end
 
   def room_params
