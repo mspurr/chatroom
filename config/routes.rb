@@ -22,14 +22,14 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :friendships, only: [:create, :destroy, :accept] do 
-    member do 
+  resources :friendships, only: [:create, :destroy, :accept] do
+    member do
       put :accept
     end
   end
-  
+
   resources :users, only: [:show, :profile, :index]
-  
+
   resources :games do
     member do
       put :favorite
@@ -39,6 +39,17 @@ Rails.application.routes.draw do
   resources :searching, path: '/search' do
     collection do
       get :autocomplete
+    end
+  end
+
+  resources :conversations do
+    resources :messages
+
+    collection do
+      get :inbox
+      get :all, action: :index
+      get :sent
+      get :trash
     end
   end
 

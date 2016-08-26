@@ -1,0 +1,28 @@
+<div class="container" id="container2">
+  <div class="body_fill_area">
+    <h2>All Conversations</h2>
+
+    <div class="splitter_light"></div>
+
+    Unread (<%= current_user.mailbox.inbox.unread(current_user).count %>) |
+    All Conversations (<%= current_user.mailbox.conversations.count %>) |
+    Sent (<%= current_user.mailbox.sentbox.count %>) |
+    Trash (<%= current_user.mailbox.trash.count %>)
+
+    <div class="splitter_light"></div>
+
+    Total: <%= @conversations.count %>
+
+    <% @conversations.each do |conversation| %>
+      <div>
+        <% if conversation.is_unread?(current_user) %>
+          <strong><%= link_to "#{conversation.subject}", conversation_path(conversation) %></strong>
+        <% else %>
+          <%= link_to "#{conversation.subject}", conversation_path(conversation) %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%= link_to "New Conversations", new_conversation_path %>
+  </div>
+</div>
