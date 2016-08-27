@@ -1,11 +1,9 @@
 # Be sure to restart your server when you modify this file. Action Cable runs in an EventMachine loop that does not support auto reloading.
 class ChatroomsChannel < ApplicationCable::Channel
   def subscribed
-    @chatroom = Chatroom.find(params[:chatrooms_id])
-    #puts params[:chatrooms_id]
-    #current_user.join_room(@chatroom)
-    stream_from "chatrooms:#{@chatroom.id}"
     # stream_from "some_channel"
+    #current_user.join_room(@chatroom)
+    stream_for @chatroom
   end
 
   def unsubscribed

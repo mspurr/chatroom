@@ -27,9 +27,9 @@ class ChatroomsController < ApplicationController
   end
 
   def show
+    @chatroom = Chatroom.find(params[:id])
     @broadcast = @room.broadcasts.order(created_at: :desc)
     @chat_messages = @room.chat_messages.order(created_at: :desc).limit(500).reverse
-    @verify_chatroom = Chatroom.find(params[:id]) #To verify being at /chatrooms/id page for actioncable
   end
 
   def new

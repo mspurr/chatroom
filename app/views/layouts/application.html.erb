@@ -36,8 +36,8 @@
         <%= csrf_meta_tags %>
 
         <% if user_signed_in? %>
-          <% if @verify_chatroom %>
-            <%= tag :meta, name: "current_user", data: {id: current_user.id, chatroom_id: @verify_chatroom.id} %>
+          <% if @chatroom %>
+            <%= tag :meta, name: "chatroom_params", data: { chatroom: @chatroom } %>
           <% end %>
         <% end %>
 
