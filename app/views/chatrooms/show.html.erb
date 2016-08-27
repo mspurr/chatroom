@@ -1,172 +1,218 @@
-    <!-- CHATROOM SITE DESIGN -->
-    <div class="container" id="container2">
-        <div class="body_fill_area">
+<!-- CHATROOM SITE DESIGN -->
+<div class="container" id="container2">
+    <div class="body_fill_area">
 
-            <%= render 'chatrooms/room_title' %>
+        <%= render 'chatrooms/room_title' %>
 
-            <div class="user_window_title">
-                <h2>Userlist</h2>
-            </div>
-            <div class="chatwindow">
-                <div class="chat_inside">
-                  <div class="chat_message_area" data-behavior="chat-messages" data-chatroom-id="<%= @room.id %>">
-                    <% @chat_messages.each do |chat_message| %>
-                      <%= render chat_message %>
-                    <% end %>
-                </div>
-
-                <%= render 'chat_messages/chat_menu' %>
-
-            </div>
+        <div class="user_window_title">
+            <h2>Userlist</h2>
         </div>
-        <div class="userwindow">
+        <div class="chatwindow">
             <div class="chat_inside">
-                <div class="users_pop_area">
-
-                    <%= render 'chatrooms/user_list' %>
-
-                </div>
-                <span class="clear_list_btn">
-                    <i class="fa fa-times-circle"></i>Clear list
-                </span>
-                <span class="invite_all_btn">
-                    <i class="fa fa-paper-plane"></i>Invite All
-                </span>
-                <p class="window_tip">Use #hashtags in the chatwindow to match with other users. Users matching your hashtags will appear above.</p>
+                <div class="chat_message_area" data-behavior="chat-messages" data-chatroom-id="<%= @room.id %>">
+                <% @chat_messages.each do |chat_message| %>
+                    <%= render chat_message %>
+                <% end %>
             </div>
-        </div>
 
-        <!-- Chatroom site funtions buttons // Follow & Favorite //INVITE -->
-        <div class="chatroom_functions">
-            <% if current_user.favorites.where(title: @room.title).count > 0 %>
-              <%= link_to favorite_chatroom_path(@room, type: "unfavorite"), class: "unfav_btn", method: :put, remote: true do %>
-                <span class="fav_room_btn unfav">
-                    <i class="fa fa-heart noselect"></i>
-                    Unfavorite room
-                </span>
-              <% end %>
-            <% else %>
-              <%= link_to favorite_chatroom_path(@room, type: "favorite"), class: "fav_btn", method: :put, remote: true do %>
-                <span class="fav_room_btn">
-                    <i class="fa fa-heart noselect"></i>
-                    Favorite room
-                </span>
-              <% end %>
+            <%= render 'chat_messages/chat_menu' %>
+
+        </div>
+    </div>
+    <div class="userwindow">
+        <div class="chat_inside">
+            <div class="users_pop_area">
+
+                <%= render 'chatrooms/user_list' %>
+
+            </div>
+            <span class="clear_list_btn">
+                <i class="fa fa-times-circle"></i>Clear list
+            </span>
+            <span class="invite_all_btn">
+                <i class="fa fa-paper-plane"></i>Invite All
+            </span>
+            <p class="window_tip">Use #hashtags in the chatwindow to match with other users. Users matching your hashtags will appear above.</p>
+        </div>
+    </div>
+
+    <!-- Chatroom site funtions buttons // Follow & Favorite //INVITE -->
+    <div class="chatroom_functions">
+        <% if current_user.favorites.where(title: @room.title).count > 0 %>
+            <%= link_to favorite_chatroom_path(@room, type: "unfavorite"), class: "unfav_btn", method: :put, remote: true do %>
+            <span class="fav_room_btn unfav">
+                <i class="fa fa-heart noselect"></i>
+                Unfavorite room
+            </span>
             <% end %>
-        </div>
-        <!-- PART END -->
+        <% else %>
+            <%= link_to favorite_chatroom_path(@room, type: "favorite"), class: "fav_btn", method: :put, remote: true do %>
+            <span class="fav_room_btn">
+                <i class="fa fa-heart noselect"></i>
+                Favorite room
+            </span>
+            <% end %>
+        <% end %>
+    </div>
+    <!-- PART END -->
 
-        <%= render 'friends/friend_invite' %>
+    <%= render 'friends/friend_invite' %>
 
-        <div class="wrap_divs">
-            <%= render 'chatrooms/chatroom_tags' %>
+    <div class="wrap_divs">
+        <%= render 'chatrooms/chatroom_tags' %>
 
-            <%= render 'chatrooms/chatroom_info' %>
+        <%= render 'chatrooms/chatroom_info' %>
 
-            <%= render 'chatrooms/chatroom_explore' %>
-        </div>
+        <%= render 'chatrooms/chatroom_explore' %>
+    </div>
 
 
 
-        <div class="wrap_broadcasts">
-          <% if @room.user == current_user %>
-            <div class="broadcastwindow m_top">
-                <div class="broad_title">
-                    <p class="broadheader">Create a new broadcast</p>
-                </div>
-                <div class="user_post_area broad_post">
-                    <%= render 'broadcasts/form' %>
-                </div>
+    <div class="wrap_broadcasts">
+        <% if @room.user == current_user %>
+        <div class="broadcastwindow m_top">
+            <div class="broad_title">
+                <p class="broadheader">Create a new broadcast</p>
             </div>
-          <% else %>
-            <div class="broadcastwindow m_top">
-                <div class="broad_title">
-                    <p class="broadheader">Create a new broadcast</p>
-                </div>
-                <div class="user_post_area broad_post">
-                    <%= render 'broadcasts/form' %>
-                </div>
+            <div class="user_post_area broad_post">
+                <%= render 'broadcasts/form' %>
             </div>
-          <% end %>
-
-        <div class="feat_split_wrap">
-            <div class="splitter_light">
-            </div>
-            <p><i class="fa fa-hand-peace-o"></i>Featured</p>
         </div>
-
-        <% @room.broadcasts.top_featured.each do |featured| %>
-            <%= render :partial => "broadcasts/show", locals: {broadcast: featured} %>
+        <% else %>
+        <div class="broadcastwindow m_top">
+            <div class="broad_title">
+                <p class="broadheader">Create a new broadcast</p>
+            </div>
+            <div class="user_post_area broad_post">
+                <%= render 'broadcasts/form' %>
+            </div>
+        </div>
         <% end %>
 
-        <div class="feat_split_wrap">
-            <div class="splitter_light">
+    <div class="feat_split_wrap">
+        <div class="splitter_light">
+        </div>
+        <p><i class="fa fa-hand-peace-o"></i>Featured</p>
+    </div>
+
+    <% @room.broadcasts.top_featured.each do |featured| %>
+        <%= render :partial => "broadcasts/show", locals: {broadcast: featured} %>
+    <% end %>
+
+    <div class="feat_split_wrap">
+        <div class="splitter_light">
+        </div>
+        <p><i class="fa fa-clock-o"></i>Newest</p>
+    </div>
+    <div class="append_broad">
+    <div id="append_broad">
+    </div>
+    <% @room.broadcasts.where.not(id: @room.broadcasts.top_featured).order('created_at DESC').each do |broadcast| %>
+        <%= render :partial => "broadcasts/show", locals: {broadcast: broadcast} %>
+    <% end %>
+    </div>
+
+
+
+
+
+    <!-- BROADCAST WITH COMMENTS (TEMPLATE)
+    <div class="broadcastwindow">
+        <div class="broadcastwindow_header">
+            <div class="recent_broadcast_icon">
+                <i class="ion-radio-waves fa-spin"></i>
             </div>
-            <p><i class="fa fa-clock-o"></i>Newest</p>
-        </div>
-        <div class="append_broad">
-        <div id="append_broad">
-        </div>
-        <% @room.broadcasts.where.not(id: @room.broadcasts.top_featured).order('created_at DESC').each do |broadcast| %>
-            <%= render :partial => "broadcasts/show", locals: {broadcast: broadcast} %>
-        <% end %>
-        </div>
-
-
-
-
-
-        <!-- BROADCAST WITH COMMENTS (TEMPLATE)
-        <div class="broadcastwindow">
-            <div class="broadcastwindow_header">
-                <div class="recent_broadcast_icon">
-                    <i class="ion-radio-waves fa-spin"></i>
-                </div>
-                <div class="follow_broadcast_btn">
-                    <i class="fa fa-eye"></i>
-                    <div class="upside_tooltip_box follow_tool no_wrap" id="follow_tool_position">
-                        <span>Follow this broadcast</span>
-                        <div class="arrow-down"></div>
-                    </div>
+            <div class="follow_broadcast_btn">
+                <i class="fa fa-eye"></i>
+                <div class="upside_tooltip_box follow_tool no_wrap" id="follow_tool_position">
+                    <span>Follow this broadcast</span>
+                    <div class="arrow-down"></div>
                 </div>
             </div>
-            <div class="user_poster_info">
-                <%= image_tag 'pb2.png' %>
-                <div class="user_poster_info_text">
-                    <a href="#"><span class="header_p_link">Username</span></a>
+        </div>
+        <div class="user_poster_info">
+            <%= image_tag 'pb2.png' %>
+            <div class="user_poster_info_text">
+                <a href="#"><span class="header_p_link">Username</span></a>
+                <div class="outer_icon">
+                    <span class="veri_icon ion-ios-checkmark tool_icon">
+                        <span class="upside_tooltip_box follow_tool no_wrap" id="user_header_tool_position">Chatroom Admininistator<div class="arrow-down"></div></span>
+                    </span>
+                </div>
+                <p class="poster_info_p"><i class="fa fa-clock-o"></i>Posted 5 minutes ago</p>
+                <p class="poster_info_p"><i class="fa fa-tag"></i><span class="poster_tag_link">League of legends</span><span>·</span><span class="poster_tag_link">5v5</span><span>·</span><span class="poster_tag_link">Platinum</span></p>
+            </div>
+        </div>
+        <div class="user_post_area">
+            <div class="user_post_area_inside">
+                <p>This is a random broadcast. Please go ahead and like it. This is a random broadcast. Please go ahead and like it.</p>
+                <p>This is a random broadcast. Please go ahead and like it. This is a random broadcast. Please go ahead and like it.This is a random broadcast. Please go ahead and like it. This is a random broadcast. Please go ahead and like it.</p>
+            </div>
+        </div>
+        <div class="post_functions_area">
+            <p>
+                <i class="fa fa-thumbs-up thumb_icon"></i>
+                98 Thumbs up
+                <span class="small_dot">·</span>
+                <span class="small_functions_link thumbs_up">Thumbs up this broadcast</span>
+                <span class="small_functions_link thumbs_down">Remove thumbs up</span>
+            </p>
+            <p class="broadcast_float_right"><i class="fa fa-comments-o"></i><span class="small_functions_link comm_toggle noselect">9 Comments</span></p>
+        </div>
+        <div class="user_comment_input">
+            <%= image_tag 'gaben.png' %>
+            <textarea placeholder="Write a comment ..." name="message" class="input_field_comment"></textarea>
+            <input type="submit" value="Post Comment" class="input_comment_btn">
+        </div>
+
+
+        <div class="post_comment_area">
+
+
+            <div class="comm_with_reply">
+                <div class="user_comment">
+                    <%= image_tag 'pb2.png' %>
+                    <a href="#"><span class="comment_header">Usernamislongwtfe</span></a>
                     <div class="outer_icon">
                         <span class="veri_icon ion-ios-checkmark tool_icon">
-                            <span class="upside_tooltip_box follow_tool no_wrap" id="user_header_tool_position">Chatroom Admininistator<div class="arrow-down"></div></span>
+                            <span class="upside_tooltip_box follow_tool no_wrap">Chatroom Admininistator<div class="arrow-down"></div></span>
                         </span>
                     </div>
-                    <p class="poster_info_p"><i class="fa fa-clock-o"></i>Posted 5 minutes ago</p>
-                    <p class="poster_info_p"><i class="fa fa-tag"></i><span class="poster_tag_link">League of legends</span><span>·</span><span class="poster_tag_link">5v5</span><span>·</span><span class="poster_tag_link">Platinum</span></p>
+                    <p class="comment_header_p"><span class="small_dot">·</span>10 minutes ago.</p><br/>
+                    <p class="user_comment_text">This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!<p class="comment_functions_p">
+                        <i class="fa fa-thumbs-up thumb_icon"></i>98 Thumbs up<span class="small_dot">·</span><span class="small_functions_link thumbs_up">Thumbs up this comment</span><span class="small_functions_link thumbs_down">Remove thumbs up</span></p>
+                        <p class="broadcast_float_right comment_functions_p"><i class="fa fa-comments-o"></i>2 Comments<span class="small_dot">·</span><span class="small_functions_link reply_btn noselect">Reply</span></p></p>
+                    </div>
+
+                    <div class="reply_comm_section">
+                        <div class="user_comment_input" id="comm_reply_input">
+                            <%= image_tag 'gaben.png' %>
+                            <textarea placeholder="Write a comment ..." name="message" class="input_field_comment"></textarea>
+                            <input type="submit" value="Post Comment" class="input_comment_btn">
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-            <div class="user_post_area">
-                <div class="user_post_area_inside">
-                    <p>This is a random broadcast. Please go ahead and like it. This is a random broadcast. Please go ahead and like it.</p>
-                    <p>This is a random broadcast. Please go ahead and like it. This is a random broadcast. Please go ahead and like it.This is a random broadcast. Please go ahead and like it. This is a random broadcast. Please go ahead and like it.</p>
+
+                <div class="user_comment user_comment_reply">
+                    <%= image_tag 'pb2.png' %>
+                    <a href="#"><span class="comment_header">Usernamislongwtfe</span></a>
+                    <div class="outer_icon">
+                        <span class="veri_icon ion-ios-checkmark tool_icon">
+                            <span class="upside_tooltip_box follow_tool no_wrap">Chatroom Admininistator<div class="arrow-down"></div></span>
+                        </span>
+                    </div>
+                    <p class="comment_header_p"><span class="small_dot">·</span>10 minutes ago.</p><br/>
+                    <p class="user_comment_text">This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!<p class="comment_functions_p"><i class="fa fa-thumbs-up thumb_icon"></i>98 Thumbs up<span class="small_dot">·</span><span class="small_functions_link thumbs_up">Thumbs up this comment</span><span class="small_functions_link thumbs_down">Remove thumbs up</span></p>
                 </div>
-            </div>
-            <div class="post_functions_area">
-                <p>
-                    <i class="fa fa-thumbs-up thumb_icon"></i>
-                    98 Thumbs up
-                    <span class="small_dot">·</span>
-                    <span class="small_functions_link thumbs_up">Thumbs up this broadcast</span>
-                    <span class="small_functions_link thumbs_down">Remove thumbs up</span>
-                </p>
-                <p class="broadcast_float_right"><i class="fa fa-comments-o"></i><span class="small_functions_link comm_toggle noselect">9 Comments</span></p>
-            </div>
-            <div class="user_comment_input">
-                <%= image_tag 'gaben.png' %>
-                <textarea placeholder="Write a comment ..." name="message" class="input_field_comment"></textarea>
-                <input type="submit" value="Post Comment" class="input_comment_btn">
-            </div>
 
 
-            <div class="post_comment_area">
+                <div class="user_comment user_comment_reply">
+                    <%= image_tag 'pb2.gif' %>
+                    <a href="#"><span class="comment_header">Username</span></a>
+                    <p class="comment_header_p"><span class="small_dot">·</span>10 minutes ago.</p><br/>
+                    <p class="user_comment_text">This is a random comment. <i class="fa fa-smile-o"></i><p class="comment_functions_p"><i class="fa fa-thumbs-up thumb_icon"></i>98 Thumbs up<span class="small_dot">·</span><span class="small_functions_link thumbs_up">Thumbs up this comment</span><span class="small_functions_link thumbs_down">Remove thumbs up</span></p>
+                </div>
 
 
                 <div class="comm_with_reply">
@@ -193,56 +239,10 @@
                         </div>
 
                     </div>
-
-                    <div class="user_comment user_comment_reply">
-                        <%= image_tag 'pb2.png' %>
-                        <a href="#"><span class="comment_header">Usernamislongwtfe</span></a>
-                        <div class="outer_icon">
-                            <span class="veri_icon ion-ios-checkmark tool_icon">
-                                <span class="upside_tooltip_box follow_tool no_wrap">Chatroom Admininistator<div class="arrow-down"></div></span>
-                            </span>
-                        </div>
-                        <p class="comment_header_p"><span class="small_dot">·</span>10 minutes ago.</p><br/>
-                        <p class="user_comment_text">This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!<p class="comment_functions_p"><i class="fa fa-thumbs-up thumb_icon"></i>98 Thumbs up<span class="small_dot">·</span><span class="small_functions_link thumbs_up">Thumbs up this comment</span><span class="small_functions_link thumbs_down">Remove thumbs up</span></p>
-                    </div>
-
-
-                    <div class="user_comment user_comment_reply">
-                        <%= image_tag 'pb2.gif' %>
-                        <a href="#"><span class="comment_header">Username</span></a>
-                        <p class="comment_header_p"><span class="small_dot">·</span>10 minutes ago.</p><br/>
-                        <p class="user_comment_text">This is a random comment. <i class="fa fa-smile-o"></i><p class="comment_functions_p"><i class="fa fa-thumbs-up thumb_icon"></i>98 Thumbs up<span class="small_dot">·</span><span class="small_functions_link thumbs_up">Thumbs up this comment</span><span class="small_functions_link thumbs_down">Remove thumbs up</span></p>
-                    </div>
-
-
-                    <div class="comm_with_reply">
-                        <div class="user_comment">
-                            <%= image_tag 'pb2.png' %>
-                            <a href="#"><span class="comment_header">Usernamislongwtfe</span></a>
-                            <div class="outer_icon">
-                                <span class="veri_icon ion-ios-checkmark tool_icon">
-                                    <span class="upside_tooltip_box follow_tool no_wrap">Chatroom Admininistator<div class="arrow-down"></div></span>
-                                </span>
-                            </div>
-                            <p class="comment_header_p"><span class="small_dot">·</span>10 minutes ago.</p><br/>
-                            <p class="user_comment_text">This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!This is a random comment. I like this broadcast a lot man!<p class="comment_functions_p">
-                                <i class="fa fa-thumbs-up thumb_icon"></i>98 Thumbs up<span class="small_dot">·</span><span class="small_functions_link thumbs_up">Thumbs up this comment</span><span class="small_functions_link thumbs_down">Remove thumbs up</span></p>
-                                <p class="broadcast_float_right comment_functions_p"><i class="fa fa-comments-o"></i>2 Comments<span class="small_dot">·</span><span class="small_functions_link reply_btn noselect">Reply</span></p></p>
-                            </div>
-
-                            <div class="reply_comm_section">
-                                <div class="user_comment_input" id="comm_reply_input">
-                                    <%= image_tag 'gaben.png' %>
-                                    <textarea placeholder="Write a comment ..." name="message" class="input_field_comment"></textarea>
-                                    <input type="submit" value="Post Comment" class="input_comment_btn">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
-                -->
-
             </div>
+            -->
+
         </div>
     </div>
+</div>
