@@ -3,7 +3,7 @@ class ChatroomsChannel < ApplicationCable::Channel
   def subscribed
     # stream_from "some_channel"
     #current_user.join_room(@chatroom)
-    stream_for @chatroom
+    stream_from "chatrooms:#{params[:chatrooms_id]}"
   end
 
   def unsubscribed

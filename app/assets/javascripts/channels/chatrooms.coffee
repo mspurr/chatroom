@@ -1,7 +1,7 @@
 $(document).ready ->
   if $("meta[name='chatroom_params']").length > 0 #checks if currently at a chatrooms show page
     currentChatroom = $("meta[name='chatroom_params']").data("chatroom")
-    App.chatrooms = App.cable.subscriptions.create {channel: "ChatroomsChannel", chatrooms_id: currentChatroom.id},
+    App.chatrooms = App.cable.subscriptions.create { channel: "ChatroomsChannel", chatrooms_id: currentChatroom.id },      
       connected: ->
         # Called when the subscription is ready for use on the server
         console.log "Chatroom connected: #{currentChatroom.title}"
