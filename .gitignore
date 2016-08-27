@@ -18,8 +18,8 @@ coverage*
 
 # DB Config
 config/database.yml
-
 public/assets
 public/system
-
 dump.rdb
+.DS_Store
+
