@@ -11,7 +11,7 @@ class NotificationsChannel < ApplicationCable::Channel
   end
 
   def send_notification(data)
-    
+
   end
 
   def get_notifications
