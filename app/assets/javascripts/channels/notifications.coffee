@@ -10,11 +10,7 @@ $(document).ready ->
 
     received: (data) ->
       # Called when there's incoming data on the websocket for this channel
-      console.log "Received Notification!"
       $('#chat_activity_area').prepend(this.createHtmlBlock(data))
-
-      console.log "Existing Notfication!"
-      console.log data.existing_notifications
 
       if data.existing_notifications
         $('#chat_activity_area').prepend(this.createHtmlBlock(notification)) for notification in data.existing_notifications
@@ -23,9 +19,6 @@ $(document).ready ->
       { body, read, created_at } = data.notification
       { user } = data.user
       { sender } = data.sender
-      console.log data.notification
-      console.log data.user
-      console.log data.sender
       block = """
          <div class="inbox_message" id="invitation">
           <div class="msg_from_pic">

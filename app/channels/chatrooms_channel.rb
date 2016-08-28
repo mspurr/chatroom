@@ -2,7 +2,7 @@
 class ChatroomsChannel < ApplicationCable::Channel
   def subscribed
     # stream_from "some_channel"
-    #current_user.join_room(@chatroom)
+    puts "\n\n========================"
     chatroom = Chatroom.find(params[:chatrooms_id])
 
     chatroom.follow!(current_user)
