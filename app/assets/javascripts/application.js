@@ -16,6 +16,10 @@
 //= require masonry/jquery.masonry
 //= require bootstrap-sprockets
 //= require ./channels/application_cable
+//= require global
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .
 
 //Loading icon ALL pages
