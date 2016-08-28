@@ -8,6 +8,7 @@ gem 'rails', '>= 5.0.0.rc2', '< 5.1'
 # gem 'railties', '~> 5.0', '>= 5.0.0.beta1'
 gem 'puma'
 gem 'redis'
+gem 'redis-namespace'
 
 # ORM
 gem 'pg'

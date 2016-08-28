@@ -92,4 +92,35 @@ class User < ActiveRecord::Base
     find_random.limit(number)
   end
 
+  def follow!(chatroom)
+    $redis.multi do
+      $redis.sadd(self.redis_key(:following), chatroom.id)
+      $redis.sadd(chatroom.redis_key(:followers), self.id)
+    end
+  end
+
+  def unfollow!(chatroom)
+    $redis.multi do
+      $redis.srem(self.redis_key(:following), chatroom.id)
+      $redis.srem(chatroom.redis_key(:followers), self.id)
+    end
+  end
+
+  def following
+    chatroom_ids = $redis.smembers(self.redis_key(:following))
+    Chatroom.where(:id => chatroom_ids)
+  end
+
+  def following?(chatroom)
+    $redis.sismember(self.redis_key(:following), chatroom.id)
+  end
+
+  def following_count
+    $redis.scard(self.redis_key(:following))
+  end
+
+  # helper method to generate redis keys
+  def redis_key(str)
+    "user:#{self.id}:#{str}"
+  end
 end
