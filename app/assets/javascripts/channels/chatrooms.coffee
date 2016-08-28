@@ -15,6 +15,11 @@ $(document).ready ->
       received: (data) ->
         # Called when there's incoming data on the websocket for this channel
         console.log ("RECEIVED MESSAGE: " + data.chat_message)
+
+        # handle hash tag
+        if data.hash_tag?.tags.length > 0
+          console.log tag for tag in data.hash_tag.tags
+
         chatElement = $("[data-behavior='chat-messages'][data-chatroom-id='#{data.chatroom_id}']")
         chatElement.append(data.chat_message)
         chatElement.prop({ scrollTop: $(".chat_message_area").prop("scrollHeight") })
