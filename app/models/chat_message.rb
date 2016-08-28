@@ -8,12 +8,9 @@ class ChatMessage < ActiveRecord::Base
   
   def check_hashtag
     if tags = self.body.scan(/#\w+/).flatten
-      ActionCable.server.broadcast "chatrooms:#{self.chatroom_id}", {
-        hash_tag: {
-          tags: tags,
-          user: self.user
-        }
-      }
+      tags.each do |tag|
+        self.user.add_active_tag(tag)
+      end
     end
   end
 end

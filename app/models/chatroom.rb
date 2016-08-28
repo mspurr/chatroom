@@ -63,11 +63,12 @@ class Chatroom < ActiveRecord::Base
     $redis.srem(self.redis_key(:tag), tag.id)
   end
 
+  def tags
+    $redis.smembers(self.redis_key(:tag))
+  end
+
   # helper method to generate redis keys
   def redis_key(str)
     "chatroom:#{self.id}:#{str}"
   end
-
-  
-
 end

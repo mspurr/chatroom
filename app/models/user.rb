@@ -119,12 +119,16 @@ class User < ActiveRecord::Base
     $redis.scard(self.redis_key(:following))
   end
 
-  def add_active_tag(tag, chatroom)
-    $redis.hadd(self.redis_key(:tag), { tag_id: tag.id, chatroom_id: chatroom.id })
+  def add_active_tag(tag)
+    $redis.sadd(self.redis_key(:tag), tag)
   end
   
-  def remove_active_tag(tag, chatroom)
-    $redis.hrem(self.redis_key(:tag), { tag_id: tag.id, chatroom_id: chatroom.id })
+  def remove_active_tag(tag)
+    $redis.srem(self.redis_key(:tag), tag)
+  end
+
+  def active_tags
+    $redis.smembers(self.redis_key(:tag))
   end
 
   # helper method to generate redis keys

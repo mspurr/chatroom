@@ -23,7 +23,9 @@
         <div class="chat_inside">
             <div class="users_pop_area">
 
-                <%= render 'chatrooms/user_list' %>
+                <% @chatroom.followers.each do |user| %>
+                    <%= render 'chatrooms/user_list', locals: { user: user } %>
+                <% end %>
 
             </div>
             <span class="clear_list_btn">
