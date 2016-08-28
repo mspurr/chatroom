@@ -4,6 +4,7 @@ $ ->
       connected: ->
         # Called when the subscription is ready for use on the server
         console.log "Chatroom connected: #{currentChatroom.title}"
+        @perform 'get_users'
         #@perform 'get_user_count'
 
       disconnected: ->
@@ -16,9 +17,9 @@ $ ->
         chatElement.append(data.chat_message)
         chatElement.prop({ scrollTop: $(".chat_message_area").prop("scrollHeight") })
 
-        if data.users
-          null
-
+        if data.users?.length > 0
+          App.userActions.setUsers(data.users)
+        
         # handle hash tag
         if data.hash_tag?.tags.length > 0
           console.log tag for tag in data.hash_tag.tags
