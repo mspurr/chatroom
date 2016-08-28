@@ -1,6 +1,5 @@
 $ ->
-  if $("meta[name='chatroom_params']").length > 0 #checks if currently at a chatrooms show page
-    currentChatroom = $("meta[name='chatroom_params']").data("chatroom")
+  if currentChatroom = $("meta[name='chatroom_params']").data("chatroom")
     App.chatrooms = App.cable.subscriptions.create { channel: "ChatroomsChannel", chatrooms_id: currentChatroom.id },
       connected: ->
         # Called when the subscription is ready for use on the server
@@ -29,9 +28,6 @@ $ ->
 
       get_users: ->
         @perform "get_users"
-
-  else
-    null
 
   $('#chat_message_body').bind 'input propertychange', ->
     # console.log "Pressed key: #{$(this).val()}"
