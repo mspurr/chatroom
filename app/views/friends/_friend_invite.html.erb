@@ -1,0 +1,44 @@
+<!-- FRIEND INVITE SECTION -->
+<div class="chatroom_functions_right">
+    <span class="invite_room_btn">
+        <i class="ion-person-add noselect"></i>
+        <span class="upside_tooltip_box follow_tool no_wrap noselect" id="square_btn_position">Invite friends to this chatroom<div class="arrow-down"></div>
+        </span>
+        <div class="messagepop pop">
+            <div class="arrow_up" id="inv_friend_arrow_border"></div>
+            <div class="arrow_up" id="inv_friend_arrow"></div>
+            <div class="corner_cross" id="close">
+                <i class="ion-close-round"></i>
+            </div>
+            <div class="invite_friends_header">
+                <h3>Invite Friends</h3>
+            </div>
+            <div class="inv_friends_search">
+                <p>Select the friends you whish to invite.</p>
+                <form action="/search" method="get">
+                    <div class="inner_search">
+                        <input type="text" name="q" class="input_search_bar" placeholder="Search friends" autocomplete="off" tabindex="1" value="" id="inv_search">
+                    </div>
+                </form>
+            </div>
+
+            <div class="users_pop_area" id="inv_friends_box">
+              <%= render 'friends/friend_list' %>
+            </div>
+
+            <div class="inv_btns_section">
+                <span class="default_small_btn float_left inv_deselect_all">
+                    Deselect all
+                </span>
+                <span class="default_small_btn float_right inv_select_all">
+                    Select All
+                </span>
+            </div>
+            <span class="inv_friend_final_btn">
+                Invite
+            </span>
+        </div>
+    </span>
+</div>
+
+<!-- END -->

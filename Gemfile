@@ -8,6 +8,7 @@ gem 'rails', '>= 5.0.0.rc2', '< 5.1'
 # gem 'railties', '~> 5.0', '>= 5.0.0.beta1'
 gem 'puma'
 gem 'redis'
+gem 'redis-namespace'
 
 # ORM
 gem 'pg'
@@ -26,7 +27,7 @@ gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'jquery-rails'
 gem 'jquery-turbolinks', '~> 2.1.0'
 gem 'masonry-rails', '~> 0.2.4'
-gem 'turbolinks'
+gem 'turbolinks', '~> 5.0.0'
 gem 'jquery-ui-rails'
 
 

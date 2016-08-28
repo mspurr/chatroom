@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
         <title>World's best social chatroom for gamers.</title>
-
+        <%= action_cable_meta_tag %>
 
         <!-- External links -->
         <%= stylesheet_link_tag "//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" %>
@@ -36,8 +36,8 @@
         <%= csrf_meta_tags %>
 
         <% if user_signed_in? %>
-          <% if @verify_chatroom %>
-            <%= tag :meta, name: "current_user", data: {id: current_user.id, chatroom_id: @verify_chatroom.id} %>
+          <% if @chatroom %>
+            <%= tag :meta, name: "chatroom_params", data: { chatroom: @chatroom } %>
           <% end %>
         <% end %>
 

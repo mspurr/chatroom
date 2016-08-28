@@ -27,4 +27,48 @@ class Chatroom < ActiveRecord::Base
     find_random.limit(number)
   end
 
+  def follow!(user)
+    $redis.multi do
+      $redis.sadd(self.redis_key(:following), user.id)
+      $redis.sadd(user.redis_key(:followers), self.id)
+    end
+  end
+
+  def unfollow!(user)
+    $redis.multi do
+      $redis.srem(self.redis_key(:following), user.id)
+      $redis.srem(user.redis_key(:followers), self.id)
+    end
+  end
+
+  # users that self follows
+  def followers
+    user_ids = $redis.smembers(self.redis_key(:followers))
+    User.where(:id => user_ids)
+  end
+
+  def follower?(user)
+    $redis.sismember(self.redis_key(:followers), user.id)
+  end
+
+  def follower_count
+    $redis.scard(self.redis_key(:followers))
+  end
+  
+  def add_tag!(tag)
+    $redis.sadd(self.redis_key(:tag), tag.id)
+  end
+  
+  def remove_tag!(tag)
+    $redis.srem(self.redis_key(:tag), tag.id)
+  end
+
+  def tags
+    $redis.smembers(self.redis_key(:tag))
+  end
+
+  # helper method to generate redis keys
+  def redis_key(str)
+    "chatroom:#{self.id}:#{str}"
+  end
 end
