@@ -19,24 +19,8 @@
 
         </div>
     </div>
-    <div class="userwindow">
-        <div class="chat_inside">
-            <div class="users_pop_area">
-
-                <% @chatroom.followers.each do |user| %>
-                    <%= render 'chatrooms/user_list', locals: { user: user } %>
-                <% end %>
-
-            </div>
-            <span class="clear_list_btn">
-                <i class="fa fa-times-circle"></i>Clear list
-            </span>
-            <span class="invite_all_btn">
-                <i class="fa fa-paper-plane"></i>Invite All
-            </span>
-            <p class="window_tip">Use #hashtags in the chatwindow to match with other users. Users matching your hashtags will appear above.</p>
-        </div>
-    </div>
+    
+    <%= react_component 'App.component.userWrapper' %>
 
     <!-- Chatroom site funtions buttons // Follow & Favorite //INVITE -->
     <div class="chatroom_functions">
