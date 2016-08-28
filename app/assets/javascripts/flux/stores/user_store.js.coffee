@@ -11,12 +11,12 @@ App.userStore = do ->
     switch payload.actionType
       when actionTypes.ADD_USER
         users.push(payload.user)
-        # do something
+      when actionTypes.SET_USERS
+        users = payload.users
       else
         return
     that.notifyListeners()
 
-  that.getUsers = ->
-    users
-
+  that.getUsers = -> users
+  
   that

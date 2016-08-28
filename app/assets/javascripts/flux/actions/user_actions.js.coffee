@@ -6,4 +6,12 @@ App.userActions = do ->
       actionType: actionTypes.ADD_USER
       user: user
 
-  { add }
+  setUsers = (users) ->
+    App.dispatcher.dispatch
+      actionType: actionTypes.SET_USERS
+      users: users
+
+  { 
+    add,
+    setUsers
+  }
