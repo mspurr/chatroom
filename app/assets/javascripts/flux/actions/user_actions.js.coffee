@@ -17,7 +17,7 @@ App.userActions = do ->
       user: user
       tags: tags
 
-  { 
+  {
     add,
     setUsers,
     setUserTags

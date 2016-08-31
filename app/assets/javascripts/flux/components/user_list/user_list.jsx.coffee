@@ -4,7 +4,7 @@ App.component.userListItem = React.createClass
 
   render: ->
     user = this.props.user
-    tags = 
+    tags =
       if user.tags?.length > 0
         for tag in user.tags
           `<a href="#" key={tag}>#{tag}</a>`
@@ -15,7 +15,7 @@ App.component.userListItem = React.createClass
           <img src={App.assets.images.defaultUser} />
         </div>
         <div className="msg_info_from user_list_pos">
-          <h5>username</h5>
+          <h5>{user.username}</h5>
           <span className="match_title">matching with:</span>
           <h6>12:49</h6>
         </div>
