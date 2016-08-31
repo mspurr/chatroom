@@ -2,12 +2,31 @@ App.component.userListItem = React.createClass
   props:
     user: React.PropTypes.object
 
+  getInitialState: ->
+    messageExpanded: false
+
+  toggleExpand: ->
+    this.setState messageExpanded: (not this.state.messageExpanded)
+
   render: ->
     user = this.props.user
     tags =
       if user.tags?.length > 0
         for tag in user.tags
           `<a href="#" key={tag}>#{tag}</a>`
+
+    if this.state.messageExpanded
+      message =
+        `(
+          <div className="user_list_msg_area">
+            <p>" This is a message taken from the chat window. #5v5 #diamond #ranked. Please add me as friend or invite me. "</p>
+          </div>
+        )`
+
+      expandButton = `<span className="view_msg_user view_tog" id="view_msg_user" onClick={this.toggleExpand}>View message<i className="fa fa-angle-right"></i></span>`
+    else
+      message = null
+      expandButton = `<span className="view_msg_user hide_msg_user" id="hide_msg_user" onClick={this.toggleExpand}>Hide message<i className="fa fa-angle-up"></i></span>`
 
     `(
       <div className="inbox_message user_list_col">
@@ -23,8 +42,7 @@ App.component.userListItem = React.createClass
           <div className="used_tags_list user_list_tag">
               {tags}
           </div>
-          <span className="view_msg_user view_tog" id="view_msg_user">View message<i className="fa fa-angle-right"></i></span>
-          <span className="view_msg_user hide_msg_user" id="hide_msg_user">Hide message<i className="fa fa-angle-up"></i></span>
+          {expandButton}
           <i className="fa fa-user-plus add_friend_user_list"><span className="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="small_btns_pos">
             Add friend<div className="arrow-left"></div>
           </span></i>
@@ -32,8 +50,6 @@ App.component.userListItem = React.createClass
             Invite<div className="arrow-left"></div>
           </span></i>
         </div>
-        <div className="user_list_msg_area">
-          <p>" This is a message taken from the chat window. #5v5 #diamond #ranked. Please add me as friend or invite me. "</p>
-        </div>
+        {message}
       </div>
     )`
