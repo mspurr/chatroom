@@ -17,12 +17,13 @@ $ ->
         chatElement.append(data.chat_message)
         chatElement.prop({ scrollTop: $(".chat_message_area").prop("scrollHeight") })
 
+        # When a user enters or leaves the chatroom
         if data.users?.length > 0
           App.userActions.setUsers(data.users)
         
-        # handle hash tag
-        if data.hash_tag?.tags.length > 0
-          console.log tag for tag in data.hash_tag.tags
+        # after chat message is sent
+        if data.tags?.length > 0
+          App.userActions.setUserTags(data.user, data.tags)
 
       send_message: (chatroom_id, message) ->
         @perform "send_message", {chatroom_id: chatroom_id, body: message}

@@ -2,6 +2,6 @@ App.userConstants = do ->
 
   actionTypes: {
     'ADD_USER',
-    'GET_USERS',
-    'SET_USERS'
+    'SET_USERS',
+    'SET_USER_TAGS'
   }
