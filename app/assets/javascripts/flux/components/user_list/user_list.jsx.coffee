@@ -3,8 +3,11 @@ App.component.userListItem = React.createClass
     user: React.PropTypes.object
 
   render: ->
-
-    console.log this.props.user
+    user = this.props.user
+    tags = 
+      if user.tags?.length > 0
+        for tag in user.tags
+          `<a href="#" key={tag}>#{tag}</a>`
 
     `(
       <div className="inbox_message user_list_col">
@@ -18,7 +21,7 @@ App.component.userListItem = React.createClass
         </div>
         <div className="inbox_msg_area user_list_pos">
           <div className="used_tags_list user_list_tag">
-              <a href="#">#3v3</a>
+              {tags}
           </div>
           <span className="view_msg_user view_tog" id="view_msg_user">View message<i className="fa fa-angle-right"></i></span>
           <span className="view_msg_user hide_msg_user" id="hide_msg_user">Hide message<i className="fa fa-angle-up"></i></span>
