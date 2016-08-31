@@ -24,6 +24,17 @@ App.component.userListItem = React.createClass
         )`
 
       expandButton = `<span className="view_msg_user view_tog" id="view_msg_user" onClick={this.toggleExpand}>View message<i className="fa fa-angle-right"></i></span>`
+      socialButtons =
+        `(
+          <div>
+            <i className="fa fa-user-plus add_friend_user_list"><span className="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="small_btns_pos">
+              Add friend<div className="arrow-left"></div>
+            </span></i>
+            <i className="fa fa-paper-plane add_friend_user_list inv_friend_user_list"><span className="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="small_btns_pos">
+              Invite<div className="arrow-left"></div>
+            </span></i>
+          </div>
+        )`
     else
       message = null
       expandButton = `<span className="view_msg_user hide_msg_user" id="hide_msg_user" onClick={this.toggleExpand}>Hide message<i className="fa fa-angle-up"></i></span>`
@@ -43,12 +54,7 @@ App.component.userListItem = React.createClass
               {tags}
           </div>
           {expandButton}
-          <i className="fa fa-user-plus add_friend_user_list"><span className="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="small_btns_pos">
-            Add friend<div className="arrow-left"></div>
-          </span></i>
-          <i className="fa fa-paper-plane add_friend_user_list inv_friend_user_list"><span className="upside_tooltip_box follow_tool no_wrap tool_before_follow noselect" id="small_btns_pos">
-            Invite<div className="arrow-left"></div>
-          </span></i>
+          {socialButtons}
         </div>
         {message}
       </div>

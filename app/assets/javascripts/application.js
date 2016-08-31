@@ -271,25 +271,7 @@ $('.chat_message_area, .dropdown_fill_area, .users_pop_area, .friendlist_area').
 
 
     //Userlist users with dropdown message
-    $('.user_list_msg_area').hide();
-    $('.hide_msg_user').hide();
     $('.add_friend_user_list').hide();
-
-    $('.view_tog').on('click', function() {
-        $(this).toggle();
-        $(this).closest('div').find('.hide_msg_user').toggle();
-        $(this).closest('div').find('.add_friend_user_list').slideToggle(100);
-        $(this).closest('.user_list_col').find('.user_list_msg_area').slideToggle(200);
-    });
-
-    $('.hide_msg_user').on('click', function() {
-        $(this).toggle();
-        $(this).closest('div').find('.view_tog').toggle();
-        $(this).closest('div').find('.add_friend_user_list').slideToggle(100);
-        $(this).closest('.user_list_col').find('.user_list_msg_area').slideToggle(200);
-    });
-
-
 
     //Profile page chatrooms tabs
     $('.tabs .tabs_d a').on('click', function(e)  {
