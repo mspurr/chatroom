@@ -8,16 +8,16 @@ App.component.chatMessageWrapper = React.createClass
   componentDidMount: ->
     App.chatroomStore.addChangeListener(this.onChange)
   
-  componentDidUnmount: ->
+  componentWillUnmount: ->
     App.chatroomStore.removeChangeListener(this.onChange)
 
   onChange: ->
-    getState()
+    this.setState getState()
 
   render: ->
     messages =
       for message in this.state.messages
-        `<App.component.chatMessage message={message} />`
+        `<App.component.chatMessage message={message.message} user={message.user} key={message.message.id} />`
 
     `(
       <div>

@@ -13,11 +13,14 @@ $ ->
       received: (data) ->
         # Called when there's incoming data on the websocket for this channel
         chatElement = $("[data-behavior='chat-messages'][data-chatroom-id='#{data.chatroom_id}']")
-        chatElement.append(data.chat_message)
         chatElement.prop({ scrollTop: $(".chat_message_area").prop("scrollHeight") })
 
-        if data.chat_message
-          App.chatroomActions.addMessage(data.chat_message)
+        if data.chat_message?
+          # chat_message: chat_message,
+          # chatroom_id: chat_message.chatroom.id,
+          # tags: chat_message.user.active_tags,
+          # user: chat_message.user
+          App.chatroomActions.addMessage(data.chat_message, data.user)
 
         # When a user enters or leaves the chatroom
         if data.users?.length > 0
