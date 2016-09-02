@@ -4,15 +4,19 @@ class ChatroomsChannel < ApplicationCable::Channel
     # stream_from "some_channel"
     puts "\n\n========================"
     chatroom = Chatroom.find(params[:chatrooms_id])
-
-    chatroom.follow!(current_user)
     current_user.follow!(chatroom)
+    chatroom.follow!(current_user)
 
     stream_from "chatrooms:#{params[:chatrooms_id]}"
   end
 
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
+    chatroom = Chatroom.find(params[:chatrooms_id])
+    chatroom.unfollow!(current_user)
+    current_user.follow!(chatroom)
+    current_user.remove_all_tags
+    
     stop_all_streams
   end
 
@@ -23,8 +27,8 @@ class ChatroomsChannel < ApplicationCable::Channel
   end
 
   def get_users
-    chatroom = Chatroom.find(params[:chatrooms_id]) 
-
+    chatroom = Chatroom.find(params[:chatrooms_id])
+    
     ActionCable.server.broadcast "chatrooms:#{chatroom.id}", {
       users: chatroom.followers
     }

@@ -27,9 +27,11 @@ class ChatroomsController < ApplicationController
   end
 
   def show
+    time = 30.minutes.ago
+
     @chatroom = Chatroom.find(params[:id])
     @broadcast = @room.broadcasts.order(created_at: :desc)
-    @chat_messages = @room.chat_messages.order(created_at: :desc).limit(500).reverse
+    @chat_messages = @room.chat_messages.where('created_at > ?', time).order(created_at: :desc).limit(100).reverse
   end
 
   def new

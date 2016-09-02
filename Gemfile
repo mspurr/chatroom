@@ -29,11 +29,13 @@ gem 'jquery-turbolinks', '~> 2.1.0'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'turbolinks', '~> 5.0.0'
 gem 'jquery-ui-rails'
+gem 'react-rails'
 
 
 # Asset compilation
 gem 'sass-rails', '~> 5.0.4'
 gem 'uglifier', '>= 1.3.0'
+gem 'coffeelint'
 
 # Templating
 gem 'coffee-rails', '~> 4.1.0'

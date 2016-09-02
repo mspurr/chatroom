@@ -4,7 +4,7 @@ $ ->
       connected: ->
         # Called when the subscription is ready for use on the server
         console.log "Chatroom connected: #{currentChatroom.title}"
-        #@perform 'get_user_count'
+        @perform 'get_users'
 
       disconnected: ->
         # Called when the subscription has been terminated by the server
@@ -16,12 +16,13 @@ $ ->
         chatElement.append(data.chat_message)
         chatElement.prop({ scrollTop: $(".chat_message_area").prop("scrollHeight") })
 
-        if data.users
-          null
-
-        # handle hash tag
-        if data.hash_tag?.tags.length > 0
-          console.log tag for tag in data.hash_tag.tags
+        # When a user enters or leaves the chatroom
+        if data.users?.length > 0
+          App.userActions.setUsers(data.users)
+        
+        # after chat message is sent
+        if data.tags?.length > 0
+          App.userActions.setUserTags(data.user, data.tags)
 
       send_message: (chatroom_id, message) ->
         @perform "send_message", {chatroom_id: chatroom_id, body: message}
