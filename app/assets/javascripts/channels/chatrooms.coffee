@@ -16,6 +16,9 @@ $ ->
         chatElement.append(data.chat_message)
         chatElement.prop({ scrollTop: $(".chat_message_area").prop("scrollHeight") })
 
+        if data.chat_message
+          App.chatroomActions.addMessage(data.chat_message)
+
         # When a user enters or leaves the chatroom
         if data.users?.length > 0
           App.userActions.setUsers(data.users)
