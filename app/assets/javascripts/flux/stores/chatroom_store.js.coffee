@@ -14,6 +14,8 @@ App.chatroomStore = do ->
           message: payload.message
           user: payload.user
         })
+      when actionTypes.SET_CHAT_MESSAGES
+        messages = payload.messages
       else
         return
     that.notifyListeners()

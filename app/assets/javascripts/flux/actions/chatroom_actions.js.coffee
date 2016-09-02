@@ -7,6 +7,12 @@ App.chatroomActions = do ->
       message: message
       user: user
 
+  setMessages = (messages) ->
+    App.dispatcher.dispatch
+      actionType: actionTypes.SET_CHAT_MESSAGES
+      messages: messages
+
   {
     addMessage
+    setMessages
   }

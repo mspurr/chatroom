@@ -27,10 +27,12 @@ class ChatroomsChannel < ApplicationCable::Channel
 
   def get_users
     chatroom = Chatroom.find(params[:chatrooms_id])
-    
+    chat_messages = chatroom.chat_messages.where('created_at > ?', 30.minutes.ago)
+    messages = chat_messages.map { |m| { "user": m.user, "message": m } }
     ActionCable.server.broadcast "chatrooms:#{chatroom.id}", {
       action: "get_users",
-      users: chatroom.followers
+      users: chatroom.followers,
+      messages: messages
     }
   end
 

@@ -12,8 +12,6 @@ $ ->
 
       received: (data) ->
         # Called when there's incoming data on the websocket for this channel
-        chatElement = $("[data-behavior='chat-messages'][data-chatroom-id='#{data.chatroom_id}']")
-        chatElement.prop({ scrollTop: $(".chat_message_area").prop("scrollHeight") })
 
         if data.action is 'chat_message'
           # DATA CONTENTS
@@ -28,7 +26,11 @@ $ ->
         if data.action is 'get_users'
           # DATA CONTENTS
           # users: chatroom.followers
+          # messages:
+          #   user: user
+          #   message: message
           App.userActions.setUsers(data.users)
+          App.chatroomActions.setMessages(data.messages)
 
       send_message: (chatroom_id, message) ->
         @perform "send_message", {chatroom_id: chatroom_id, body: message}
