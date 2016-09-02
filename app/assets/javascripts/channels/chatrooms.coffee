@@ -4,7 +4,7 @@ $ ->
       connected: ->
         # Called when the subscription is ready for use on the server
         console.log "Chatroom connected: #{currentChatroom.title}"
-        @perform 'get_users'
+        @perform 'load_data'
 
       disconnected: ->
         # Called when the subscription has been terminated by the server
@@ -23,7 +23,7 @@ $ ->
           App.userActions.setUserTags(data.user, data.tags))
 
         # When a user enters or leaves the chatroom
-        if data.action is 'get_users'
+        if data.action is 'load_data'
           # DATA CONTENTS
           # users: chatroom.followers
           # messages:
@@ -35,8 +35,8 @@ $ ->
       send_message: (chatroom_id, message) ->
         @perform "send_message", {chatroom_id: chatroom_id, body: message}
 
-      get_users: ->
-        @perform "get_users"
+      load_data: ->
+        @perform "load_data"
 
   $('#chat_message_body').bind 'input propertychange', ->
     # console.log "Pressed key: #{$(this).val()}"
