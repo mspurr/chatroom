@@ -13,8 +13,6 @@ App.component.userWrapper = React.createClass
       users: App.userStore.getUsers()
 
   render: ->
-    console.log "USERS:"
-    console.log this.state.users
     users =
       for user in this.state.users
         `<App.component.userListItem user={user} key={user.id} />`

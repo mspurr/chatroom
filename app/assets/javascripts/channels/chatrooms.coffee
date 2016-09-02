@@ -5,7 +5,6 @@ $ ->
         # Called when the subscription is ready for use on the server
         console.log "Chatroom connected: #{currentChatroom.title}"
         @perform 'get_users'
-        #@perform 'get_user_count'
 
       disconnected: ->
         # Called when the subscription has been terminated by the server
