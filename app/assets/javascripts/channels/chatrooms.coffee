@@ -15,20 +15,20 @@ $ ->
         chatElement = $("[data-behavior='chat-messages'][data-chatroom-id='#{data.chatroom_id}']")
         chatElement.prop({ scrollTop: $(".chat_message_area").prop("scrollHeight") })
 
-        if data.chat_message?
+        if data.action is 'chat_message'
+          # DATA CONTENTS
           # chat_message: chat_message,
           # chatroom_id: chat_message.chatroom.id,
           # tags: chat_message.user.active_tags,
           # user: chat_message.user
-          App.chatroomActions.addMessage(data.chat_message, data.user)
+          App.chatroomActions.addMessage(data.chat_message, data.user
+          App.userActions.setUserTags(data.user, data.tags))
 
         # When a user enters or leaves the chatroom
-        if data.users?.length > 0
+        if data.action is 'get_users'
+          # DATA CONTENTS
+          # users: chatroom.followers
           App.userActions.setUsers(data.users)
-        
-        # after chat message is sent
-        if data.tags?.length > 0
-          App.userActions.setUserTags(data.user, data.tags)
 
       send_message: (chatroom_id, message) ->
         @perform "send_message", {chatroom_id: chatroom_id, body: message}

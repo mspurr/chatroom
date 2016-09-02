@@ -29,6 +29,7 @@ class ChatroomsChannel < ApplicationCable::Channel
     chatroom = Chatroom.find(params[:chatrooms_id])
     
     ActionCable.server.broadcast "chatrooms:#{chatroom.id}", {
+      action: "get_users",
       users: chatroom.followers
     }
   end
