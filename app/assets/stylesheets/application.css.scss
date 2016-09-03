@@ -24,6 +24,17 @@
 @import "chatrooms";
 @import "games";
 
+$white: #FFFFFF;
+$dark-gray: #737373;
+$light-gray: #A0A0A0;
+$bg-color: #ECECEC;
+$orange: #FDD364;
+$dark-orange: #E2B641;
+
+$header-font1: "Mallanna";
+$header-font2: "Viga";
+$body-font: "Fira Sans";
+
 * {
   margin: 0;
   padding: 0;
@@ -31,35 +42,34 @@
 }
 
 body {
-  font-family: "Fira Sans","Mallanna";
-  color: #737373;
-  background-color: #ECECEC;
+  font-family: $body-font;
+  color: $dark-gray;
+  background-color: $bg-color;
 }
 
 h1,h2,h3,h4,h5,h6 {
-  color: #FFFFFF;
-  font-family: "Mallanna";
+  color: $white;
+  font-family: $header-font1;
 }
 
 a {
   text-decoration: none;
-  color: #A0A0A0;
+  color: $light-gray;
+  &:hover {
+    text-decoration: none;
+    color: $white;
+  }
+  &:focus {
+    text-decoration: none;
+    outline: none;
+    color: $white;
+  }
 }
-a:hover {
-  text-decoration: none;
-  color: #FFFFFF;
-}
-a:focus {
-  text-decoration: none;
-  outline: none;
-  color: #FFFFFF;
-}
-
 .main_header_bg {
   min-width: 100%;
   height: auto;
   background: transparent;
-  // background: url("mainheaderbg2.png") center center/cover no-repeat fixed #FFFFFF;
+  // background: url("mainheaderbg2.png") center center/cover no-repeat fixed $white;
 }
 #bg-video {
   position: absolute;
@@ -67,23 +77,21 @@ a:focus {
   z-index: -1;
 }
 .main_index_body {
-  background-color: #ececec;
+  background-color: $bg-color;
   border-top: 2px solid #fdd364;
 }
-
 .center_h1 {
   text-align: center;
-    font-size: 4.0em;
-    color: #FDD364;
-    font-family: "Viga";
-    text-shadow: 0px 2px 0px #E2B641;
+  font-size: 4.0em;
+  color: $orange;
+  font-family: $header-font2;
+  text-shadow: 0px 2px 0px $dark-orange;
 }
-
 .center_h4 {
   text-align: center;
   font-size: 1.7em;
-  font-family: "Viga";
-  color: #EFEFEF;
+  font-family: $header-font2;
+  color: $white;
   text-shadow: 0px 2px 0px rgba(171, 165, 165, 0.75);
 }
 
@@ -99,13 +107,13 @@ a:focus {
 .default_btn {
   padding: 5px 20px 5px 20px;
   border: 1px solid #E4B944;
-    border-bottom: 2px solid #E4B944;
+  border-bottom: 2px solid #E4B944;
   text-decoration: none;
   color: #EFEFEF;
   font-size: 1em;
   border-radius: 2px;
   transition: .2s;
-  font-family: "viga";
+  font-family: $header-font2;
   background-color: #EFC760;
   &:hover {
     color: #EFEFEF;
@@ -119,16 +127,16 @@ a:focus {
 .main_header_h5 {
   margin-top: 35px;
   font-size: 1.0em;
-  font-family: "Fira Sans";
+  font-family: $body-font;
   font-weight: 400;
 }
 
 .main_header_h5 a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: $white;
 }
 .main_header_h5 a:hover {
-  border-bottom: 1px dotted #FFFFFF;
+  border-bottom: 1px dotted $white;
 }
 
 #header_login_btn {
@@ -170,7 +178,7 @@ a:focus {
 .nav_logoarea a {
   font-size: 1.8em;
   color: #737373;
-  font-family: "Viga";
+  font-family: $header-font2;
   transition: 0.3s;
 }
 
@@ -250,7 +258,7 @@ a:focus {
   margin-left: 28px;
   font-size: 0.65em;
   text-align: center;
-  color: #FFFFFF;
+  color: $white;
   opacity: 1;
   box-shadow: 0px 0px 2px #ADADAD;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, .4);
@@ -428,7 +436,7 @@ a:focus {
 .main_login_h5 {
   font-size: 1.1em;
   color: #737373;
-  font-family: "Fira Sans";
+  font-family: $body-font;
   font-weight: 400;
 }
 
@@ -479,9 +487,9 @@ a:focus {
 
 #input_login_btn {
   margin-top: 20px;
-  background-color: #FFFFFF;
+  background-color: $white;
   border: none;
-  font-family: "Fira Sans";
+  font-family: $body-font;
   font-size: 1.2em;
   outline: none;
   padding-top: 5px;
@@ -765,7 +773,7 @@ label {
   color: #737373 !important;
   transition: 0.15s !important;
   border-right: none !important;
-  font-family: "Fira Sans","Mallanna" !important;
+  font-family: $body-font !important;
 }
 .user_menu_list ul li a:hover {
   background: #EFEFEF;
@@ -830,7 +838,7 @@ label {
   margin: 0px;
   font-size: 1.0em;
   font-weight: 400;
-  font-family: "Fira Sans","Mallanna";
+  font-family: $body-font;
 }
 .dropdown_fill_area {
   width: 100%;
@@ -933,20 +941,20 @@ label {
   padding-bottom: 20px;
   color: #A3A3A3;
 }
-::-webkit-scrollbar {  
-    width: 6px;  
-}  
-::-webkit-scrollbar-track {  
-    background-color: #eaeaea;  
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background-color: #eaeaea;
     border-left: 1px solid #ccc;
-}  
-::-webkit-scrollbar-thumb {  
+}
+::-webkit-scrollbar-thumb {
     background-color: #CCCCCC;
-    border-radius: 50px;  
-}  
-::-webkit-scrollbar-thumb:hover {  
-    background-color: #BEBEBE;  
-} 
+    border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #BEBEBE;
+}
 #read {
   opacity: 0.6;
 }
@@ -974,7 +982,7 @@ label {
   color: #8E8E8E;
   margin-right: 10px;
   display: inline;
-  font-family: "Fira Sans";
+  font-family: $body-font;
   border-bottom: 1px solid rgba(0, 0, 0, .16);
 }
 #dropdown_btn2 {
@@ -991,7 +999,7 @@ label {
   color: #8E8E8E;
   margin-left: 10px;
   display: inline;
-  font-family: "Fira Sans";
+  font-family: $body-font;
   border-bottom: 1px solid rgba(0, 0, 0, .16);
 }
 #dropdown_btn2:hover {
@@ -1229,7 +1237,7 @@ label {
 }
 .chat_msg_sender {
   display: inline-block;
-  float:left; 
+  float:left;
 }
 .user_msg_info {
   width: 5%;
@@ -1425,8 +1433,8 @@ label {
   opacity: 0;
 }
 .arrow-down {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   position: absolute;
@@ -1435,8 +1443,8 @@ label {
   margin-left: 45px;
 }
 .arrow-left {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
   position: absolute;
@@ -1518,7 +1526,7 @@ label {
 }
 .outer_icon:hover .follow_tool {
   opacity: 1.0;
-} 
+}
 .outer_icon {
   display: inline;
   position: relative;
@@ -1643,7 +1651,7 @@ label {
   height: auto;
   padding: 6px 10px 3px 10px;
   margin-right: 20px;
-  color: #FFFFFF;
+  color: $white;
   border-radius: 2px;
   border: 1px solid #E2B12D;
   border-bottom: 2px solid #E2B12D;
@@ -1716,7 +1724,7 @@ label {
   width: auto;
   height: auto;
   padding: 4px 10px 5px 10px;
-  color: #FFFFFF;
+  color: $white;
   border-radius: 2px;
   border: 1px solid #5A8844;
   border-bottom: 2px solid #518C34;
@@ -1933,7 +1941,7 @@ span.selected:hover {
   padding-bottom: 20px;
 }
 .thumb_active {
-  
+
 }
  .thumbs_down {
   font-style: italic;
@@ -1973,7 +1981,7 @@ span.selected:hover {
   color: #A0A0A0;
   margin: 0px;
   padding: 0px;
-  font-family: "Fira Sans", "serif";
+  font-family: $body-font, "serif";
   font-size: 1.2em;
   margin-bottom: 10px;
 }
@@ -2003,7 +2011,7 @@ span.selected:hover {
   font-size: 0.95em;
   font-weight: bold;
   color: #A0A0A0;
-  font-family: "Fira Sans", "Mallanna", "Serif";
+  font-family: $body-font, "Serif";
 }
 .wrap_divs {
   width: 32%;
@@ -2147,7 +2155,7 @@ span.selected:hover {
   border-bottom: 1px solid #D7A700;
   border-left: 1px solid #E3B002;
   margin-left: 30%;
-  font-family: "Fira Sans", "Mallanna", "Serif";
+  font-family: $body-font, "Serif";
   font-weight: bold;
   color: #FAFAFA;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
@@ -2254,7 +2262,7 @@ span.selected:hover {
   opacity: 0.9;
 }
 .match_title {
-  font-family: "Fira Sans", "Mallanna", "serif";
+  font-family: $body-font, $header-font1, "serif";
   font-size: 0.8em;
   color: #A0A0A0;
   margin-left: 5px;
@@ -2325,7 +2333,7 @@ span.selected:hover {
 #small_btns_pos {
   margin-left: 15px;
   margin-top: -5px;
-  font-family: "Fira Sans", "Mallanna", "serif";
+  font-family: $body-font, $header-font1, "serif";
   font-size: 0.9em;
   color: #E4E4E4;
 }
@@ -2466,7 +2474,7 @@ span.selected:hover {
   color: #A0A0A0;
   margin: 0px;
   padding: 0px;
-  font-family: "Mallanna", "serif";
+  font-family: $header-font1, "serif";
   font-size: 1.3em;
   margin-bottom: 10px;
   font-weight: normal;
@@ -2871,7 +2879,7 @@ h3.a {
 .badge_area img {
   width: 80px;
   height: 80px;
-  opacity: 0.7; 
+  opacity: 0.7;
   margin-left: 6px;
   margin-top: 6px;
 }
@@ -2905,7 +2913,7 @@ h3.a {
   color: #A0A0A0;
   padding: 0;
   margin: 0;
-  font-family: "Fira Sans", "serif";
+  font-family: $body-font, "serif";
   font-size: 1.2em;
   padding: 5px 0;
 }
@@ -3081,7 +3089,7 @@ h3.a {
   font-weight: bold;
   margin: 0px;
   margin-bottom: 10px;
-  color: #a0a0a0; 
+  color: #a0a0a0;
 }
 .p_picture_text {
   width: 150px;
@@ -3219,8 +3227,8 @@ h3.a {
   h2 {
     text-align: center;
     font-family: 'viga';
-    color: #FDD364;
-      text-shadow: 0px 2px 0px #E2B641;
+    color: $orange;
+    text-shadow: 0px 2px 0px $dark-orange;
     font-size: 3em;
   }
   h5 {
@@ -3374,7 +3382,7 @@ h3.a {
     animation-iteration-count: infinite;
 }
 @-webkit-keyframes tmatch {
-    0%   { 
+    0%   {
       background-color: #E8E8E8;
       border: 1px solid rgba(216, 216, 216, 1);
       box-shadow: 0px 0px 2px rgba(161, 161, 161, 0.40);
@@ -3393,7 +3401,7 @@ h3.a {
 
 /* Standard syntax */
 @keyframes tmatch {
-    0%   { 
+    0%   {
       background-color: #E8E8E8;
       border: 1px solid rgba(216, 216, 216, 1);
       box-shadow: 0px 0px 2px rgba(161, 161, 161, 0.40);
@@ -3441,7 +3449,7 @@ h3.a {
         border-right: 1px solid #C7C7C7;
       }
       p {
-        
+
       }
     }
     &:active {
@@ -3463,7 +3471,7 @@ h3.a {
 }
 .rmv_btn {
   box-shadow: none !important;
-  
+
 }
 .feat_split_wrap {
   width: 60%;
@@ -3503,7 +3511,8 @@ h3.a {
 .top_games {
   margin-top: 20px;
   h4 {
-    font-family: "Fira Sans";
+    font-family: $body-font
+;
     color: #a0a0a0;
     font-size: 1.5em;
   }
@@ -3511,7 +3520,7 @@ h3.a {
     padding-left: 10px !important;
     padding-right: 10px !important;
     a {
-      
+
     }
     img {
       height: 200px;
@@ -3521,7 +3530,8 @@ h3.a {
 }
 .top_broadcasts {
   h4 {
-    font-family: "Fira Sans";
+    font-family: $body-font
+;
     color: #a0a0a0;
     margin-bottom: 20px;
     font-size: 1.5em;
@@ -3650,9 +3660,10 @@ h3.a {
       border-right: 1px solid #4B80B7;
       border-bottom: 1px solid #49718E;
       border-left: 1px solid #5D89AF;
-      font-family: "Fira Sans", "Mallanna", "Serif";
+      font-family: $body-font
+  , $header-font1, "Serif";
       font-weight: bold;
-      color: #FFFFFF;
+      color: $white;
       text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
       box-shadow: 0px 0px 3px rgba(161, 161, 161, 0.18);
       &:hover {
@@ -4000,7 +4011,7 @@ h3.a {
   }
 }
 .front_title {
-  font-family: "Fira Sans";
+  font-family: $body-font;
   color: #a0a0a0;
   margin-bottom: 20px;
   font-size: 1.5em;
