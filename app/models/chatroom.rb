@@ -29,15 +29,15 @@ class Chatroom < ActiveRecord::Base
 
   def follow!(user)
     $redis.multi do
-      $redis.sadd(self.redis_key(:following), user.id)
-      $redis.sadd(user.redis_key(:followers), self.id)
+      $redis.sadd(self.redis_key(:followers), user.id)
+      $redis.sadd(user.redis_key(:following), self.id)
     end
   end
 
   def unfollow!(user)
     $redis.multi do
-      $redis.srem(self.redis_key(:following), user.id)
-      $redis.srem(user.redis_key(:followers), self.id)
+      $redis.srem(self.redis_key(:followers), user.id)
+      $redis.srem(user.redis_key(:following), self.id)
     end
   end
 

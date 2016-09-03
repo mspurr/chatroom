@@ -10,9 +10,8 @@
         <div class="chatwindow">
             <div class="chat_inside">
                 <div class="chat_message_area" data-behavior="chat-messages" data-chatroom-id="<%= @room.id %>">
-                <% @chat_messages.each do |chat_message| %>
-                    <%= render chat_message %>
-                <% end %>
+                
+                <%= react_component 'App.component.chatMessageWrapper' %>
             </div>
 
             <%= render 'chat_messages/chat_menu' %>

@@ -2,7 +2,6 @@
 class ChatroomsChannel < ApplicationCable::Channel
   def subscribed
     # stream_from "some_channel"
-    puts "\n\n========================"
     chatroom = Chatroom.find(params[:chatrooms_id])
     current_user.follow!(chatroom)
     chatroom.follow!(current_user)
@@ -26,11 +25,15 @@ class ChatroomsChannel < ApplicationCable::Channel
     MessageRelayJob.perform_later(chat_message)
   end
 
-  def get_users
+  def load_data
     chatroom = Chatroom.find(params[:chatrooms_id])
-    
+    chat_messages = chatroom.chat_messages.where('created_at > ?', 30.minutes.ago)
+    messages = chat_messages.map { |m| { "user": m.user, "message": m } }
+
     ActionCable.server.broadcast "chatrooms:#{chatroom.id}", {
-      users: chatroom.followers
+      action: "load_data",
+      users: chatroom.followers,
+      messages: messages
     }
   end
 
