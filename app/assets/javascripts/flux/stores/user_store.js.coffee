@@ -29,5 +29,6 @@ App.userStore = do ->
     return new Date(b.updated_at) - new Date(a.updated_at)
 
   that.getUsers = -> users
+  that.getUserCount = -> users.length
   
   that
